@@ -1,12 +1,12 @@
 import {
-  LIST_ROOMS,
   ActionTypesRooms,
-} from '../../acciones/productos/ProductosTiposAcciones';
+  LIST_ROOMS,
+} from '../../acciones/rooms/ActionTypesRooms';
 import { IStateRooms } from '../../modelo/IStateRooms';
-import { IRoom } from 'app/feature/Producto/models/Room';
+import { IRoom } from 'app/feature/Rooms/models/Room';
 
 const initialState: IStateRooms = {
-  listRooms: Array<IRoom>()
+  listRooms: Array<IRoom>(),
 };
 
 export default function (
@@ -15,13 +15,13 @@ export default function (
 ): IStateRooms {
   switch (action.type) {
     case LIST_ROOMS: {
-      console.log(action.payload)
+      console.log(action.payload);
       const rooms = action.payload;
       return {
         ...state,
         listRooms: rooms,
       };
-    } 
+    }
 
     default:
       return state;

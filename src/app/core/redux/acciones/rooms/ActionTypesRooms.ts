@@ -1,4 +1,4 @@
-import { IRoom } from 'app/feature/Producto/models/Room';
+import { IRoom } from 'app/feature/Rooms/models/Room';
 
 export const LIST_ROOMS = 'LISTAR_HABITACIONES';
 // export const AGREGAR_PRODUCTO = 'AGREGAR_PRODUCTO';
@@ -19,7 +19,6 @@ interface ListRoomsAction {
 //   payload: Producto;
 // }
 
-export type ActionTypesRooms =
-  | ListRoomsAction
-  // | AccionAgregarProducto
-  // | AccionEliminarProducto;
+export type ActionTypesRooms = ListRoomsAction;
+// | AccionAgregarProducto
+// | AccionEliminarProducto;
