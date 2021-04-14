@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import productos from './productos/productosReductor';
+import rooms from './rooms/roomsReducers';
 
-export default combineReducers({ productos });
+export default combineReducers({ rooms });

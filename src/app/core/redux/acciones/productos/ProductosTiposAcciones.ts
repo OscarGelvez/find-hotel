@@ -1,26 +1,25 @@
-import { Producto } from 'app/feature/Producto/models/Producto';
+import { IRoom } from 'app/feature/Producto/models/Room';
 
-export const LISTAR_PRODUCTOS = 'LISTAR_PRODUCTOS';
-export const AGREGAR_PRODUCTO = 'AGREGAR_PRODUCTO';
-export const ELIMINAR_PRODUCTO = 'ELIMINAR_PRODUCTO';
+export const LIST_ROOMS = 'LISTAR_HABITACIONES';
+// export const AGREGAR_PRODUCTO = 'AGREGAR_PRODUCTO';
+// export const ELIMINAR_PRODUCTO = 'ELIMINAR_PRODUCTO';
 
-interface AccionListarProductos {
-  type: typeof LISTAR_PRODUCTOS;
-  payload: Producto[];
-  cantidadTotalProducto: number;
+interface ListRoomsAction {
+  type: typeof LIST_ROOMS;
+  payload: IRoom[];
 }
 
-interface AccionAgregarProducto {
-  type: typeof AGREGAR_PRODUCTO;
-  payload: Producto;
-}
+// interface AccionAgregarProducto {
+//   type: typeof AGREGAR_PRODUCTO;
+//   payload: Producto;
+// }
 
-interface AccionEliminarProducto {
-  type: typeof ELIMINAR_PRODUCTO;
-  payload: Producto;
-}
+// interface AccionEliminarProducto {
+//   type: typeof ELIMINAR_PRODUCTO;
+//   payload: Producto;
+// }
 
-export type TiposAccionesProducto =
-  | AccionListarProductos
-  | AccionAgregarProducto
-  | AccionEliminarProducto;
+export type ActionTypesRooms =
+  | ListRoomsAction
+  // | AccionAgregarProducto
+  // | AccionEliminarProducto;

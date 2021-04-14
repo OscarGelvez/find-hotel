@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { HeaderNav } from './styles';
-import LogoCeiba from 'assets/img/logo-ceiba.png';
+import LogoCeiba from 'assets/img/logoHotel.png';
 import { NavBrand } from './NavBrand';
 import { NavList } from './NavList';
 
 export const NavigationHeader: React.FC = () => {
   const routes = [
-    { label: 'Home', url: '/home' },
-    { label: 'Productos', url: '/productos' },
+    { label: 'Habitaciones', url: '/' },
+    { label: 'Reservas', url: '/reservation' },
   ];
   return (
     <HeaderNav>
-      <NavBrand imgSrc={LogoCeiba} text="Ceiba Software"></NavBrand>
+      <NavBrand imgSrc={LogoCeiba} text="Find Hotel"></NavBrand>
       <NavList items={routes} />
     </HeaderNav>
   );

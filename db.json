@@ -1,0 +1,197 @@
+{
+  "rooms": [
+    {
+      "id": 50,
+      "hotel": {
+        "id": 1,
+        "name": "Gold Hotel 5",
+        "address": "Calle 54 # 56 -32 Av Libre",
+        "stars": 4,
+        "description": "Hotel con ambiente familiar, increible opción. Muchas comodidades",
+        "score": 8.7
+      },
+      "value": 154000,
+      "ac": "Y",
+      "parking": "Y",
+      "available_from": "2021-04-13",
+      "available_until": "2021-04-30",
+      "wifi": "Y",
+      "capacity": 1,
+      "description": "Baño privado, cama doble, con nevera, Wifi, TV."
+    },
+    {
+      "id": 51,
+      "hotel": {
+        "id": 1,
+        "name": "Gold Hotel 5",
+        "address": "Calle 54 # 56 -32 Av Libre",
+        "stars": 4,
+        "description": "Hotel con ambiente familiar, increible opción. Muchas comodidades",
+        "score": 8.7
+      },
+      "value": 134000,
+      "ac": "Y",
+      "parking": "N",
+      "available_from": "2021-04-23",
+      "available_until": "2021-05-02",
+      "wifi": "N",
+      "capacity": 2,
+      "description": "Baño privado, cama doble, con nevera, TV."
+    },
+    {
+      "id": 52,
+      "hotel": {
+        "id": 2,
+        "name": "Resort vacation",
+        "address": "Calle 4 # 6-3 Av del rio",
+        "stars": 3,
+        "description": "Ambiente familiar, Recomendado",
+        "score": 9.3
+      },
+      "value": 99000,
+      "ac": "N",
+      "parking": "N",
+      "available_from": "2021-05-02",
+      "available_until": "2021-05-08",
+      "wifi": "Y",
+      "capacity": 1,
+      "description": "Baño privado, cama sencilla, TV."
+    },
+    {
+      "id": 53,
+      "hotel": {
+        "id": 1,
+        "name": "Resort vacation",
+        "address": "Calle 4 # 6-3 Av del rio",
+        "stars": 3,
+        "description": "Ambiente familiar, Recomendado",
+        "score": 9.3
+      },
+      "value": 120000,
+      "ac": "Y",
+      "parking": "Y",
+      "available_from": "2021-05-05",
+      "available_until": "2021-05-10",
+      "wifi": "Y",
+      "capacity": 2,
+      "description": "Baño privado, cama doble, WIFI"
+    },
+    {
+      "id": 54,
+      "hotel": {
+        "id": 3,
+        "name": "Cencor suite",
+        "address": "Calle 1 # 16-23",
+        "stars": 4,
+        "description": "Ambiente familiar, amigos, descaso y relajación",
+        "score": 7.2
+      },
+      "value": 56000,
+      "ac": "N",
+      "parking": "N",
+      "available_from": "2021-05-02",
+      "available_until": "2021-05-04",
+      "wifi": "N",
+      "capacity": 1,
+      "description": "Baño privado, cama sencilla, TV."
+    },
+
+    {
+      "id": 55,
+      "hotel": {
+        "id": 4,
+        "name": "Palmetto plaza",
+        "address": "Avenida 3 # 23 - 110 Sur, Calima",
+        "stars": 5,
+        "description": "Ambiente de descanso para toda la familia, buena atención y servicio",
+        "score": 8
+      },
+      "value": 75000,
+      "ac": "Y",
+      "parking": "Y",
+      "available_from": "2021-04-26",
+      "available_until": "2020-05-03",
+      "wifi": "Y",
+      "capacity": 2,
+      "description": "Baño privado, cama doble, TV, Balcon, WIFI."
+    },
+
+    {
+      "id": 56,
+      "hotel": {
+        "id": 4,
+        "name": "Palmetto plaza",
+        "address": "Avenida 3 # 23 - 110 Sur, Calima",
+        "stars": 5,
+        "description": "Ambiente de descanso para toda la familia, buena atención y servicio",
+        "score": 8
+      },
+      "value": 142000,
+      "ac": "Y",
+      "parking": "Y",
+      "available_from": "2021-04-26",
+      "available_until": "2021-04-31",
+      "wifi": "Y",
+      "capacity": 2,
+      "description": "Baño privado, Nevera, Bar, cama doble, TV Y WIFI."
+    },
+
+    {
+      "id": 56,
+      "hotel": {
+        "id": 5,
+        "name": "DeCameron",
+        "address": "Avenida 31 # 2 - 110 norte, rivera center",
+        "stars": 5,
+        "description": "Ambiente de descanso atención y servicio para todos. Amigos, Familia, Trabajo",
+        "score": 9.6
+      },
+      "value": 200000,
+      "ac": "Y",
+      "parking": "Y",
+      "available_from": "2021-04-13",
+      "available_until": "2020-04-30",
+      "wifi": "N",
+      "capacity": 4,
+      "description": "Baño privado, 2 camas dobles, TV, Balcon, Nevera"
+    },
+    {
+      "id": 56,
+      "hotel": {
+        "id": 5,
+        "name": "DeCameron",
+        "address": "Avenida 31 # 2 - 110 norte, rivera center",
+        "stars": 5,
+        "description": "Ambiente de descanso atención y servicio para todos. Amigos, Familia, Trabajo",
+        "score": 9.6
+      },
+      "value": 180000,
+      "ac": "Y",
+      "parking": "Y",
+      "available_from": "2021-04-13",
+      "available_until": "2021-04-22",
+      "wifi": "Y",
+      "capacity": 3,
+      "description": "Baño privado, Nevera, Bar, cama doble y cama sencilla , TV Y WIFI."
+    },
+    {
+      "id": 56,
+      "hotel": {
+        "id": 5,
+        "name": "DeCameron",
+        "address": "Avenida 31 # 2 - 110 norte, rivera center",
+        "stars": 5,
+        "description": "Ambiente de descanso atención y servicio para todos. Amigos, Familia, Trabajo",
+        "score": 9.6
+      },
+      "value": 155000,
+      "ac": "Y",
+      "parking": "Y",
+      "available_from": "2021-04-13",
+      "available_until": "2021-04-14",
+      "wifi": "Y",
+      "capacity": 2,
+      "description": "Baño privado, Nevera, Bar, cama doble, Never, TV Y WIFI."
+    }
+  ]
+}

@@ -1,47 +1,45 @@
 import {
-  AGREGAR_PRODUCTO,
-  ELIMINAR_PRODUCTO,
-  LISTAR_PRODUCTOS,
-  TiposAccionesProducto,
+  LIST_ROOMS,
+  ActionTypesRooms,
 } from './ProductosTiposAcciones';
-import { Producto } from 'app/feature/Producto/models/Producto';
+import { IRoom } from 'app/feature/Producto/models/Room';
 import { ProductoRepositorio } from 'app/core/api/productos.repositorio';
 
-export function listarProductos(
-  productos: Array<Producto>,
-  cantidadTotalProducto: number
-): TiposAccionesProducto {
+export function listingRooms(
+  rooms: Array<IRoom>,
+): ActionTypesRooms {
   return {
-    type: LISTAR_PRODUCTOS,
-    payload: productos,
-    cantidadTotalProducto,
+    type: LIST_ROOMS,
+    payload: rooms,
   };
 }
 
-export function agregarNuevoProducto(
-  producto: Producto
-): TiposAccionesProducto {
-  return {
-    type: AGREGAR_PRODUCTO,
-    payload: producto,
-  };
-}
+// export function agregarNuevoProducto(
+//   producto: Producto
+// ): TiposAccionesProducto {
+//   return {
+//     type: AGREGAR_PRODUCTO,
+//     payload: producto,
+//   };
+// }
 
-export function eliminarProducto(producto: Producto): TiposAccionesProducto {
-  return {
-    type: ELIMINAR_PRODUCTO,
-    payload: producto,
-  };
-}
+// export function eliminarProducto(producto: Producto): TiposAccionesProducto {
+//   return {
+//     type: ELIMINAR_PRODUCTO,
+//     payload: producto,
+//   };
+// }
 
-export function listarProductosAsync(numeroPagina: number) {
+export function listingRoomsAsync(numeroPagina: number) {
   return function (dispacth: any) {
     ProductoRepositorio.consultarPorPagina(
       numeroPagina
-    ).then((respuesta: any) =>
-      dispacth(
-        listarProductos(respuesta.data.articles, respuesta.data.articlesCount)
-      )
+    ).then((response: any) =>
+    {
+    console.log(response.data)
+     return dispacth(
+        listingRooms(response.data)
+      )}
     );
   };
 }

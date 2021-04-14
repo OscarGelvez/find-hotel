@@ -6,7 +6,7 @@ export const BrandDiv = styled.div`
 `;
 
 export const LogoImg = styled.img`
-  max-height: 50px;
+  max-height: 70px;
   max-width: 150px;
 `;
 
