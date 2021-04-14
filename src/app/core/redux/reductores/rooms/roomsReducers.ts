@@ -1,7 +1,7 @@
 import {
   ActionTypesRooms,
   LIST_ROOMS,
-} from '../../acciones/rooms/ActionTypesRooms';
+} from '../../actions/rooms/ActionTypesRooms';
 import { IStateRooms } from '../../modelo/IStateRooms';
 import { IRoom } from 'app/feature/Rooms/models/Room';
 

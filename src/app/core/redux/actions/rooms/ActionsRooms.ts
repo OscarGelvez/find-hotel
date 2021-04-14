@@ -1,6 +1,6 @@
 import { ActionTypesRooms, LIST_ROOMS } from './ActionTypesRooms';
 import { IRoom } from 'app/feature/Rooms/models/Room';
-import { ProductoRepositorio } from 'app/core/api/productos.repositorio';
+import { RoomsRepository } from 'app/core/api/rooms.repository';
 
 export function listingRooms(rooms: Array<IRoom>): ActionTypesRooms {
   return {
@@ -27,11 +27,9 @@ export function listingRooms(rooms: Array<IRoom>): ActionTypesRooms {
 
 export function listingRoomsAsync(numeroPagina: number) {
   return function (dispacth: any) {
-    ProductoRepositorio.consultarPorPagina(numeroPagina).then(
-      (response: any) => {
-        console.log(response.data);
-        return dispacth(listingRooms(response.data));
-      }
-    );
+    RoomsRepository.consultarPorPagina(numeroPagina).then((response: any) => {
+      console.log(response.data);
+      return dispacth(listingRooms(response.data));
+    });
   };
 }

@@ -4,6 +4,6 @@ import { axiosIntance } from '../config/AxiosConfig';
 // const limit = (count: number, p: number) =>
 //   `limit=${count}&offset=${p ? p * count : 0}`;
 
-export const ProductoRepositorio = {
+export const RoomsRepository = {
   consultarPorPagina: (page: number) => axiosIntance.get('/rooms'),
 };
