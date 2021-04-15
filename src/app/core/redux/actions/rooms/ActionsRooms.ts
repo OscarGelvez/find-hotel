@@ -1,10 +1,17 @@
-import { ActionTypesRooms, LIST_ROOMS } from './ActionTypesRooms';
-import { IRoom } from 'app/feature/Rooms/models/Room';
+import { ActionTypesRooms, FINDED_ROOMS, LIST_ROOMS } from './ActionTypesRooms';
+import { IRoom, fieldsForm } from 'app/feature/Rooms/models/Room';
 import { RoomsRepository } from 'app/core/api/rooms.repository';
 
 export function listingRooms(rooms: Array<IRoom>): ActionTypesRooms {
   return {
     type: LIST_ROOMS,
+    payload: rooms,
+  };
+}
+
+export function roomsFiltered(rooms: Array<IRoom>): ActionTypesRooms {
+  return {
+    type: FINDED_ROOMS,
     payload: rooms,
   };
 }
@@ -25,11 +32,18 @@ export function listingRooms(rooms: Array<IRoom>): ActionTypesRooms {
 //   };
 // }
 
-export function listingRoomsAsync(numeroPagina: number) {
+export function listingRoomsAsync() {
   return function (dispacth: any) {
-    RoomsRepository.consultarPorPagina(numeroPagina).then((response: any) => {
-      console.log(response.data);
+    RoomsRepository.findAllRooms().then((response: any) => {
       return dispacth(listingRooms(response.data));
+    });
+  };
+}
+
+export function findRoomsFilter(dataFilter: fieldsForm) {
+  return function (dispacth: any) {
+    RoomsRepository.findFilterRooms(dataFilter).then((response: any) => {
+      return dispacth(roomsFiltered(response.data));
     });
   };
 }

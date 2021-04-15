@@ -1,11 +1,15 @@
 import { IRoom } from 'app/feature/Rooms/models/Room';
 
 export const LIST_ROOMS = 'LISTAR_HABITACIONES';
-// export const AGREGAR_PRODUCTO = 'AGREGAR_PRODUCTO';
-// export const ELIMINAR_PRODUCTO = 'ELIMINAR_PRODUCTO';
+export const FINDED_ROOMS = 'HABITACIONES_FILTRADAS';
 
 interface ListRoomsAction {
   type: typeof LIST_ROOMS;
+  payload: IRoom[];
+}
+
+interface findedRoomsAction {
+  type: typeof FINDED_ROOMS;
   payload: IRoom[];
 }
 
@@ -19,6 +23,6 @@ interface ListRoomsAction {
 //   payload: Producto;
 // }
 
-export type ActionTypesRooms = ListRoomsAction;
+export type ActionTypesRooms = ListRoomsAction | findedRoomsAction;
 // | AccionAgregarProducto
 // | AccionEliminarProducto;

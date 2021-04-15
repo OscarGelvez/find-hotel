@@ -67,3 +67,26 @@ export interface IHotel {
    */
   score: number;
 }
+
+export interface fieldsForm {
+  /**
+   * Fecha inicio de reservación
+   */
+  fromDate?: string;
+  /**
+   * Fecha final de reservación
+   */
+  untilDate?: string;
+  /**
+   * Cantidad de personas en habitación
+   */
+  capacity?: string;
+  /**
+   * Habitación con aire acondicionado
+   */
+  withAir?: boolean;
+  /**
+   * Habitación con parqueadero propio
+   */
+  withParking?: boolean;
+}

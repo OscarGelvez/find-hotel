@@ -1,5 +1,6 @@
 import {
   ActionTypesRooms,
+  FINDED_ROOMS,
   LIST_ROOMS,
 } from '../../actions/rooms/ActionTypesRooms';
 import { IStateRooms } from '../../modelo/IStateRooms';
@@ -15,7 +16,13 @@ export default function (
 ): IStateRooms {
   switch (action.type) {
     case LIST_ROOMS: {
-      console.log(action.payload);
+      const rooms = action.payload;
+      return {
+        ...state,
+        listRooms: rooms,
+      };
+    }
+    case FINDED_ROOMS: {
       const rooms = action.payload;
       return {
         ...state,

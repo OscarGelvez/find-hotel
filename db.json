@@ -130,14 +130,14 @@
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-04-26",
-      "available_until": "2021-04-31",
+      "available_until": "2021-04-30",
       "wifi": "Y",
       "capacity": 2,
       "description": "Baño privado, Nevera, Bar, cama doble, TV Y WIFI."
     },
 
     {
-      "id": 56,
+      "id": 57,
       "hotel": {
         "id": 5,
         "name": "DeCameron",
@@ -149,14 +149,14 @@
       "value": 200000,
       "ac": "Y",
       "parking": "Y",
-      "available_from": "2021-04-13",
+      "available_from": "2021-04-17",
       "available_until": "2020-04-30",
       "wifi": "N",
       "capacity": 4,
       "description": "Baño privado, 2 camas dobles, TV, Balcon, Nevera"
     },
     {
-      "id": 56,
+      "id": 58,
       "hotel": {
         "id": 5,
         "name": "DeCameron",
@@ -168,14 +168,14 @@
       "value": 180000,
       "ac": "Y",
       "parking": "Y",
-      "available_from": "2021-04-13",
+      "available_from": "2021-04-16",
       "available_until": "2021-04-22",
       "wifi": "Y",
       "capacity": 3,
       "description": "Baño privado, Nevera, Bar, cama doble y cama sencilla , TV Y WIFI."
     },
     {
-      "id": 56,
+      "id": 59,
       "hotel": {
         "id": 5,
         "name": "DeCameron",

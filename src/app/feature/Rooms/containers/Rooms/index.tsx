@@ -1,41 +1,35 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { DivContainer, DivRow } from './styles';
+import { DivContainer } from './styles';
 import { ListRooms } from '../../components/ListRooms';
 // import { PaginadorProductos } from '../../components/PaginadorProductos';
-import { IRoom } from '../../models/Room';
+import { IRoom, fieldsForm } from '../../models/Room';
 import { useEffect } from 'react';
+import { FindRooms } from '../../components/findRooms';
 
 interface RoomsProps {
   listRooms: Array<IRoom>;
-  listAvailableRooms: (numeroPagina: number) => void;
+  listAvailableRooms: () => void;
+  findRoomsFilter: (data: fieldsForm) => void;
 }
 
 export const Rooms: React.FC<RoomsProps> = ({
   listRooms,
   listAvailableRooms,
+  findRoomsFilter,
 }) => {
   useEffect(() => {
     if (listRooms && listRooms.length === 0) {
-      listAvailableRooms(0);
+      listAvailableRooms();
     }
   }, [listRooms, listAvailableRooms]);
+
+  // const onFindRoom = (values: fieldsForm) => {
+  //   console.log(values);
+  // };
   return (
     <DivContainer>
-      {/* <DivRow>
-        <FormCrearProducto
-          onSubmit={agregarNuevoProducto}
-          formTitle="Crear producto"
-        />
-      </DivRow> */}
-      {/* <DivRow>
-       
-        <PaginadorProductos
-          cantidadTotalProductos={cantidadTotalProducto}
-          onClickCambiarPagina={listarProductos}
-        />
-      </DivRow> */}
-
+      <FindRooms onSubmit={findRoomsFilter} />
       <ListRooms listRooms={listRooms} />
     </DivContainer>
   );
@@ -44,4 +38,5 @@ export const Rooms: React.FC<RoomsProps> = ({
 Rooms.propTypes = {
   listRooms: PropTypes.array.isRequired,
   listAvailableRooms: PropTypes.func.isRequired,
+  findRoomsFilter: PropTypes.func.isRequired,
 };
