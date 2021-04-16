@@ -2,6 +2,8 @@
   "rooms": [
     {
       "id": 50,
+      "title": "Suite full. Caroline",
+      "image": "https://static.abc.es/Media/201504/27/hotel12--644x362.jpg",
       "hotel": {
         "id": 1,
         "name": "Gold Hotel 5",
@@ -10,7 +12,7 @@
         "description": "Hotel con ambiente familiar, increible opción. Muchas comodidades",
         "score": 8.7
       },
-      "value": 154000,
+      "value": "154.000",
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-04-13",
@@ -21,15 +23,17 @@
     },
     {
       "id": 51,
+      "title": "Suite Maravilla",
+      "image": "https://www.cataloniahotels.com/es/blog/wp-content/uploads/2016/05/Habitaci%C3%B3n-suite-catalonia.jpg",
       "hotel": {
         "id": 1,
         "name": "Gold Hotel 5",
         "address": "Calle 54 # 56 -32 Av Libre",
-        "stars": 4,
+        "stars": 3,
         "description": "Hotel con ambiente familiar, increible opción. Muchas comodidades",
         "score": 8.7
       },
-      "value": 134000,
+      "value": "134.000",
       "ac": "Y",
       "parking": "N",
       "available_from": "2021-04-23",
@@ -40,6 +44,8 @@
     },
     {
       "id": 52,
+      "title": "Suite Placer y paz",
+      "image": "https://www.cataloniahotels.com/es/blog/wp-content/uploads/2016/05/habitaci%C3%B3n-doble-catalonia-620x412.jpg",
       "hotel": {
         "id": 2,
         "name": "Resort vacation",
@@ -48,7 +54,7 @@
         "description": "Ambiente familiar, Recomendado",
         "score": 9.3
       },
-      "value": 99000,
+      "value": "99.000",
       "ac": "N",
       "parking": "N",
       "available_from": "2021-05-02",
@@ -59,15 +65,17 @@
     },
     {
       "id": 53,
+      "title": "Suite Encanto de Viviane",
+      "image": "https://moovemag.com/wp-content/uploads/2012/11/mandarin-oriental-tokyo-4.jpg",
       "hotel": {
         "id": 1,
         "name": "Resort vacation",
         "address": "Calle 4 # 6-3 Av del rio",
-        "stars": 3,
+        "stars": 2,
         "description": "Ambiente familiar, Recomendado",
         "score": 9.3
       },
-      "value": 120000,
+      "value": "120.000",
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-05-05",
@@ -78,15 +86,17 @@
     },
     {
       "id": 54,
+      "title": "Peace and Love",
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/2d/70/6d/habitacion-master-suite.jpg?w=600&h=300&s=1",
       "hotel": {
         "id": 3,
-        "name": "Cencor suite",
+        "name": "Cencor hotel",
         "address": "Calle 1 # 16-23",
         "stars": 4,
         "description": "Ambiente familiar, amigos, descaso y relajación",
         "score": 7.2
       },
-      "value": 56000,
+      "value": "56.000",
       "ac": "N",
       "parking": "N",
       "available_from": "2021-05-02",
@@ -98,15 +108,17 @@
 
     {
       "id": 55,
+      "title": "Relax y placer suite",
+      "image": "https://noticiaslogisticaytransporte.com/wp-content/uploads/2015/09/habitacion-hotel.jpg",
       "hotel": {
         "id": 4,
         "name": "Palmetto plaza",
         "address": "Avenida 3 # 23 - 110 Sur, Calima",
-        "stars": 5,
+        "stars": 3,
         "description": "Ambiente de descanso para toda la familia, buena atención y servicio",
         "score": 8
       },
-      "value": 75000,
+      "value": "75.000",
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-04-26",
@@ -118,6 +130,8 @@
 
     {
       "id": 56,
+      "title": "Boca grande suite",
+      "image": "https://www.farandahotels.com/uploads/galeriahabitaciones/habitacion-cabana-hotel-panama-faranda-a.jpg",
       "hotel": {
         "id": 4,
         "name": "Palmetto plaza",
@@ -126,7 +140,7 @@
         "description": "Ambiente de descanso para toda la familia, buena atención y servicio",
         "score": 8
       },
-      "value": 142000,
+      "value": "142.000",
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-04-26",
@@ -138,15 +152,17 @@
 
     {
       "id": 57,
+      "title": "Balcones de luz suite",
+      "image": "https://www.farandahotels.com/cache/7b/ce/7bcea8bb90d85d2189490e1285827cac.jpg",
       "hotel": {
         "id": 5,
         "name": "DeCameron",
         "address": "Avenida 31 # 2 - 110 norte, rivera center",
         "stars": 5,
         "description": "Ambiente de descanso atención y servicio para todos. Amigos, Familia, Trabajo",
-        "score": 9.6
+        "score": 8.3
       },
-      "value": 200000,
+      "value": "200.000",
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-04-17",
@@ -157,15 +173,17 @@
     },
     {
       "id": 58,
+      "title": "Brisa y Mar suite",
+      "image": "https://www.reportur.com/wp-content/uploads/2019/01/renaissance-cancun-resort-1.jpg",
       "hotel": {
         "id": 5,
         "name": "DeCameron",
         "address": "Avenida 31 # 2 - 110 norte, rivera center",
         "stars": 5,
         "description": "Ambiente de descanso atención y servicio para todos. Amigos, Familia, Trabajo",
-        "score": 9.6
+        "score": 8.7
       },
-      "value": 180000,
+      "value": "180.000",
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-04-16",
@@ -176,15 +194,17 @@
     },
     {
       "id": 59,
+      "title": "Sol encantador suite",
+      "image": "https://poseidon-resort.com/storage/26/habitacion-doble-uso-individual-%282%29.jpg",
       "hotel": {
         "id": 5,
         "name": "DeCameron",
         "address": "Avenida 31 # 2 - 110 norte, rivera center",
         "stars": 5,
         "description": "Ambiente de descanso atención y servicio para todos. Amigos, Familia, Trabajo",
-        "score": 9.6
+        "score": 9.0
       },
-      "value": 155000,
+      "value": "155.000",
       "ac": "Y",
       "parking": "Y",
       "available_from": "2021-04-13",
