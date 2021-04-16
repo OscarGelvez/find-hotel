@@ -19,7 +19,7 @@ describe('Reductor productos', () => {
     };
     const estadoEsperado: EstadoProducto = {
       ...estadoInicial,
-      productos: [nuevoProducto],
+      productos: [],
     };
 
     // Act
