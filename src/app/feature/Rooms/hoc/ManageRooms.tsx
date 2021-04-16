@@ -1,6 +1,7 @@
 import {
   findRoomsFilter,
   listingRoomsAsync,
+  loadDetailRoom,
 } from 'app/core/redux/actions/rooms/ActionsRooms';
 import { Istate } from 'app/core/redux/modelo/GeneralState';
 import { Rooms } from '../containers/Rooms';
@@ -13,4 +14,5 @@ const mapStateToProps = (state: Istate) => {
 export const ManageRooms = connect(mapStateToProps, {
   listAvailableRooms: listingRoomsAsync,
   findRoomsFilter,
+  loadDetailRoom,
 })(Rooms);

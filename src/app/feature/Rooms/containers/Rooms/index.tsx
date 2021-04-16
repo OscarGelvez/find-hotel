@@ -11,12 +11,14 @@ interface RoomsProps {
   listRooms: Array<IRoom>;
   listAvailableRooms: () => void;
   findRoomsFilter: (data: fieldsForm) => void;
+  loadDetailRoom: (roomId: number) => void;
 }
 
 export const Rooms: React.FC<RoomsProps> = ({
   listRooms,
   listAvailableRooms,
   findRoomsFilter,
+  loadDetailRoom,
 }) => {
   useEffect(() => {
     if (listRooms && listRooms.length === 0) {
@@ -24,13 +26,13 @@ export const Rooms: React.FC<RoomsProps> = ({
     }
   }, [listRooms, listAvailableRooms]);
 
-  // const onFindRoom = (values: fieldsForm) => {
-  //   console.log(values);
+  // const onFindRoom = (roomId: number) => {
+  //   console.log(roomId);
   // };
   return (
     <DivContainer>
       <FindRooms onSubmit={findRoomsFilter} />
-      <ListRooms listRooms={listRooms} />
+      <ListRooms listRooms={listRooms} loadDetailRoom={loadDetailRoom} />
     </DivContainer>
   );
 };
@@ -39,4 +41,5 @@ Rooms.propTypes = {
   listRooms: PropTypes.array.isRequired,
   listAvailableRooms: PropTypes.func.isRequired,
   findRoomsFilter: PropTypes.func.isRequired,
+  loadDetailRoom: PropTypes.func.isRequired,
 };

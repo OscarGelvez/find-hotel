@@ -1,4 +1,9 @@
-import { ActionTypesRooms, FINDED_ROOMS, LIST_ROOMS } from './ActionTypesRooms';
+import {
+  ActionTypesRooms,
+  FINDED_ROOMS,
+  LIST_ROOMS,
+  LOAD_ROOM_DETAIL,
+} from './ActionTypesRooms';
 import { IRoom, fieldsForm } from 'app/feature/Rooms/models/Room';
 import { RoomsRepository } from 'app/core/api/rooms.repository';
 
@@ -13,6 +18,13 @@ export function roomsFiltered(rooms: Array<IRoom>): ActionTypesRooms {
   return {
     type: FINDED_ROOMS,
     payload: rooms,
+  };
+}
+
+export function loadDetailRoom(roomId: number): ActionTypesRooms {
+  return {
+    type: LOAD_ROOM_DETAIL,
+    payload: roomId,
   };
 }
 

@@ -2,6 +2,7 @@ import { IRoom } from 'app/feature/Rooms/models/Room';
 
 export const LIST_ROOMS = 'LISTAR_HABITACIONES';
 export const FINDED_ROOMS = 'HABITACIONES_FILTRADAS';
+export const LOAD_ROOM_DETAIL = 'CARGA_HABITACION_SELECCIONADA';
 
 interface ListRoomsAction {
   type: typeof LIST_ROOMS;
@@ -11,6 +12,11 @@ interface ListRoomsAction {
 interface findedRoomsAction {
   type: typeof FINDED_ROOMS;
   payload: IRoom[];
+}
+
+interface loadRoomDetail {
+  type: typeof LOAD_ROOM_DETAIL;
+  payload: number;
 }
 
 // interface AccionAgregarProducto {
@@ -23,6 +29,9 @@ interface findedRoomsAction {
 //   payload: Producto;
 // }
 
-export type ActionTypesRooms = ListRoomsAction | findedRoomsAction;
+export type ActionTypesRooms =
+  | ListRoomsAction
+  | findedRoomsAction
+  | loadRoomDetail;
 // | AccionAgregarProducto
 // | AccionEliminarProducto;

@@ -4,13 +4,21 @@ export interface IRoom {
    */
   id: number;
   /**
+   * Título de la habitación
+   */
+  title: string;
+  /**
+   * Imagen descriptiva de la habitación
+   */
+  image: string;
+  /**
    * Objeto hotel al cual pertenece la habitación
    */
   hotel: IHotel;
   /**
    * Valor de la habitación
    */
-  value: number;
+  value: string;
   /**
    * Indica si tiene o no aire acondicionado
    */

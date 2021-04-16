@@ -6,7 +6,7 @@ import { Button } from 'app/shared/components/Button';
 import { fieldsForm } from '../../models/Room';
 
 export interface FindRoomsProps {
-  onSubmit: (payload: fieldsForm) => any;
+  onSubmit: (payload: fieldsForm) => void;
 }
 
 const initialValues = {
