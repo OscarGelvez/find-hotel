@@ -1,4 +1,4 @@
-import { fieldsForm } from 'app/feature/Rooms/models/Room';
+import { BookingData, fieldsForm } from 'app/feature/Rooms/models/Room';
 import { axiosIntance } from '../config/AxiosConfig';
 
 // const NUMERO_REGISTROS = 10;
@@ -33,8 +33,16 @@ const getDataFilter = (data: fieldsForm) => {
   return filterBy;
 };
 
+const headers = {
+  'Content-Type': 'application/json',
+};
+
 export const RoomsRepository = {
   findAllRooms: () => axiosIntance.get('/rooms'),
   findFilterRooms: (dataFilter: fieldsForm) =>
     axiosIntance.get(`/rooms${getDataFilter(dataFilter)}`),
+  saveBookingRoom: (bookingData: BookingData) =>
+    axiosIntance.post('/booking', bookingData, {
+      headers: headers,
+    }),
 };

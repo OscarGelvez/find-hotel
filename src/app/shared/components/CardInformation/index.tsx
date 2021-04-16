@@ -1,7 +1,14 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { IRoom } from '../../../feature/Rooms/models/Room';
+import {
+  BookingData,
+  IRoom,
+  fieldsFormBooking,
+} from '../../../feature/Rooms/models/Room';
+import { CustomField } from '../CustomFieldIcon';
 import { Link } from '../Link';
+import * as Yup from 'yup';
+import { FormikHelpers } from 'formik/dist/types';
+import { Field, Form, Formik } from 'formik';
 
 interface CardInformationProps {
   /**
@@ -9,19 +16,29 @@ interface CardInformationProps {
    */
   data: IRoom;
   /**
+   * Identificador de la habitación seleccionada
+   */
+  selectedRoom?: number;
+  /**
    * Función necargada de mostrar el detalle de la habitación
    */
   loadDetailRoom?: (roomId: number) => void;
   /**
-   * Identificador de la habitación seleccionada
+   * Función encargada de registrar la reservación
    */
-  selectedRoom?: number;
+  saveBookingRoom?: (bookingData: BookingData) => void;
 }
 
+/**
+ * Componente encargado de renderizar Card con información de la habitación
+ * @param param0
+ * @returns
+ */
 export const CardInformation: React.FC<CardInformationProps> = ({
   data,
   loadDetailRoom,
   selectedRoom,
+  saveBookingRoom,
 }) => {
   console.log(selectedRoom);
   return (
@@ -48,14 +65,12 @@ export const CardInformation: React.FC<CardInformationProps> = ({
               </div>
               <div className="col-12 col-lg-4">
                 {selectedRoom && selectedRoom !== -1 ? (
-                  <button
-                    type="button"
-                    className="btn btn-primary btn-book w-100"
-                    onClick={() => null}
-                  >
-                    <i className="far fa-calendar-check ml-3"></i>
-                    {' Reservar'}
-                  </button>
+                  <>
+                    <ModalFormBook
+                      saveBookingRoom={saveBookingRoom}
+                      dataRoom={data}
+                    />
+                  </>
                 ) : (
                   <Link to={'/detail'} replace={true}>
                     <button
@@ -140,56 +155,200 @@ export const CardInformation: React.FC<CardInformationProps> = ({
   );
 };
 
-interface CustomFieldProps {
+interface ModalFormBookProps {
   /**
-   * Título del campo
+   * Información de la reserva a registrar
    */
-  label: string;
+  saveBookingRoom?: (bookingData: BookingData) => void;
   /**
-   * Icono a mostrar
+   * Información de la habitación
    */
-  icon: string;
-  /**
-   * Indica si cuenta o no con la propiedad
-   */
-  value?: boolean;
-  /**
-   * Valor de la propiedad en texto
-   */
-  valueText?: string;
+  dataRoom: IRoom;
 }
 
+const initialValues = {
+  name: '',
+  email: '',
+  identification_type: '',
+  identification: '',
+};
+
+const validationSchema = Yup.object().shape<fieldsFormBooking>({
+  name: Yup.string()
+    .min(2, 'Nombre muy corto')
+    .max(50, 'Nombre muy largo')
+    .required('Nacesitamos tu nombre'),
+  email: Yup.string().email('Email no válido').required('Necesitamos tu email'),
+  identification_type: Yup.string().required(
+    'Necesitamos tu tipo de identificación'
+  ),
+  identification: Yup.string().required('Necesitamos tu identificación'),
+});
+
 /**
- * Componente encargado de renderizar cada item de la card con su respectivo icono y valor
+ * Componente encargado de renderizar el modal con el formulario de reservación
+ * de la habitación
  * @param param0
- * @returns Sección con item y valor de la habitación
+ * @returns
  */
-const CustomField: React.FC<CustomFieldProps> = ({
-  label,
-  icon,
-  value,
-  valueText,
+const ModalFormBook: React.FC<ModalFormBookProps> = ({
+  saveBookingRoom,
+  dataRoom,
 }) => {
+  const handleSubmit = (
+    values: fieldsFormBooking,
+    { resetForm }: FormikHelpers<fieldsFormBooking>
+  ) => {
+    console.log('values submit ', values);
+    saveBookingRoom &&
+      saveBookingRoom({
+        bookData: {
+          name: values.name,
+          email: values.email,
+          identification_type: values.identification_type,
+          identification: values.identification,
+        },
+        roomData: dataRoom,
+      });
+    resetForm();
+  };
+
   return (
-    <h6 className="font-weight-bold">
-      {label} <i className={`fas ${icon}`}></i> :{' '}
-      {valueText && valueText !== '' ? (
-        valueText
-      ) : value !== undefined && value === true ? (
-        <i className="fas fa-check"></i>
-      ) : (
-        <i className="fas fa-times"></i>
-      )}
-    </h6>
+    <>
+      <button
+        type="button"
+        className="btn btn-primary btn-book w-100"
+        data-bs-toggle="modal"
+        data-bs-target="#modalFormBook"
+      >
+        <i className="far fa-calendar-check ml-3"></i>
+        {' Reservar'}
+      </button>
+
+      <div
+        className="modal fade"
+        id="modalFormBook"
+        aria-labelledby="modalFormBookLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="modalFormBookLabel">
+                Completa tu reserva
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+              >
+                {({ errors, touched }) => (
+                  <Form>
+                    <div className="row mb-3">
+                      <div className="col-12 col-md-6 ">
+                        <label htmlFor="name" className="col-12 col-form-label">
+                          Nombre
+                        </label>
+                        <Field
+                          name="name"
+                          className="form-control col-12"
+                          placeholder="eje: Joe Doe"
+                        />
+                        {errors.name && touched.name ? (
+                          <small className="text-danger">{errors.name}</small>
+                        ) : null}
+                      </div>
+                      <div className=" col-12 col-md-6">
+                        <label
+                          htmlFor="email"
+                          className="col-12 col-form-label"
+                        >
+                          Correo electrónico
+                        </label>
+                        <Field
+                          name="email"
+                          type="email"
+                          className="form-control col-12"
+                          placeholder="eje: joe@email.com"
+                        />
+                        {errors.email && touched.email ? (
+                          <small className="text-danger">{errors.email}</small>
+                        ) : null}
+                      </div>
+                    </div>
+                    <div className="row mb-2">
+                      <div className="col-12 col-md-6 ">
+                        <label className="pr-2" htmlFor="identification_type">
+                          Tipo de identificación
+                        </label>
+                        <Field
+                          as="select"
+                          className=" d-block w-100"
+                          aria-label=".form-select-sm example"
+                          id="identification_type"
+                          name="identification_type"
+                        >
+                          <option value="">Seleccione</option>
+                          <option value="1">Cédula de ciudadanía</option>
+                          <option value="2">Cédula de extranjeria</option>
+                          <option value="3">Nit</option>
+                          <option value="4">Pasaporte</option>
+                        </Field>
+                        {errors.identification_type &&
+                        touched.identification_type ? (
+                          <small className="text-danger">
+                            {errors.identification_type}
+                          </small>
+                        ) : null}
+                      </div>
+                      <div className=" col-12 col-md-6">
+                        <label className="pr-2" htmlFor="identification">
+                          Identificación
+                        </label>
+                        <Field
+                          name="identification"
+                          className="form-control"
+                          placeholder="eje: 60830147"
+                        />
+                        {errors.identification && touched.identification ? (
+                          <small className="text-danger">
+                            {errors.identification}
+                          </small>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <div className="d-flex justify-content-between mt-3">
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancelar
+                      </button>
+                      <button type="submit" className="btn btn-primary">
+                        Finalizar
+                      </button>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
-interface StarScoreProps {
-  /**
-   * Cantidad de estrellas del hotel
-   */
-  score: number;
-}
 /**
  * Componente encargado de renderizar estrellas según el nivel del hotel
  */
@@ -206,3 +365,10 @@ const StarScore: React.FC<StarScoreProps> = ({ score }) => {
     </>
   );
 };
+
+interface StarScoreProps {
+  /**
+   * Cantidad de estrellas del hotel
+   */
+  score: number;
+}

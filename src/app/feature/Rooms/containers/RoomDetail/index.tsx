@@ -2,23 +2,26 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { DivContainer } from './styles';
 import { RoomDetailView } from '../../components/roomDetail';
-// import { PaginadorProductos } from '../../components/PaginadorProductos';
-import { IRoom, fieldsForm } from '../../models/Room';
-import { useEffect } from 'react';
-import { FindRooms } from '../../components/findRooms';
+import { BookingData, IRoom } from '../../models/Room';
 
 interface RoomsDetailProps {
   listRooms: Array<IRoom>;
   selectedRoom: number;
+  saveBookingRoom?: (bookingData: BookingData) => void;
 }
 
 export const RoomDetail: React.FC<RoomsDetailProps> = ({
   listRooms,
   selectedRoom,
+  saveBookingRoom,
 }) => {
   return (
     <DivContainer>
-      <RoomDetailView listRooms={listRooms} selectedRoom={selectedRoom} />
+      <RoomDetailView
+        listRooms={listRooms}
+        selectedRoom={selectedRoom}
+        saveBookingRoom={saveBookingRoom}
+      />
     </DivContainer>
   );
 };

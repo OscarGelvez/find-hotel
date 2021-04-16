@@ -98,3 +98,33 @@ export interface fieldsForm {
    */
   withParking?: boolean;
 }
+
+export interface fieldsFormBooking {
+  /**
+   * Nombre de ususario que hace la reserva
+   */
+  name: string;
+  /**
+   * Correo electrónico de quien hacer la reserva
+   */
+  email: string;
+  /**
+   * Tipo de identificación
+   */
+  identification_type: string;
+  /**
+   * Número de identificación
+   */
+  identification: string;
+}
+
+export interface BookingData {
+  /**
+   * Objeto con información de la habitación seleccionada
+   */
+  roomData: IRoom;
+  /**
+   * Objeto con la información el usuari oque reserva
+   */
+  bookData: fieldsFormBooking;
+}

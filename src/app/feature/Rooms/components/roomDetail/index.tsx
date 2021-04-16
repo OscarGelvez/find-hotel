@@ -1,7 +1,7 @@
 import { CardInformation } from 'app/shared/components/CardInformation';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { IRoom } from '../../models/Room';
+import { BookingData, IRoom } from '../../models/Room';
 
 export interface RoomDetailViewProps {
   /**
@@ -12,11 +12,16 @@ export interface RoomDetailViewProps {
    * Función necargada de mostrar el detalle de la habitación
    */
   selectedRoom: number;
+  /**
+   * Función encargada de registrar la reservación
+   */
+  saveBookingRoom?: (bookingData: BookingData) => void;
 }
 
 export const RoomDetailView: React.FC<RoomDetailViewProps> = ({
   listRooms,
   selectedRoom,
+  saveBookingRoom,
 }) => {
   const roomSelected = listRooms.filter((item) => item.id === selectedRoom)[0];
   return (
@@ -28,6 +33,7 @@ export const RoomDetailView: React.FC<RoomDetailViewProps> = ({
               key={selectedRoom}
               data={roomSelected}
               selectedRoom={selectedRoom}
+              saveBookingRoom={saveBookingRoom}
             />
           </div>
         </div>
