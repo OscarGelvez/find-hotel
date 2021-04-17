@@ -1,5 +1,13 @@
 language: node_js
 node_js:
   - 10
-script:
-  - npm run test
+
+jobs:
+  include:
+    - if: branch = master
+    - stage: Prueba 1
+      script: echo "wenaaaas..."
+
+    - if: branch != master
+    - stage: Prueba 2
+      script: echo "wenaaaas...2"
