@@ -4,7 +4,7 @@ node_js:
 stages:
   - name: check conflicts
     script: chmod +x /scripts/checkout.sh && sudo sh /scripts/checkout.sh
-    if: branch = master
+    if: branch = testCI
   - name: unit test
     script: npm run test
-    if: branch = master
+    if: branch = testCI
