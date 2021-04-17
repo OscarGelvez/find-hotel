@@ -10,9 +10,9 @@ export const AppRouter = () => {
     <BrowserRouter>
       <NavigationHeader />
       <Switch>
-        <Route path="/" exact component={MainPage} />
         <Route path="/home" component={HomeRouter} />
         <Route path="/productos" component={ProductoRouter} />
+        <Route path="/" component={MainPage} />
       </Switch>
     </BrowserRouter>
   );
