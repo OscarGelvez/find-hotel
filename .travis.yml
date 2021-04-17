@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - 10
-script:
-  - chmod +x /scripts/checkout.sh && sudo sh /scripts/checkout.sh
-  - npm run test
+stages:
+  - name: check conflicts
+    script: chmod +x /scripts/checkout.sh && sudo sh /scripts/checkout.sh
+    if: branch = master
+  - name: unit test
+    script: npm run test
+    if: branch = master
