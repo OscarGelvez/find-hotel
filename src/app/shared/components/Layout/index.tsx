@@ -1,7 +1,8 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { DivContainer } from './styles';
 import { Helmet } from 'react-helmet';
+
+import { DivContainer } from './styles';
 
 interface LayoutProps {
   title: string;

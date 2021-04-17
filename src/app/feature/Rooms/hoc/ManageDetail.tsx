@@ -1,7 +1,8 @@
 import { saveBookingRoom } from 'app/core/redux/actions/rooms/ActionsRooms';
 import { Istate } from 'app/core/redux/modelo/GeneralState';
-import { RoomDetail } from '../containers/RoomDetail';
 import { connect } from 'react-redux';
+
+import { RoomDetail } from '../containers/RoomDetail';
 
 const mapStateToProps = (state: Istate) => {
   console.log(state.selectedRoom);

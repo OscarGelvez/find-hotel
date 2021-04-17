@@ -1,7 +1,8 @@
-import * as React from 'react';
 import { Layout } from 'app/shared/components/Layout';
-import { ManageRooms } from '../hoc/ManageRooms';
+import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+
+import { ManageRooms } from '../hoc/ManageRooms';
 
 const MainPage: React.FC<RouteComponentProps> = () => {
   return (

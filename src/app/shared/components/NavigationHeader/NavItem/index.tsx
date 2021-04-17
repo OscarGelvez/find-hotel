@@ -1,6 +1,7 @@
+import { Link } from 'app/shared/components/Link';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { Link } from 'app/shared/components/Link';
+
 import { NavItemDiv } from './styles';
 
 interface NavItemProps {

@@ -1,5 +1,6 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 import { NavItem } from '../NavItem';
 import { NavListUl } from './styles';
 

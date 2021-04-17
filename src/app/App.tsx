@@ -1,8 +1,9 @@
-import * as React from 'react';
 import { AppRouter } from 'app/AppRouter';
-import { GlobalErrorBoundary } from './core/errors/GlobalErrorBoundary';
-import { Provider } from 'react-redux';
 import store from 'app/core/redux/store';
+import * as React from 'react';
+import { Provider } from 'react-redux';
+
+import { GlobalErrorBoundary } from './core/errors/GlobalErrorBoundary';
 
 function App() {
   return (

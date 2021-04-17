@@ -1,6 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux';
-import rootReducer from './reductores';
 import thunk from 'redux-thunk';
+
+import rootReducer from './reductores';
 
 declare const window: any;
 

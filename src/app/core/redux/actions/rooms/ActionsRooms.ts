@@ -1,3 +1,6 @@
+import { RoomsRepository } from 'app/core/api/rooms.repository';
+import { BookingData, fieldsForm,IRoom } from 'app/feature/Rooms/models/Room';
+
 import {
   ActionTypesRooms,
   BOOKING_ROOM_SAVED,
@@ -5,8 +8,6 @@ import {
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
 } from './ActionTypesRooms';
-import { BookingData, IRoom, fieldsForm } from 'app/feature/Rooms/models/Room';
-import { RoomsRepository } from 'app/core/api/rooms.repository';
 
 export function listingRooms(rooms: Array<IRoom>): ActionTypesRooms {
   return {

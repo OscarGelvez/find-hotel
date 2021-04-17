@@ -1,8 +1,9 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { DivContainer } from './styles';
+
 import { RoomDetailView } from '../../components/roomDetail';
 import { BookingData, IRoom } from '../../models/Room';
+import { DivContainer } from './styles';
 
 interface RoomsDetailProps {
   listRooms: Array<IRoom>;

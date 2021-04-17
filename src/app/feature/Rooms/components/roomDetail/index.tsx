@@ -1,6 +1,7 @@
 import { CardInformation } from 'app/shared/components/CardInformation';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 import { BookingData, IRoom } from '../../models/Room';
 
 export interface RoomDetailViewProps {

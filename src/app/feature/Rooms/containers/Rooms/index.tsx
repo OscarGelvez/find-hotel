@@ -1,11 +1,12 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { DivContainer } from './styles';
+import { useEffect } from 'react';
+
+import { FindRooms } from '../../components/findRooms';
 import { ListRooms } from '../../components/ListRooms';
 // import { PaginadorProductos } from '../../components/PaginadorProductos';
-import { IRoom, fieldsForm } from '../../models/Room';
-import { useEffect } from 'react';
-import { FindRooms } from '../../components/findRooms';
+import { fieldsForm,IRoom } from '../../models/Room';
+import { DivContainer } from './styles';
 
 interface RoomsProps {
   listRooms: Array<IRoom>;

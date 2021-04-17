@@ -1,3 +1,5 @@
+import { IRoom } from 'app/feature/Rooms/models/Room';
+
 import {
   ActionTypesRooms,
   FINDED_ROOMS,
@@ -5,7 +7,6 @@ import {
   LOAD_ROOM_DETAIL,
 } from '../../actions/rooms/ActionTypesRooms';
 import { IStateRooms } from '../../modelo/IStateRooms';
-import { IRoom } from 'app/feature/Rooms/models/Room';
 
 const initialState: IStateRooms = {
   listRooms: Array<IRoom>(),

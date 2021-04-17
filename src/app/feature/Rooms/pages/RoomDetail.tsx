@@ -1,7 +1,8 @@
-import * as React from 'react';
 import { Layout } from 'app/shared/components/Layout';
-import { ManageDetail } from '../hoc/ManageDetail';
+import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+
+import { ManageDetail } from '../hoc/ManageDetail';
 
 const DetailPage: React.FC<RouteComponentProps> = () => {
   return (

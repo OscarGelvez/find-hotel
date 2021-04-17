@@ -1,7 +1,8 @@
+import { Link } from 'app/shared/components/Link';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 import { BrandDiv, LogoImg, LogoSpan } from './styles';
-import { Link } from 'app/shared/components/Link';
 
 interface NavBrandProps {
   imgSrc?: string;

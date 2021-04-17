@@ -1,8 +1,9 @@
+import { CardInformation } from 'app/shared/components/CardInformation';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 // import { FindRooms, fieldsForm } from '../findRooms';
 import { IRoom } from '../../models/Room';
-import { CardInformation } from 'app/shared/components/CardInformation';
 
 export interface ListRoomsProps {
   /**

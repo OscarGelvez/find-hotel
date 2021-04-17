@@ -1,14 +1,15 @@
+import { Field, Form, Formik } from 'formik';
+import { FormikHelpers } from 'formik/dist/types';
 import * as React from 'react';
+import * as Yup from 'yup';
+
 import {
   BookingData,
-  IRoom,
   fieldsFormBooking,
+  IRoom,
 } from '../../../feature/Rooms/models/Room';
 import { CustomField } from '../CustomFieldIcon';
 import { Link } from '../Link';
-import * as Yup from 'yup';
-import { FormikHelpers } from 'formik/dist/types';
-import { Field, Form, Formik } from 'formik';
 
 interface CardInformationProps {
   /**

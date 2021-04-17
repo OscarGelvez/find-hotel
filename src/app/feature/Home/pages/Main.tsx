@@ -1,7 +1,8 @@
-import * as React from 'react';
-import { HolaMundo } from '../components/HolaMundo';
 import { Layout } from 'app/shared/components/Layout';
+import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+
+import { HolaMundo } from '../components/HolaMundo';
 
 const HomeMainPage: React.FC<RouteComponentProps> = () => (
   <Layout title="Home" description="Home de la aplicación">

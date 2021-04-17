@@ -1,8 +1,8 @@
+import { ReservationRouter } from 'app/feature/Home/ReservationRouter';
+import { RoomsRouter } from 'app/feature/Rooms/RoomsRouter';
+import { NavigationHeader } from 'app/shared/components/NavigationHeader';
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { ReservationRouter } from 'app/feature/Home/ReservationRouter';
-import { NavigationHeader } from 'app/shared/components/NavigationHeader';
-import { RoomsRouter } from 'app/feature/Rooms/RoomsRouter';
 
 export const AppRouter = () => {
   return (
