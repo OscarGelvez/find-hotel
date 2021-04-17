@@ -32,7 +32,7 @@ export const CustomField: React.FC<CustomFieldProps> = ({
   valueText,
 }) => {
   return (
-    <h6 className="font-weight-bold">
+    <h6 data-testid="custom-field" className="font-weight-bold">
       {label} <i className={`fas ${icon}`}></i> :{' '}
       {valueText && valueText !== '' ? (
         valueText
@@ -48,6 +48,6 @@ export const CustomField: React.FC<CustomFieldProps> = ({
 CustomField.propTypes = {
   label: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-  value: PropTypes.bool.isRequired,
-  valueText: PropTypes.string.isRequired,
+  value: PropTypes.bool,
+  valueText: PropTypes.string,
 };

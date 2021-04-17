@@ -42,9 +42,8 @@ export const CardInformation: React.FC<CardInformationProps> = ({
   selectedRoom,
   saveBookingRoom,
 }) => {
-  console.log(selectedRoom);
   return (
-    <div className="card room-item">
+    <div data-testid="card-information" className="card room-item">
       <div className="card-header room-item-header ">
         <h3>{data.hotel.name}</h3>
         <h4>{data.hotel.score}</h4>
@@ -179,7 +178,7 @@ CardInformation.propTypes = {
     capacity: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
-  selectedRoom: PropTypes.number.isRequired,
+  selectedRoom: PropTypes.number,
   loadDetailRoom: PropTypes.func,
   saveBookingRoom: PropTypes.func,
 };
@@ -244,132 +243,139 @@ const ModalFormBook: React.FC<ModalFormBookProps> = ({
 
   return (
     <>
-      <button
-        type="button"
-        className="btn btn-primary btn-book w-100"
-        data-bs-toggle="modal"
-        data-bs-target="#modalFormBook"
-      >
-        <i className="far fa-calendar-check ml-3"></i>
-        {' Reservar'}
-      </button>
+      <div data-testid="modal-form-book">
+        <button
+          type="button"
+          className="btn btn-primary btn-book w-100"
+          data-bs-toggle="modal"
+          data-bs-target="#modalFormBook"
+        >
+          <i className="far fa-calendar-check ml-3"></i>
+          {' Reservar'}
+        </button>
 
-      <div
-        className="modal fade"
-        id="modalFormBook"
-        aria-labelledby="modalFormBookLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="modalFormBookLabel">
-                Completa tu reserva
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={handleSubmit}
-              >
-                {({ errors, touched }) => (
-                  <Form>
-                    <div className="row mb-3">
-                      <div className="col-12 col-md-6 ">
-                        <label htmlFor="name" className="col-12 col-form-label">
-                          Nombre
-                        </label>
-                        <Field
-                          name="name"
-                          className="form-control col-12"
-                          placeholder="eje: Joe Doe"
-                        />
-                        {errors.name && touched.name ? (
-                          <small className="text-danger">{errors.name}</small>
-                        ) : null}
+        <div
+          className="modal fade"
+          id="modalFormBook"
+          aria-labelledby="modalFormBookLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="modalFormBookLabel">
+                  Completa tu reserva
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                <Formik
+                  initialValues={initialValues}
+                  validationSchema={validationSchema}
+                  onSubmit={handleSubmit}
+                >
+                  {({ errors, touched }) => (
+                    <Form>
+                      <div className="row mb-3">
+                        <div className="col-12 col-md-6 ">
+                          <label
+                            htmlFor="name"
+                            className="col-12 col-form-label"
+                          >
+                            Nombre
+                          </label>
+                          <Field
+                            name="name"
+                            className="form-control col-12"
+                            placeholder="eje: Joe Doe"
+                          />
+                          {errors.name && touched.name ? (
+                            <small className="text-danger">{errors.name}</small>
+                          ) : null}
+                        </div>
+                        <div className=" col-12 col-md-6">
+                          <label
+                            htmlFor="email"
+                            className="col-12 col-form-label"
+                          >
+                            Correo electrónico
+                          </label>
+                          <Field
+                            name="email"
+                            type="email"
+                            className="form-control col-12"
+                            placeholder="eje: joe@email.com"
+                          />
+                          {errors.email && touched.email ? (
+                            <small className="text-danger">
+                              {errors.email}
+                            </small>
+                          ) : null}
+                        </div>
                       </div>
-                      <div className=" col-12 col-md-6">
-                        <label
-                          htmlFor="email"
-                          className="col-12 col-form-label"
-                        >
-                          Correo electrónico
-                        </label>
-                        <Field
-                          name="email"
-                          type="email"
-                          className="form-control col-12"
-                          placeholder="eje: joe@email.com"
-                        />
-                        {errors.email && touched.email ? (
-                          <small className="text-danger">{errors.email}</small>
-                        ) : null}
+                      <div className="row mb-2">
+                        <div className="col-12 col-md-6 ">
+                          <label className="pr-2" htmlFor="identification_type">
+                            Tipo de identificación
+                          </label>
+                          <Field
+                            as="select"
+                            className=" d-block w-100"
+                            aria-label=".form-select-sm example"
+                            id="identification_type"
+                            name="identification_type"
+                          >
+                            <option value="">Seleccione</option>
+                            <option value="1">Cédula de ciudadanía</option>
+                            <option value="2">Cédula de extranjeria</option>
+                            <option value="3">Nit</option>
+                            <option value="4">Pasaporte</option>
+                          </Field>
+                          {errors.identification_type &&
+                          touched.identification_type ? (
+                            <small className="text-danger">
+                              {errors.identification_type}
+                            </small>
+                          ) : null}
+                        </div>
+                        <div className=" col-12 col-md-6">
+                          <label className="pr-2" htmlFor="identification">
+                            Identificación
+                          </label>
+                          <Field
+                            name="identification"
+                            className="form-control"
+                            placeholder="eje: 60830147"
+                          />
+                          {errors.identification && touched.identification ? (
+                            <small className="text-danger">
+                              {errors.identification}
+                            </small>
+                          ) : null}
+                        </div>
                       </div>
-                    </div>
-                    <div className="row mb-2">
-                      <div className="col-12 col-md-6 ">
-                        <label className="pr-2" htmlFor="identification_type">
-                          Tipo de identificación
-                        </label>
-                        <Field
-                          as="select"
-                          className=" d-block w-100"
-                          aria-label=".form-select-sm example"
-                          id="identification_type"
-                          name="identification_type"
-                        >
-                          <option value="">Seleccione</option>
-                          <option value="1">Cédula de ciudadanía</option>
-                          <option value="2">Cédula de extranjeria</option>
-                          <option value="3">Nit</option>
-                          <option value="4">Pasaporte</option>
-                        </Field>
-                        {errors.identification_type &&
-                        touched.identification_type ? (
-                          <small className="text-danger">
-                            {errors.identification_type}
-                          </small>
-                        ) : null}
-                      </div>
-                      <div className=" col-12 col-md-6">
-                        <label className="pr-2" htmlFor="identification">
-                          Identificación
-                        </label>
-                        <Field
-                          name="identification"
-                          className="form-control"
-                          placeholder="eje: 60830147"
-                        />
-                        {errors.identification && touched.identification ? (
-                          <small className="text-danger">
-                            {errors.identification}
-                          </small>
-                        ) : null}
-                      </div>
-                    </div>
 
-                    <div className="d-flex justify-content-between mt-3">
-                      <button
-                        type="button"
-                        className="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Cancelar
-                      </button>
-                      <button type="submit" className="btn btn-primary">
-                        Finalizar
-                      </button>
-                    </div>
-                  </Form>
-                )}
-              </Formik>
+                      <div className="d-flex justify-content-between mt-3">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancelar
+                        </button>
+                        <button type="submit" className="btn btn-primary">
+                          Finalizar
+                        </button>
+                      </div>
+                    </Form>
+                  )}
+                </Formik>
+              </div>
             </div>
           </div>
         </div>
@@ -412,10 +418,12 @@ const StarScore: React.FC<StarScoreProps> = ({ score }) => {
   console.log(arrStar);
   return (
     <>
-      {score &&
-        arrStar.map((data, index) => (
-          <i key={index} className="fas fa-star"></i>
-        ))}
+      <div data-testid="star-score">
+        {score &&
+          arrStar.map((data, index) => (
+            <i key={index} className="fas fa-star"></i>
+          ))}
+      </div>
     </>
   );
 };

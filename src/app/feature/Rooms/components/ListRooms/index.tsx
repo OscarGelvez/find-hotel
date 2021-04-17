@@ -22,7 +22,7 @@ export const ListRooms: React.FC<ListRoomsProps> = ({
 }) => {
   return (
     <>
-      <div className="card-rooms">
+      <div data-testid="list-rooms" className="card-rooms">
         <div className="row pt-5">
           <div className="col">
             {listRooms &&

@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { RoomDetail } from '../containers/RoomDetail';
 
 const mapStateToProps = (state: Istate) => {
-  console.log(state.selectedRoom);
   return {
     listRooms: state.rooms.listRooms,
     selectedRoom: state.rooms.selectedRoomId,
