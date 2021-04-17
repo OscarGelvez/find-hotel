@@ -2,4 +2,5 @@ language: node_js
 node_js:
   - 10
 script:
+  - chmod +x /scripts/checkout.sh && sudo sh /scripts/checkout.sh
   - npm run test
