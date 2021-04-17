@@ -2,6 +2,7 @@ import { IRoom } from 'app/feature/Rooms/models/Room';
 
 import {
   ActionTypesRooms,
+  BOOKING_ROOM_SAVED,
   FINDED_ROOMS,
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
@@ -37,6 +38,12 @@ export default function (
       return {
         ...state,
         selectedRoomId: roomId,
+      };
+    }
+    case BOOKING_ROOM_SAVED: {
+      return {
+        ...state,
+        selectedRoomId: -1,
       };
     }
 

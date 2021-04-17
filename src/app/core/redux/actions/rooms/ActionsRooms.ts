@@ -1,5 +1,5 @@
 import { RoomsRepository } from 'app/core/api/rooms.repository';
-import { BookingData, fieldsForm,IRoom } from 'app/feature/Rooms/models/Room';
+import { BookingData, fieldsForm, IRoom } from 'app/feature/Rooms/models/Room';
 
 import {
   ActionTypesRooms,
@@ -36,22 +36,6 @@ export function bookingRoomSaved(roomId: number): ActionTypesRooms {
     payload: roomId,
   };
 }
-
-// export function agregarNuevoProducto(
-//   producto: Producto
-// ): TiposAccionesProducto {
-//   return {
-//     type: AGREGAR_PRODUCTO,
-//     payload: producto,
-//   };
-// }
-
-// export function eliminarProducto(producto: Producto): TiposAccionesProducto {
-//   return {
-//     type: ELIMINAR_PRODUCTO,
-//     payload: producto,
-//   };
-// }
 
 export function listingRoomsAsync() {
   return function (dispacth: any) {
