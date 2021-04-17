@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import { FormikHelpers } from 'formik/dist/types';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
@@ -154,6 +155,33 @@ export const CardInformation: React.FC<CardInformationProps> = ({
       </div>
     </div>
   );
+};
+
+CardInformation.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    hotel: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      stars: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+      score: PropTypes.number.isRequired,
+    }).isRequired,
+    value: PropTypes.string.isRequired,
+    ac: PropTypes.string.isRequired,
+    parking: PropTypes.string.isRequired,
+    available_from: PropTypes.string.isRequired,
+    available_until: PropTypes.string.isRequired,
+    wifi: PropTypes.string.isRequired,
+    capacity: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  selectedRoom: PropTypes.number.isRequired,
+  loadDetailRoom: PropTypes.func,
+  saveBookingRoom: PropTypes.func,
 };
 
 interface ModalFormBookProps {
@@ -350,6 +378,31 @@ const ModalFormBook: React.FC<ModalFormBookProps> = ({
   );
 };
 
+ModalFormBook.propTypes = {
+  dataRoom: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    hotel: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      stars: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+      score: PropTypes.number.isRequired,
+    }).isRequired,
+    value: PropTypes.string.isRequired,
+    ac: PropTypes.string.isRequired,
+    parking: PropTypes.string.isRequired,
+    available_from: PropTypes.string.isRequired,
+    available_until: PropTypes.string.isRequired,
+    wifi: PropTypes.string.isRequired,
+    capacity: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  saveBookingRoom: PropTypes.func,
+};
+
 /**
  * Componente encargado de renderizar estrellas según el nivel del hotel
  */
@@ -373,3 +426,7 @@ interface StarScoreProps {
    */
   score: number;
 }
+
+StarScore.propTypes = {
+  score: PropTypes.number.isRequired,
+};

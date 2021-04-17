@@ -30,4 +30,5 @@ export const RoomDetail: React.FC<RoomsDetailProps> = ({
 RoomDetail.propTypes = {
   listRooms: PropTypes.array.isRequired,
   selectedRoom: PropTypes.number.isRequired,
+  saveBookingRoom: PropTypes.func,
 };

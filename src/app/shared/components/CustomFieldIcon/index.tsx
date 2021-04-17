@@ -1,4 +1,6 @@
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 interface CustomFieldProps {
   /**
    * Título del campo
@@ -41,4 +43,11 @@ export const CustomField: React.FC<CustomFieldProps> = ({
       )}
     </h6>
   );
+};
+
+CustomField.propTypes = {
+  label: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  value: PropTypes.bool.isRequired,
+  valueText: PropTypes.string.isRequired,
 };

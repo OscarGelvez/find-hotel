@@ -1,6 +1,7 @@
 import { Button } from 'app/shared/components/Button';
 import { Field, Form, Formik } from 'formik';
 import { FormikHelpers } from 'formik/dist/types';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
@@ -178,4 +179,8 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
       </div>
     </>
   );
+};
+
+FindRooms.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
