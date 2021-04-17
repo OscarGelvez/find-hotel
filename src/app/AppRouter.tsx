@@ -11,8 +11,8 @@ export const AppRouter = () => {
       <NavigationHeader />
       <Switch>
         <Route path="/home" component={HomeRouter} />
+        <Route path="/" exact component={MainPage} />
         <Route path="/productos" component={ProductoRouter} />
-        <Route path="/" component={MainPage} />
       </Switch>
     </BrowserRouter>
   );
