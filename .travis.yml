@@ -2,12 +2,10 @@ language: node_js
 node_js:
   - 10
 
-jobs:
-  include:
-    - if: branch = master
-    - stage: Prueba 1
-      script: echo "wenaaaas..."
-
-    - if: branch != master
-    - stage: Prueba 2
-      script: echo "wenaaaas...2"
+-stages:
+  - name: check conflicts
+    script: chmod +x /scripts/checkout.sh && sudo sh /scripts/checkout.sh
+    if: branch = master
+  - name: unit test
+    script: npm run test
+    if: branch = master
