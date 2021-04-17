@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - 10
-stages:
+-stages:
   - name: check conflicts
     script: chmod +x /scripts/checkout.sh && sudo sh /scripts/checkout.sh
     if: branch = testCI
