@@ -77,7 +77,7 @@ export const BookingDetail: React.FC<BookingDetail> = ({ onFindBooking }) => {
                           id="identification_type"
                           name="identification_type"
                         >
-                          <option value="">Seleccione uno</option>
+                          <option value="">Seleccione</option>
                           <option value="1">Cédula de ciudadanía</option>
                           <option value="2">Cédula de extranjeria</option>
                           <option value="3">Nit</option>
