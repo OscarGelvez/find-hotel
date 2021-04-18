@@ -23,7 +23,7 @@ export const Layout: React.FC<LayoutProps> = ({
         }
         {description && <meta name="description" content={description} />}
       </Helmet>
-      <DivContainer>{children}</DivContainer>
+      <DivContainer data-testid="layout">{children}</DivContainer>
     </>
   );
 };

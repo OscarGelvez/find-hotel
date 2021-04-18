@@ -1,0 +1,426 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prueba componente de orden superior HOC con redux Compara snapshot del componente ManageRooms renderizado 1`] = `
+<div
+  className="sc-AxiKw bvTGbm"
+  data-testid="room"
+>
+  <div
+    className="card-rooms"
+    data-testid="find-rooms"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="card filter-area "
+      >
+        <div
+          className="col"
+        >
+          <form
+            action="#"
+            data-testid="form-find-rooms"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group row mb-3 mt-3"
+            >
+              <label
+                className="col-12 col-sm-6 col-lg-2 col-form-label"
+                htmlFor="fromDate"
+              >
+                Fecha de ingreso
+              </label>
+              <div
+                className="col-12 col-sm-6 col-lg-4"
+              >
+                <input
+                  className="form-control"
+                  data-testid="form-fromDate"
+                  id="fromDate"
+                  min="2021-04-18"
+                  name="fromDate"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <label
+                className="col-12  col-sm-6 col-lg-2 col-form-label"
+                htmlFor="untilDate"
+              >
+                Fecha de salida
+              </label>
+              <div
+                className="col-12 col-sm-6 col-lg-4"
+              >
+                <input
+                  className="form-control"
+                  data-testid="form-untilDate"
+                  id="untilDate"
+                  min="2021-04-19"
+                  name="untilDate"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="date"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="row mb-4"
+            >
+              <div
+                className="d-flex col-12 col-sm-6 col-lg-4 text-center"
+              >
+                <label
+                  className="pr-2"
+                  htmlFor="capacity"
+                >
+                  Personas
+                </label>
+                <select
+                  aria-label=".form-select-sm example"
+                  className=" filter-select"
+                  data-testid="form-capacity"
+                  id="capacity"
+                  name="capacity"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  value=""
+                >
+                  <option
+                    value=""
+                  >
+                    Seleccione
+                  </option>
+                  <option
+                    value="1"
+                  >
+                    1 adulto
+                  </option>
+                  <option
+                    value="2"
+                  >
+                    2 adultos
+                  </option>
+                  <option
+                    value="3"
+                  >
+                    3 adultos
+                  </option>
+                  <option
+                    value="4"
+                  >
+                    4 adultos
+                  </option>
+                </select>
+              </div>
+              <div
+                className="col-12 col-sm-6 col-lg-4 text-md-center "
+              >
+                <input
+                  aria-label="Checkbox find room with air"
+                  checked={false}
+                  className="m-2"
+                  data-testid="form-withAir"
+                  id="withAir"
+                  name="withAir"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={false}
+                />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="withAir"
+                >
+                  ¿Aire acondicionado?
+                </label>
+              </div>
+              <div
+                className="col-12 col-lg-4 mt-sm-2 mt-md-0"
+              >
+                <input
+                  aria-label="Checkbox  find room with parking"
+                  checked={false}
+                  className="m-2"
+                  data-testid="form-withParking"
+                  id="withParking"
+                  name="withParking"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="withParking"
+                >
+                  ¿Parqueadero?
+                </label>
+              </div>
+            </div>
+            <div
+              className="text-center mt-5"
+            >
+              <button
+                className="sc-AxjAm cYJbNq  w-50"
+                data-testid="form-button-find"
+                type="submit"
+              >
+                Encuentralo!
+              </button>
+            </div>
+            <div
+              className="text-center mb-4 mt-1"
+            >
+              <button
+                className="sc-AxjAm cYJbNq button-link"
+                data-testid="form-button-reset"
+                type="reset"
+              >
+                limpiar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="card-rooms"
+    data-testid="list-rooms"
+  >
+    <div
+      className="row pt-5"
+    >
+      <div
+        className="col"
+      >
+        <div
+          className="card room-item"
+          data-testid="card-information"
+        >
+          <div
+            className="card-header room-item-header "
+          >
+            <h3>
+              Gold Hotel 5
+            </h3>
+            <h4>
+              8.7
+            </h4>
+          </div>
+          <div
+            className="card-body"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col col-md-4"
+              >
+                <img
+                  alt="hotel room"
+                  className="img-fluid"
+                  height="180px"
+                  src="https://static.abc.es/Media/201504/27/hotel12--644x362.jpg"
+                  width="260px"
+                />
+              </div>
+              <div
+                className="col col-md-8"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-12 col-lg-8"
+                  >
+                    <h5
+                      className="card-title"
+                    >
+                      Suite full. Caroline
+                    </h5>
+                  </div>
+                  <div
+                    className="col-12 col-lg-4"
+                  >
+                    <a
+                      className="sc-AxirZ AiLKW"
+                      href="/detail"
+                      onClick={[Function]}
+                    >
+                      <button
+                        className="btn btn-primary btn-book w-100"
+                        data-testid="form-button-load-detail"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <i
+                          className="far fa-calendar-check ml-3"
+                        />
+                         Seleccionar
+                      </button>
+                    </a>
+                  </div>
+                  <div
+                    className="col-12 col-md-12"
+                  >
+                    <h4>
+                      <i
+                        className="far fa-money-bill-alt"
+                      />
+                       
+                      154.000
+                    </h4>
+                  </div>
+                  <div
+                    className="col-12 col-md-12 d-flex"
+                  >
+                    <h6
+                      className="font-weight-bold"
+                      data-testid="custom-field"
+                    >
+                      Inicio
+                       
+                      <i
+                        className="fas fa-calendar-alt"
+                      />
+                       :
+                       
+                      <span
+                        data-testid="custom-field-value-text"
+                      >
+                        2021-04-13
+                      </span>
+                    </h6>
+                    <h6
+                      className="font-weight-bold"
+                      data-testid="custom-field"
+                    >
+                      -  Fin
+                       
+                      <i
+                        className="fas fa-calendar-alt"
+                      />
+                       :
+                       
+                      <span
+                        data-testid="custom-field-value-text"
+                      >
+                        2021-04-30
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+                <p
+                  className="card-text"
+                >
+                  Baño privado, cama doble, con nevera, Wifi, TV.
+                </p>
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col col-md-6"
+                  >
+                    <h6
+                      className="font-weight-bold"
+                      data-testid="custom-field"
+                    >
+                      Camas
+                       
+                      <i
+                        className="fas fa-bed"
+                      />
+                       :
+                       
+                      <span
+                        data-testid="custom-field-value-text"
+                      >
+                        1
+                      </span>
+                    </h6>
+                    <h6
+                      className="font-weight-bold"
+                      data-testid="custom-field"
+                    >
+                      Aire
+                       
+                      <i
+                        className="fas fa-wind"
+                      />
+                       :
+                       
+                      <i
+                        className="fas fa-check"
+                        data-testid="custom-field-value-true"
+                      />
+                    </h6>
+                    <h6
+                      className="font-weight-bold"
+                      data-testid="custom-field"
+                    >
+                      Wifi
+                       
+                      <i
+                        className="fas fa-wifi"
+                      />
+                       :
+                       
+                      <i
+                        className="fas fa-check"
+                        data-testid="custom-field-value-true"
+                      />
+                    </h6>
+                  </div>
+                  <div
+                    className="col col-md-6"
+                  >
+                    <h6
+                      className="font-weight-bold"
+                      data-testid="custom-field"
+                    >
+                      Parqueadero
+                       
+                      <i
+                        className="fas fa-car"
+                      />
+                       :
+                       
+                      <i
+                        className="fas fa-check"
+                        data-testid="custom-field-value-true"
+                      />
+                    </h6>
+                    <h6
+                      className="font-weight-bold"
+                      data-testid="custom-field"
+                    >
+                      Baños
+                       
+                      <i
+                        className="fas fa-restroom"
+                      />
+                       :
+                       
+                      <i
+                        className="fas fa-check"
+                        data-testid="custom-field-value-true"
+                      />
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
