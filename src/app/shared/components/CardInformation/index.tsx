@@ -415,7 +415,6 @@ ModalFormBook.propTypes = {
 const StarScore: React.FC<StarScoreProps> = ({ score }) => {
   const arrStar = new Array(score);
   arrStar.fill('star', 0);
-  console.log(arrStar);
   return (
     <>
       <div data-testid="star-score">

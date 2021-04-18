@@ -28,7 +28,6 @@ const validationSchema = Yup.object().shape<fieldsForm>({
 
 export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
   const handleSubmit = (values: fieldsForm) => {
-    console.log('values submit ', values);
     onSubmit({
       fromDate: fromDate,
       untilDate: values.untilDate,

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { FindRooms } from '../../components/findRooms';
 import { ListRooms } from '../../components/ListRooms';
 // import { PaginadorProductos } from '../../components/PaginadorProductos';
-import { fieldsForm,IRoom } from '../../models/Room';
+import { fieldsForm, IRoom } from '../../models/Room';
 import { DivContainer } from './styles';
 
 interface RoomsProps {
@@ -27,9 +27,6 @@ export const Rooms: React.FC<RoomsProps> = ({
     }
   }, [listRooms, listAvailableRooms]);
 
-  // const onFindRoom = (roomId: number) => {
-  //   console.log(roomId);
-  // };
   return (
     <DivContainer>
       <FindRooms onSubmit={findRoomsFilter} />

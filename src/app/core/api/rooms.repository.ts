@@ -30,7 +30,6 @@ const getDataFilter = (data: fieldsForm) => {
     data.withParking && data.withParking === true ? 'Y' : 'N'
   }`;
 
-  console.log('filterBy ', filterBy);
   return filterBy;
 };
 
