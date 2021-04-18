@@ -81,7 +81,6 @@ export const BookingDetail: React.FC<BookingDetail> = ({ onFindBooking }) => {
                           <option value="1">Cédula de ciudadanía</option>
                           <option value="2">Cédula de extranjeria</option>
                           <option value="3">Nit</option>
-                          <option value="4">Pasaporte</option>
                         </Field>
                         {errors.identification_type &&
                         touched.identification_type ? (
