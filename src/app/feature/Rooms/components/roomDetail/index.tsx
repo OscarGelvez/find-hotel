@@ -27,7 +27,7 @@ export const RoomDetailView: React.FC<RoomDetailViewProps> = ({
   const roomSelected = listRooms.filter((item) => item.id === selectedRoom)[0];
   return (
     <>
-      <div className="card-rooms">
+      <div data-testid="room-detail-view" className="card-rooms">
         <div className="row pt-5">
           <div className="col">
             <CardInformation

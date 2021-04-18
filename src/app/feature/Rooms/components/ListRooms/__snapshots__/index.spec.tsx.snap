@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente ListRooms cuando hay habitaciones 1`] = `
+<div
+  className="card-rooms"
+  data-testid="list-rooms"
+>
+  <div
+    className="row pt-5"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="card room-item"
+        data-testid="card-information"
+      >
+        <div
+          className="card-header room-item-header "
+        >
+          <h3>
+            Gold Hotel 5
+          </h3>
+          <h4>
+            8.7
+          </h4>
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col col-md-4"
+            >
+              <img
+                alt="hotel room"
+                className="img-fluid"
+                height="180px"
+                src="https://static.abc.es/Media/201504/27/hotel12--644x362.jpg"
+                width="260px"
+              />
+            </div>
+            <div
+              className="col col-md-8"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-12 col-lg-8"
+                >
+                  <h5
+                    className="card-title"
+                  >
+                    Suite full. Caroline
+                  </h5>
+                </div>
+                <div
+                  className="col-12 col-lg-4"
+                >
+                  <a
+                    className="sc-AxjAm jqjyPd"
+                    href="/detail"
+                    onClick={[Function]}
+                  >
+                    <button
+                      className="btn btn-primary btn-book w-100"
+                      data-testid="form-button-load-detail"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <i
+                        className="far fa-calendar-check ml-3"
+                      />
+                       Seleccionar
+                    </button>
+                  </a>
+                </div>
+                <div
+                  className="col-12 col-md-12"
+                >
+                  <h4>
+                    <i
+                      className="far fa-money-bill-alt"
+                    />
+                     
+                    154.000
+                  </h4>
+                </div>
+                <div
+                  className="col-12 col-md-12 d-flex"
+                >
+                  <h6
+                    className="font-weight-bold"
+                    data-testid="custom-field"
+                  >
+                    Inicio
+                     
+                    <i
+                      className="fas fa-calendar-alt"
+                    />
+                     :
+                     
+                    2021-04-13
+                  </h6>
+                  <h6
+                    className="font-weight-bold"
+                    data-testid="custom-field"
+                  >
+                    -  Fin
+                     
+                    <i
+                      className="fas fa-calendar-alt"
+                    />
+                     :
+                     
+                    2021-04-30
+                  </h6>
+                </div>
+              </div>
+              <p
+                className="card-text"
+              >
+                Baño privado, cama doble, con nevera, Wifi, TV.
+              </p>
+              <div
+                className="row"
+              >
+                <div
+                  className="col col-md-6"
+                >
+                  <h6
+                    className="font-weight-bold"
+                    data-testid="custom-field"
+                  >
+                    camas
+                     
+                    <i
+                      className="fas fa-bed"
+                    />
+                     :
+                     
+                    1
+                  </h6>
+                  <h6
+                    className="font-weight-bold"
+                    data-testid="custom-field"
+                  >
+                    Aire
+                     
+                    <i
+                      className="fas fa-wind"
+                    />
+                     :
+                     
+                    <i
+                      className="fas fa-check"
+                    />
+                  </h6>
+                  <h6
+                    className="font-weight-bold"
+                    data-testid="custom-field"
+                  >
+                    Wifi
+                     
+                    <i
+                      className="fas fa-wifi"
+                    />
+                     :
+                     
+                    <i
+                      className="fas fa-check"
+                    />
+                  </h6>
+                </div>
+                <div
+                  className="col col-md-6"
+                >
+                  <h6
+                    className="font-weight-bold"
+                    data-testid="custom-field"
+                  >
+                    Parqueadero
+                     
+                    <i
+                      className="fas fa-car"
+                    />
+                     :
+                     
+                    <i
+                      className="fas fa-check"
+                    />
+                  </h6>
+                  <h6
+                    className="font-weight-bold"
+                    data-testid="custom-field"
+                  >
+                    Baños
+                     
+                    <i
+                      className="fas fa-restroom"
+                    />
+                     :
+                     
+                    <i
+                      className="fas fa-check"
+                    />
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Compara snapshot del componente ListRooms cuando no hay habitaciones 1`] = `
+<div
+  className="card-rooms"
+  data-testid="list-rooms"
+>
+  <div
+    className="row pt-5"
+  >
+    <div
+      className="col"
+    />
+  </div>
+</div>
+`;

@@ -18,7 +18,7 @@ interface CardInformationProps {
    */
   data: IRoom;
   /**
-   * Identificador de la habitación seleccionada
+   * Identificador de la habitación seleccionada (existe cuando se visualiza como detalle)
    */
   selectedRoom?: number;
   /**
@@ -26,7 +26,7 @@ interface CardInformationProps {
    */
   loadDetailRoom?: (roomId: number) => void;
   /**
-   * Función encargada de registrar la reservación
+   * Función encargada de registrar la reservación (existe cuando se visualiza como detalle)
    */
   saveBookingRoom?: (bookingData: BookingData) => void;
 }
@@ -77,6 +77,7 @@ export const CardInformation: React.FC<CardInformationProps> = ({
                     <button
                       type="button"
                       className="btn btn-primary btn-book w-100"
+                      data-testid="form-button-load-detail"
                       onClick={() => loadDetailRoom && loadDetailRoom(data.id)}
                     >
                       <i className="far fa-calendar-check ml-3"></i>
@@ -106,7 +107,7 @@ export const CardInformation: React.FC<CardInformationProps> = ({
             </div>
             <p className="card-text">{data.description}</p>
             {selectedRoom && selectedRoom !== -1 && (
-              <div className="mb-3">
+              <div className="mb-3" data-testid="form-field-hotel-desc">
                 <p className="card-text">{data.hotel.description}</p>
                 <CustomField
                   label={'Dirección'}
@@ -227,7 +228,6 @@ const ModalFormBook: React.FC<ModalFormBookProps> = ({
     values: fieldsFormBooking,
     { resetForm }: FormikHelpers<fieldsFormBooking>
   ) => {
-    console.log('values submit ', values);
     saveBookingRoom &&
       saveBookingRoom({
         bookData: {

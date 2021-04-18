@@ -67,7 +67,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
   const nextDate = getNextDate();
   return (
     <>
-      <div className="card-rooms">
+      <div data-testid="find-rooms" className="card-rooms">
         <div className="row">
           <div className="card filter-area ">
             <div className="col">
@@ -77,7 +77,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                 onSubmit={handleSubmit}
                 onReset={handleReset}
               >
-                <Form>
+                <Form data-testid="form-find-rooms">
                   <div className="form-group row mb-3 mt-3">
                     <label
                       htmlFor="fromDate"
@@ -88,6 +88,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                     <div className="col-12 col-sm-6 col-lg-4">
                       <Field
                         className="form-control"
+                        data-testid="form-fromDate"
                         type="date"
                         name="fromDate"
                         id="fromDate"
@@ -107,6 +108,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                     <div className="col-12 col-sm-6 col-lg-4">
                       <Field
                         className="form-control"
+                        data-testid="form-untilDate"
                         type="date"
                         name="untilDate"
                         id="untilDate"
@@ -123,6 +125,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                       <Field
                         component="select"
                         className=" filter-select"
+                        data-testid="form-capacity"
                         aria-label=".form-select-sm example"
                         id="capacity"
                         name="capacity"
@@ -139,6 +142,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                       <Field
                         type="checkbox"
                         className="m-2"
+                        data-testid="form-withAir"
                         aria-label="Checkbox find room with air"
                         name="withAir"
                         id="withAir"
@@ -152,6 +156,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                       <Field
                         type="checkbox"
                         className="m-2"
+                        data-testid="form-withParking"
                         aria-label="Checkbox  find room with parking"
                         name="withParking"
                         id="withParking"
@@ -162,12 +167,20 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                     </div>
                   </div>
                   <div className="text-center mt-5">
-                    <Button className=" w-50" type="submit">
+                    <Button
+                      className=" w-50"
+                      data-testid="form-button-find"
+                      type="submit"
+                    >
                       Encuentralo!
                     </Button>
                   </div>
                   <div className="text-center mb-4 mt-1">
-                    <Button className="button-link" type="reset">
+                    <Button
+                      className="button-link"
+                      data-testid="form-button-reset"
+                      type="reset"
+                    >
                       limpiar
                     </Button>
                   </div>

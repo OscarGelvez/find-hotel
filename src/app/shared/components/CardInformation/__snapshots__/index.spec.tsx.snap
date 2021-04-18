@@ -1,0 +1,616 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente CardInformation en modo detalle 1`] = `
+<div
+  className="card room-item"
+  data-testid="card-information"
+>
+  <div
+    className="card-header room-item-header "
+  >
+    <h3>
+      Gold Hotel 5
+    </h3>
+    <h4>
+      8.7
+    </h4>
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col col-md-4"
+      >
+        <img
+          alt="hotel room"
+          className="img-fluid"
+          height="180px"
+          src="https://static.abc.es/Media/201504/27/hotel12--644x362.jpg"
+          width="260px"
+        />
+      </div>
+      <div
+        className="col col-md-8"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-12 col-lg-8"
+          >
+            <h5
+              className="card-title"
+            >
+              Suite full. Caroline
+            </h5>
+          </div>
+          <div
+            className="col-12 col-lg-4"
+          >
+            <div
+              data-testid="modal-form-book"
+            >
+              <button
+                className="btn btn-primary btn-book w-100"
+                data-bs-target="#modalFormBook"
+                data-bs-toggle="modal"
+                type="button"
+              >
+                <i
+                  className="far fa-calendar-check ml-3"
+                />
+                 Reservar
+              </button>
+              <div
+                aria-hidden="true"
+                aria-labelledby="modalFormBookLabel"
+                className="modal fade"
+                id="modalFormBook"
+              >
+                <div
+                  className="modal-dialog"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <div
+                      className="modal-header"
+                    >
+                      <h5
+                        className="modal-title"
+                        id="modalFormBookLabel"
+                      >
+                        Completa tu reserva
+                      </h5>
+                      <button
+                        aria-label="Close"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        type="button"
+                      />
+                    </div>
+                    <div
+                      className="modal-body"
+                    >
+                      <form
+                        action="#"
+                        onReset={[Function]}
+                        onSubmit={[Function]}
+                      >
+                        <div
+                          className="row mb-3"
+                        >
+                          <div
+                            className="col-12 col-md-6 "
+                          >
+                            <label
+                              className="col-12 col-form-label"
+                              htmlFor="name"
+                            >
+                              Nombre
+                            </label>
+                            <input
+                              className="form-control col-12"
+                              name="name"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              placeholder="eje: Joe Doe"
+                              value=""
+                            />
+                          </div>
+                          <div
+                            className=" col-12 col-md-6"
+                          >
+                            <label
+                              className="col-12 col-form-label"
+                              htmlFor="email"
+                            >
+                              Correo electrónico
+                            </label>
+                            <input
+                              className="form-control col-12"
+                              name="email"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              placeholder="eje: joe@email.com"
+                              type="email"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="row mb-2"
+                        >
+                          <div
+                            className="col-12 col-md-6 "
+                          >
+                            <label
+                              className="pr-2"
+                              htmlFor="identification_type"
+                            >
+                              Tipo de identificación
+                            </label>
+                            <select
+                              aria-label=".form-select-sm example"
+                              className=" d-block w-100"
+                              id="identification_type"
+                              name="identification_type"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              value=""
+                            >
+                              <option
+                                value=""
+                              >
+                                Seleccione
+                              </option>
+                              <option
+                                value="1"
+                              >
+                                Cédula de ciudadanía
+                              </option>
+                              <option
+                                value="2"
+                              >
+                                Cédula de extranjeria
+                              </option>
+                              <option
+                                value="3"
+                              >
+                                Nit
+                              </option>
+                              <option
+                                value="4"
+                              >
+                                Pasaporte
+                              </option>
+                            </select>
+                          </div>
+                          <div
+                            className=" col-12 col-md-6"
+                          >
+                            <label
+                              className="pr-2"
+                              htmlFor="identification"
+                            >
+                              Identificación
+                            </label>
+                            <input
+                              className="form-control"
+                              name="identification"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              placeholder="eje: 60830147"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="d-flex justify-content-between mt-3"
+                        >
+                          <button
+                            className="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                            type="button"
+                          >
+                            Cancelar
+                          </button>
+                          <button
+                            className="btn btn-primary"
+                            type="submit"
+                          >
+                            Finalizar
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-12 col-md-12"
+          >
+            <h4>
+              <i
+                className="far fa-money-bill-alt"
+              />
+               
+              154.000
+            </h4>
+          </div>
+          <div
+            className="col-12 col-md-12 d-flex"
+          >
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Inicio
+               
+              <i
+                className="fas fa-calendar-alt"
+              />
+               :
+               
+              2021-04-13
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              -  Fin
+               
+              <i
+                className="fas fa-calendar-alt"
+              />
+               :
+               
+              2021-04-30
+            </h6>
+          </div>
+        </div>
+        <p
+          className="card-text"
+        >
+          Baño privado, cama doble, con nevera, Wifi, TV.
+        </p>
+        <div
+          className="mb-3"
+          data-testid="form-field-hotel-desc"
+        >
+          <p
+            className="card-text"
+          >
+            Hotel con ambiente familiar, increible opción. Muchas comodidades
+          </p>
+          <h6
+            className="font-weight-bold"
+            data-testid="custom-field"
+          >
+            Dirección
+             
+            <i
+              className="fas fa-map-marked-alt"
+            />
+             :
+             
+            Calle 54 # 56 -32 Av Libre
+          </h6>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col col-md-6"
+          >
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              camas
+               
+              <i
+                className="fas fa-bed"
+              />
+               :
+               
+              1
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Aire
+               
+              <i
+                className="fas fa-wind"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Wifi
+               
+              <i
+                className="fas fa-wifi"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+          </div>
+          <div
+            className="col col-md-6"
+          >
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Parqueadero
+               
+              <i
+                className="fas fa-car"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Baños
+               
+              <i
+                className="fas fa-restroom"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+            <div
+              data-testid="star-score"
+            >
+              <i
+                className="fas fa-star"
+              />
+              <i
+                className="fas fa-star"
+              />
+              <i
+                className="fas fa-star"
+              />
+              <i
+                className="fas fa-star"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Compara snapshot del componente CardInformation en modo lista 1`] = `
+<div
+  className="card room-item"
+  data-testid="card-information"
+>
+  <div
+    className="card-header room-item-header "
+  >
+    <h3>
+      Gold Hotel 5
+    </h3>
+    <h4>
+      8.7
+    </h4>
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col col-md-4"
+      >
+        <img
+          alt="hotel room"
+          className="img-fluid"
+          height="180px"
+          src="https://static.abc.es/Media/201504/27/hotel12--644x362.jpg"
+          width="260px"
+        />
+      </div>
+      <div
+        className="col col-md-8"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-12 col-lg-8"
+          >
+            <h5
+              className="card-title"
+            >
+              Suite full. Caroline
+            </h5>
+          </div>
+          <div
+            className="col-12 col-lg-4"
+          >
+            <a
+              className="sc-AxjAm jqjyPd"
+              href="/detail"
+              onClick={[Function]}
+            >
+              <button
+                className="btn btn-primary btn-book w-100"
+                data-testid="form-button-load-detail"
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="far fa-calendar-check ml-3"
+                />
+                 Seleccionar
+              </button>
+            </a>
+          </div>
+          <div
+            className="col-12 col-md-12"
+          >
+            <h4>
+              <i
+                className="far fa-money-bill-alt"
+              />
+               
+              154.000
+            </h4>
+          </div>
+          <div
+            className="col-12 col-md-12 d-flex"
+          >
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Inicio
+               
+              <i
+                className="fas fa-calendar-alt"
+              />
+               :
+               
+              2021-04-13
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              -  Fin
+               
+              <i
+                className="fas fa-calendar-alt"
+              />
+               :
+               
+              2021-04-30
+            </h6>
+          </div>
+        </div>
+        <p
+          className="card-text"
+        >
+          Baño privado, cama doble, con nevera, Wifi, TV.
+        </p>
+        <div
+          className="row"
+        >
+          <div
+            className="col col-md-6"
+          >
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              camas
+               
+              <i
+                className="fas fa-bed"
+              />
+               :
+               
+              1
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Aire
+               
+              <i
+                className="fas fa-wind"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Wifi
+               
+              <i
+                className="fas fa-wifi"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+          </div>
+          <div
+            className="col col-md-6"
+          >
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Parqueadero
+               
+              <i
+                className="fas fa-car"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+            <h6
+              className="font-weight-bold"
+              data-testid="custom-field"
+            >
+              Baños
+               
+              <i
+                className="fas fa-restroom"
+              />
+               :
+               
+              <i
+                className="fas fa-check"
+              />
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

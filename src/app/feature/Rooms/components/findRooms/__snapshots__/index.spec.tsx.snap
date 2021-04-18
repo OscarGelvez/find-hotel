@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshots del componente FindRooms 1`] = `
+<div
+  className="card-rooms"
+  data-testid="find-rooms"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="card filter-area "
+    >
+      <div
+        className="col"
+      >
+        <form
+          action="#"
+          data-testid="form-find-rooms"
+          onReset={[Function]}
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group row mb-3 mt-3"
+          >
+            <label
+              className="col-12 col-sm-6 col-lg-2 col-form-label"
+              htmlFor="fromDate"
+            >
+              Fecha de ingreso
+            </label>
+            <div
+              className="col-12 col-sm-6 col-lg-4"
+            >
+              <input
+                className="form-control"
+                data-testid="form-fromDate"
+                id="fromDate"
+                min="2021-04-17"
+                name="fromDate"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="date"
+                value=""
+              />
+            </div>
+            <label
+              className="col-12  col-sm-6 col-lg-2 col-form-label"
+              htmlFor="untilDate"
+            >
+              Fecha de salida
+            </label>
+            <div
+              className="col-12 col-sm-6 col-lg-4"
+            >
+              <input
+                className="form-control"
+                data-testid="form-untilDate"
+                id="untilDate"
+                min="2021-04-18"
+                name="untilDate"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="row mb-4"
+          >
+            <div
+              className="d-flex col-12 col-sm-6 col-lg-4 text-center"
+            >
+              <label
+                className="pr-2"
+                htmlFor="capacity"
+              >
+                Personas
+              </label>
+              <select
+                aria-label=".form-select-sm example"
+                className=" filter-select"
+                data-testid="form-capacity"
+                id="capacity"
+                name="capacity"
+                onBlur={[Function]}
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  value=""
+                >
+                  Seleccione
+                </option>
+                <option
+                  value="1"
+                >
+                  1 adulto
+                </option>
+                <option
+                  value="2"
+                >
+                  2 adultos
+                </option>
+                <option
+                  value="3"
+                >
+                  3 adultos
+                </option>
+                <option
+                  value="4"
+                >
+                  4 adultos
+                </option>
+              </select>
+            </div>
+            <div
+              className="col-12 col-sm-6 col-lg-4 text-md-center "
+            >
+              <input
+                aria-label="Checkbox find room with air"
+                checked={false}
+                className="m-2"
+                data-testid="form-withAir"
+                id="withAir"
+                name="withAir"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="checkbox"
+                value={false}
+              />
+              <label
+                className="cursor-pointer"
+                htmlFor="withAir"
+              >
+                ¿Aire acondicionado?
+              </label>
+            </div>
+            <div
+              className="col-12 col-lg-4 mt-sm-2 mt-md-0"
+            >
+              <input
+                aria-label="Checkbox  find room with parking"
+                checked={false}
+                className="m-2"
+                data-testid="form-withParking"
+                id="withParking"
+                name="withParking"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label
+                className="cursor-pointer"
+                htmlFor="withParking"
+              >
+                ¿Parqueadero?
+              </label>
+            </div>
+          </div>
+          <div
+            className="text-center mt-5"
+          >
+            <button
+              className="sc-AxjAm cYJbNq  w-50"
+              data-testid="form-button-find"
+              type="submit"
+            >
+              Encuentralo!
+            </button>
+          </div>
+          <div
+            className="text-center mb-4 mt-1"
+          >
+            <button
+              className="sc-AxjAm cYJbNq button-link"
+              data-testid="form-button-reset"
+              type="reset"
+            >
+              limpiar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
