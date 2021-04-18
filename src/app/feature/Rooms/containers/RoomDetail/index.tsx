@@ -17,7 +17,7 @@ export const RoomDetail: React.FC<RoomsDetailProps> = ({
   saveBookingRoom,
 }) => {
   return (
-    <DivContainer>
+    <DivContainer data-testid="room-detail">
       <RoomDetailView
         listRooms={listRooms}
         selectedRoom={selectedRoom}

@@ -28,7 +28,7 @@ export const Rooms: React.FC<RoomsProps> = ({
   }, [listRooms, listAvailableRooms]);
 
   return (
-    <DivContainer>
+    <DivContainer data-testid="room">
       <FindRooms onSubmit={findRoomsFilter} />
       <ListRooms listRooms={listRooms} loadDetailRoom={loadDetailRoom} />
     </DivContainer>
