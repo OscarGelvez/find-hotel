@@ -123,5 +123,5 @@ export const BookingDetail: React.FC<BookingDetail> = ({ onFindBooking }) => {
 };
 
 BookingDetail.propTypes = {
-  // msg: PropTypes.string.isRequired,
+  onFindBooking: PropTypes.func.isRequired,
 };
