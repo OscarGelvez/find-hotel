@@ -24,3 +24,16 @@ jobs:
       run: npm test
     - name: Run linters  
       run: npm run lint
+    - name: Build
+      run: npm run build
+    - name: Deploy
+      run: |
+        git config --global user.name $user_name
+        git config --global user.email $user_email
+        git remote set-url origin https://${github_token}@github.com/${repository}
+        npm run deploy
+      env:
+        user_name: 'OscarGelvez'
+        user_email: 'oscargelvez23@gmail.com'
+        github_token: ${{ secrets.ACTIONS_DEPLOY_FIND_HOTEL }}
+        repository: ${{ github.repository }}  
