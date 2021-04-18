@@ -8,7 +8,7 @@ import { HeaderNav } from './styles';
 export const NavigationHeader: React.FC = () => {
   const routes = [
     { label: 'Habitaciones', url: '/' },
-    { label: 'Reservas', url: '/reservation' },
+    { label: 'Reservas', url: '/booking' },
   ];
   return (
     <HeaderNav>

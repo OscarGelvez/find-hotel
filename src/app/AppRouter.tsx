@@ -1,4 +1,4 @@
-import { ReservationRouter } from 'app/feature/Home/ReservationRouter';
+import { BookingRouter } from 'app/feature/Book/BookingRouter';
 import { RoomsRouter } from 'app/feature/Rooms/RoomsRouter';
 import { NavigationHeader } from 'app/shared/components/NavigationHeader';
 import * as React from 'react';
@@ -9,7 +9,7 @@ export const AppRouter = () => {
     <BrowserRouter>
       <NavigationHeader />
       <Switch>
-        <Route path="/reservation" component={ReservationRouter} />
+        <Route path="/booking" component={BookingRouter} />
         <Route path="/" component={RoomsRouter} />
       </Switch>
     </BrowserRouter>

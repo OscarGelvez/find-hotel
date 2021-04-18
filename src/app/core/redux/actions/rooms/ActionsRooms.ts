@@ -1,5 +1,10 @@
 import { RoomsRepository } from 'app/core/api/rooms.repository';
-import { BookingData, fieldsForm, IRoom } from 'app/feature/Rooms/models/Room';
+import {
+  BookingData,
+  fieldsForm,
+  fieldsFormFindBooking,
+  IRoom,
+} from 'app/feature/Rooms/models/Room';
 
 import {
   ActionTypesRooms,
@@ -58,5 +63,14 @@ export function saveBookingRoom(bookingData: BookingData) {
     RoomsRepository.saveBookingRoom(bookingData).then((response: any) => {
       return dispacth(bookingRoomSaved(response.data.id));
     });
+  };
+}
+
+export function onFindBooking(findBookingData: fieldsFormFindBooking) {
+  return function (dispacth: any) {
+    return null;
+    // RoomsRepository.saveBookingRoom(bookingData).then((response: any) => {
+    //   return dispacth(bookingRoomSaved(response.data.id));
+    // });
   };
 }

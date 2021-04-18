@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 
 import { FindRooms } from '../../components/findRooms';
 import { ListRooms } from '../../components/ListRooms';
-// import { PaginadorProductos } from '../../components/PaginadorProductos';
 import { fieldsForm, IRoom } from '../../models/Room';
 import { DivContainer } from './styles';
 

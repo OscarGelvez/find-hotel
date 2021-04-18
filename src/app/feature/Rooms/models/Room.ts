@@ -128,3 +128,18 @@ export interface BookingData {
    */
   bookData: fieldsFormBooking;
 }
+
+export interface fieldsFormFindBooking {
+  /**
+   * Correo electrónico de quien hacer la reserva
+   */
+  email: string;
+  /**
+   * Tipo de identificación
+   */
+  identification_type: string;
+  /**
+   * Número de identificación
+   */
+  identification: string;
+}
