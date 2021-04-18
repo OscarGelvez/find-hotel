@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente CustomField con texto personalizado 1`] = `
+<h6
+  className="font-weight-bold"
+  data-testid="custom-field"
+>
+  Dirección
+   
+  <i
+    className="fas fa-map-marked-alt"
+  />
+   :
+   
+  <span
+    data-testid="custom-field-value-text"
+  >
+    Calle 12 # 34-56 Av. siempre viva
+  </span>
+</h6>
+`;
+
+exports[`Compara snapshot del componente CustomField con valor boolean en false 1`] = `
+<h6
+  className="font-weight-bold"
+  data-testid="custom-field"
+>
+  Baños
+   
+  <i
+    className="fas fa-restroom"
+  />
+   :
+   
+  <i
+    className="fas fa-times"
+    data-testid="custom-field-value-false"
+  />
+</h6>
+`;
+
+exports[`Compara snapshot del componente CustomField con valor boolean en true 1`] = `
+<h6
+  className="font-weight-bold"
+  data-testid="custom-field"
+>
+  Baños
+   
+  <i
+    className="fas fa-restroom"
+  />
+   :
+   
+  <i
+    className="fas fa-check"
+    data-testid="custom-field-value-true"
+  />
+</h6>
+`;

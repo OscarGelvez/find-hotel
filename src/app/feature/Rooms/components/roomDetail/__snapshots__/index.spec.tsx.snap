@@ -267,7 +267,11 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                     />
                      :
                      
-                    2021-04-13
+                    <span
+                      data-testid="custom-field-value-text"
+                    >
+                      2021-04-13
+                    </span>
                   </h6>
                   <h6
                     className="font-weight-bold"
@@ -280,7 +284,11 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                     />
                      :
                      
-                    2021-04-30
+                    <span
+                      data-testid="custom-field-value-text"
+                    >
+                      2021-04-30
+                    </span>
                   </h6>
                 </div>
               </div>
@@ -309,7 +317,11 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                   />
                    :
                    
-                  Calle 54 # 56 -32 Av Libre
+                  <span
+                    data-testid="custom-field-value-text"
+                  >
+                    Calle 54 # 56 -32 Av Libre
+                  </span>
                 </h6>
               </div>
               <div
@@ -322,14 +334,18 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                     className="font-weight-bold"
                     data-testid="custom-field"
                   >
-                    camas
+                    Camas
                      
                     <i
                       className="fas fa-bed"
                     />
                      :
                      
-                    1
+                    <span
+                      data-testid="custom-field-value-text"
+                    >
+                      1
+                    </span>
                   </h6>
                   <h6
                     className="font-weight-bold"
@@ -344,6 +360,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                      
                     <i
                       className="fas fa-check"
+                      data-testid="custom-field-value-true"
                     />
                   </h6>
                   <h6
@@ -359,6 +376,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                      
                     <i
                       className="fas fa-check"
+                      data-testid="custom-field-value-true"
                     />
                   </h6>
                 </div>
@@ -378,6 +396,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                      
                     <i
                       className="fas fa-check"
+                      data-testid="custom-field-value-true"
                     />
                   </h6>
                   <h6
@@ -393,6 +412,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                      
                     <i
                       className="fas fa-check"
+                      data-testid="custom-field-value-true"
                     />
                   </h6>
                   <div

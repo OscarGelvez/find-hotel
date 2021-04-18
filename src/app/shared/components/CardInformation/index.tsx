@@ -120,7 +120,7 @@ export const CardInformation: React.FC<CardInformationProps> = ({
             <div className="row">
               <div className="col col-md-6">
                 <CustomField
-                  label={'camas'}
+                  label={'Camas'}
                   icon="fa-bed"
                   valueText={`${data.capacity}`}
                 />

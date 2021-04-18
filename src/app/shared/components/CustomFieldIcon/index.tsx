@@ -35,11 +35,11 @@ export const CustomField: React.FC<CustomFieldProps> = ({
     <h6 data-testid="custom-field" className="font-weight-bold">
       {label} <i className={`fas ${icon}`}></i> :{' '}
       {valueText && valueText !== '' ? (
-        valueText
+        <span data-testid="custom-field-value-text">{valueText}</span>
       ) : value !== undefined && value === true ? (
-        <i className="fas fa-check"></i>
+        <i className="fas fa-check" data-testid="custom-field-value-true"></i>
       ) : (
-        <i className="fas fa-times"></i>
+        <i className="fas fa-times" data-testid="custom-field-value-false"></i>
       )}
     </h6>
   );

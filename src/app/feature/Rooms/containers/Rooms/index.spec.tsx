@@ -3,8 +3,8 @@ import '@testing-library/jest-dom';
 import { cleanup, render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
+import renderer from 'react-test-renderer';
 
 import { IRoom } from '../../models/Room';
 import { Rooms } from './index';
