@@ -62,7 +62,7 @@ exports[`Compara snapshot del componente ListRooms cuando hay habitaciones 1`] =
                 >
                   <a
                     className="sc-AxjAm jqjyPd"
-                    href="/detail"
+                    href="/rooms/detail"
                     onClick={[Function]}
                   >
                     <button

@@ -481,7 +481,7 @@ exports[`Compara snapshot del componente CardInformation en modo lista 1`] = `
           >
             <a
               className="sc-AxjAm jqjyPd"
-              href="/detail"
+              href="/rooms/detail"
               onClick={[Function]}
             >
               <button

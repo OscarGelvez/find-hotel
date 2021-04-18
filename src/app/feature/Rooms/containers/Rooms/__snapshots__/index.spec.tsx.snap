@@ -251,7 +251,7 @@ exports[`Compara snapshot del componente Rooms 1`] = `
                   >
                     <a
                       className="sc-AxirZ AiLKW"
-                      href="/detail"
+                      href="/rooms/detail"
                       onClick={[Function]}
                     >
                       <button
