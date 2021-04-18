@@ -9,8 +9,8 @@ export const RoomsRouter = () => (
   <React.Suspense fallback={<LazyFallback />}>
     {/* Layout compartido entre las rutas va aquí */}
     <Switch>
-      <Route path="/detail" component={DetailPage}></Route>
-      <Route path="/" component={MainPage}></Route>
+      <Route path="/rooms/detail" component={DetailPage}></Route>
+      <Route path="/rooms" component={MainPage}></Route>
     </Switch>
   </React.Suspense>
 );

@@ -73,7 +73,7 @@ export const CardInformation: React.FC<CardInformationProps> = ({
                     />
                   </>
                 ) : (
-                  <Link to={'/detail'} replace={true}>
+                  <Link to={'/rooms/detail'}>
                     <button
                       type="button"
                       className="btn btn-primary btn-book w-100"
