@@ -3,13 +3,14 @@ import '@testing-library/jest-dom';
 import { cleanup, render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
-import { ManageDetail } from '../../../feature/Rooms/hoc/ManageDetail';
 import { Provider } from 'react-redux';
-import { Layout } from './index';
-import { IStateRooms } from '../../../core/redux/modelo/IStateRooms';
-import { IRoom } from '../../../feature/Rooms/models/Room';
+import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
+
+import { IStateRooms } from '../../../core/redux/modelo/IStateRooms';
+import { ManageDetail } from '../../../feature/Rooms/hoc/ManageDetail';
+import { IRoom } from '../../../feature/Rooms/models/Room';
+import { Layout } from './index';
 
 const mockStore = configureStore([]);
 
@@ -57,8 +58,9 @@ it('rederizar el componente Layout sin errores', () => {
       <Layout
         title={'Detalle de habitación'}
         description={'Detalles de tu habitación'}
-        children={<ManageDetail />}
-      />
+      >
+        {<ManageDetail></ManageDetail>}
+      </Layout>
     </Provider>,
     div
   );
@@ -71,8 +73,9 @@ it('renderiza el componente Layout y verifica existencia de componentes hijos', 
       <Layout
         title={'Detalle de habitación'}
         description={'Detalles de tu habitación'}
-        children={<ManageDetail />}
-      />
+      >
+        {<ManageDetail></ManageDetail>}
+      </Layout>
     </Provider>
   );
 
@@ -86,8 +89,9 @@ it('Compara snapshot del componente Layout renderizado', () => {
         <Layout
           title={'Detalle de habitación'}
           description={'Detalles de tu habitación'}
-          children={<ManageDetail />}
-        />
+        >
+          {<ManageDetail></ManageDetail>}
+        </Layout>
       </Provider>
     )
     .toJSON();

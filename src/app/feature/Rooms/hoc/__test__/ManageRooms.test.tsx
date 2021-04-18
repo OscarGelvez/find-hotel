@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
+
 import { IStateRooms } from '../../../../core/redux/modelo/IStateRooms';
 import { IRoom } from '../../models/Room';
-import { BrowserRouter } from 'react-router-dom';
-
 import { ManageRooms } from '../ManageRooms';
 
 const mockStore = configureStore([]);

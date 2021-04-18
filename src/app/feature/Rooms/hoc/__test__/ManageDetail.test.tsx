@@ -2,9 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
+
 import { IStateRooms } from '../../../../core/redux/modelo/IStateRooms';
 import { IRoom } from '../../models/Room';
-
 import { ManageDetail } from '../ManageDetail';
 
 const mockStore = configureStore([]);
