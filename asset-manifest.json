@@ -1,0 +1,32 @@
+{
+  "files": {
+    "static/js/0.97dc82d4.chunk.js": "/static/js/0.97dc82d4.chunk.js",
+    "static/js/0.97dc82d4.chunk.js.map": "/static/js/0.97dc82d4.chunk.js.map",
+    "main.css": "/static/css/main.b7eb6c98.chunk.css",
+    "main.js": "/static/js/main.a8cf1f21.chunk.js",
+    "main.js.map": "/static/js/main.a8cf1f21.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.46b12e7b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.46b12e7b.js.map",
+    "static/js/3.264c319b.chunk.js": "/static/js/3.264c319b.chunk.js",
+    "static/js/3.264c319b.chunk.js.map": "/static/js/3.264c319b.chunk.js.map",
+    "static/js/4.b2dfe31f.chunk.js": "/static/js/4.b2dfe31f.chunk.js",
+    "static/js/4.b2dfe31f.chunk.js.map": "/static/js/4.b2dfe31f.chunk.js.map",
+    "static/js/5.e3a3f8fd.chunk.js": "/static/js/5.e3a3f8fd.chunk.js",
+    "static/js/5.e3a3f8fd.chunk.js.map": "/static/js/5.e3a3f8fd.chunk.js.map",
+    "static/js/6.7bb031d6.chunk.js": "/static/js/6.7bb031d6.chunk.js",
+    "static/js/6.7bb031d6.chunk.js.map": "/static/js/6.7bb031d6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.094ad2f9f5995843927248b5e892ac92.js": "/precache-manifest.094ad2f9f5995843927248b5e892ac92.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b7eb6c98.chunk.css.map": "/static/css/main.b7eb6c98.chunk.css.map",
+    "static/js/0.97dc82d4.chunk.js.LICENSE.txt": "/static/js/0.97dc82d4.chunk.js.LICENSE.txt",
+    "static/js/3.264c319b.chunk.js.LICENSE.txt": "/static/js/3.264c319b.chunk.js.LICENSE.txt",
+    "static/media/logoHotel.png": "/static/media/logoHotel.1e0431ed.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46b12e7b.js",
+    "static/js/3.264c319b.chunk.js",
+    "static/css/main.b7eb6c98.chunk.css",
+    "static/js/main.a8cf1f21.chunk.js"
+  ]
+}
