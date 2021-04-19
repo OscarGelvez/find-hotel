@@ -54,7 +54,7 @@ export const BookingDetail: React.FC<BookingDetail> = ({ onFindBooking }) => {
                           htmlFor="email"
                           className="col-12 col-form-label"
                         >
-                          Correo electrónico
+                          Correo electrónico*
                         </label>
                         <Field
                           name="email"
@@ -67,13 +67,16 @@ export const BookingDetail: React.FC<BookingDetail> = ({ onFindBooking }) => {
                         ) : null}
                       </div>
                       <div className="col-12 col-md-4">
-                        <label className="pr-2" htmlFor="identification_type">
-                          Tipo de identificación
+                        <label
+                          className="col-12 col-form-label"
+                          htmlFor="identification_type"
+                        >
+                          Tipo de identificación*
                         </label>
                         <Field
                           as="select"
                           className=" d-block w-100"
-                          aria-label=".form-select-sm example"
+                          aria-label=".form-select"
                           id="identification_type"
                           name="identification_type"
                         >
@@ -91,8 +94,11 @@ export const BookingDetail: React.FC<BookingDetail> = ({ onFindBooking }) => {
                         ) : null}
                       </div>
                       <div className=" col-12 col-md-4">
-                        <label className="pr-2" htmlFor="identification">
-                          Identificación
+                        <label
+                          className="col-12 col-form-label"
+                          htmlFor="identification"
+                        >
+                          Identificación*
                         </label>
                         <Field
                           name="identification"
