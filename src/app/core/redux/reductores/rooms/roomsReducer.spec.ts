@@ -45,20 +45,6 @@ describe('Reductor de habitaciones', () => {
     expect(newState).toStrictEqual(expectedState);
   });
 
-  it('debería retornar las habitaciones filtradas', () => {
-    const initialState: IStateRooms = {
-      listRooms: [],
-      selectedRoomId: -1,
-    };
-    const expectedState: IStateRooms = {
-      ...initialState,
-      listRooms: [newRoom],
-    };
-
-    const newState = roomsReducers(initialState, listingRooms([newRoom]));
-    expect(newState).toStrictEqual(expectedState);
-  });
-
   it('debería almacenar el identificador de la habitación seleccionada', () => {
     const selectedRoomId = 56;
     const initialState: IStateRooms = {

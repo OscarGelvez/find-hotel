@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 const MainPage = React.lazy(() => import('./pages/MainPage'));
-const DetailPage = React.lazy(() => import('./pages/RoomDetail'));
+const DetailPage = React.lazy(() => import('./pages/DetailPage'));
 
 export const RoomsRouter = () => (
   <React.Suspense fallback={<LazyFallback />}>
