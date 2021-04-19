@@ -9,7 +9,6 @@ import {
 import {
   ActionTypesRooms,
   BOOKING_ROOM_SAVED,
-  FINDED_ROOMS,
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
 } from './ActionTypesRooms';
@@ -17,13 +16,6 @@ import {
 export function listingRooms(rooms: Array<IRoom>): ActionTypesRooms {
   return {
     type: LIST_ROOMS,
-    payload: rooms,
-  };
-}
-
-export function roomsFiltered(rooms: Array<IRoom>): ActionTypesRooms {
-  return {
-    type: FINDED_ROOMS,
     payload: rooms,
   };
 }
@@ -53,7 +45,7 @@ export function listingRoomsAsync() {
 export function findRoomsFilter(dataFilter: fieldsForm) {
   return function (dispacth: any) {
     RoomsRepository.findFilterRooms(dataFilter).then((response: any) => {
-      return dispacth(roomsFiltered(response.data));
+      return dispacth(listingRooms(response.data));
     });
   };
 }
@@ -69,8 +61,5 @@ export function saveBookingRoom(bookingData: BookingData) {
 export function onFindBooking(findBookingData: fieldsFormFindBooking) {
   return function (dispacth: any) {
     return null;
-    // RoomsRepository.saveBookingRoom(bookingData).then((response: any) => {
-    //   return dispacth(bookingRoomSaved(response.data.id));
-    // });
   };
 }

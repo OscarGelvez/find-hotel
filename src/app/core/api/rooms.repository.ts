@@ -2,10 +2,6 @@ import { BookingData, fieldsForm } from 'app/feature/Rooms/models/Room';
 
 import { axiosIntance } from '../config/AxiosConfig';
 
-// const NUMERO_REGISTROS = 10;
-// const limit = (count: number, p: number) =>
-//   `limit=${count}&offset=${p ? p * count : 0}`;
-
 const getDataFilter = (data: fieldsForm) => {
   let filterBy = '?';
   if (data.fromDate) {
