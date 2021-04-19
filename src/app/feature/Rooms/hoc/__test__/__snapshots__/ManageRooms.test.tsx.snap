@@ -31,7 +31,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                 className="col-12 col-sm-6 col-lg-2 col-form-label"
                 htmlFor="fromDate"
               >
-                Fecha de ingreso
+                Fecha de ingreso*
               </label>
               <div
                 className="col-12 col-sm-6 col-lg-4"
@@ -44,6 +44,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                   name="fromDate"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  required={true}
                   type="date"
                   value=""
                 />
@@ -52,7 +53,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                 className="col-12  col-sm-6 col-lg-2 col-form-label"
                 htmlFor="untilDate"
               >
-                Fecha de salida
+                Fecha de salida*
               </label>
               <div
                 className="col-12 col-sm-6 col-lg-4"
@@ -65,6 +66,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                   name="untilDate"
                   onBlur={[Function]}
                   onChange={[Function]}
+                  required={true}
                   type="date"
                   value=""
                 />

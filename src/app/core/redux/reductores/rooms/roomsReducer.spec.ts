@@ -86,7 +86,7 @@ describe('Reductor de habitaciones', () => {
     };
     const expectedState: IStateRooms = {
       ...initialState,
-      selectedRoomId: -1,
+      selectedRoomId: 56,
     };
 
     const newState = roomsReducers(initialState, bookingRoomSaved(roomId));

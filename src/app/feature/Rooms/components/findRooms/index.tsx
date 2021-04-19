@@ -9,6 +9,7 @@ import { fieldsForm } from '../../models/Room';
 
 export interface FindRoomsProps {
   onSubmit: (payload: fieldsForm) => void;
+  listAvailableRooms: () => void;
 }
 
 const initialValues = {
@@ -26,7 +27,10 @@ const validationSchema = Yup.object().shape<fieldsForm>({
   withParking: Yup.boolean().notRequired(),
 });
 
-export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
+export const FindRooms: React.FC<FindRoomsProps> = ({
+  onSubmit,
+  listAvailableRooms,
+}) => {
   const handleSubmit = (values: fieldsForm) => {
     onSubmit({
       fromDate: fromDate,
@@ -42,6 +46,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
     { resetForm }: FormikHelpers<fieldsForm>
   ) => {
     setFromDate('');
+    listAvailableRooms();
   };
   const currentDate = new Date();
   const minDate = currentDate.toISOString().split('T')[0];
@@ -82,7 +87,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                       htmlFor="fromDate"
                       className="col-12 col-sm-6 col-lg-2 col-form-label"
                     >
-                      Fecha de ingreso
+                      Fecha de ingreso*
                     </label>
                     <div className="col-12 col-sm-6 col-lg-4">
                       <Field
@@ -93,6 +98,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                         id="fromDate"
                         min={minDate}
                         value={fromDate}
+                        required
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           setFromDate(e.target.value);
                         }}
@@ -102,7 +108,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                       htmlFor="untilDate"
                       className="col-12  col-sm-6 col-lg-2 col-form-label"
                     >
-                      Fecha de salida
+                      Fecha de salida*
                     </label>
                     <div className="col-12 col-sm-6 col-lg-4">
                       <Field
@@ -111,6 +117,7 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
                         type="date"
                         name="untilDate"
                         id="untilDate"
+                        required
                         min={nextDate}
                       />
                     </div>
@@ -195,4 +202,5 @@ export const FindRooms: React.FC<FindRoomsProps> = ({ onSubmit }) => {
 
 FindRooms.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  listAvailableRooms: PropTypes.func.isRequired,
 };

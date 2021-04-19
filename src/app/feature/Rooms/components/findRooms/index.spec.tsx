@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { cleanup,render } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
@@ -11,12 +11,17 @@ afterEach(cleanup);
 
 it('rederizar el componente FindRooms sin errores', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<FindRooms onSubmit={() => null} />, div);
+  ReactDOM.render(
+    <FindRooms onSubmit={() => null} listAvailableRooms={() => null} />,
+    div
+  );
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renderiza el componente FindRooms y verifica existencia de componentes hijos', () => {
-  const { getByTestId } = render(<FindRooms onSubmit={() => null} />);
+  const { getByTestId } = render(
+    <FindRooms onSubmit={() => null} listAvailableRooms={() => null} />
+  );
 
   expect(getByTestId('find-rooms')).toContainElement(
     getByTestId('form-find-rooms')
@@ -56,6 +61,8 @@ it('renderiza el componente FindRooms y verifica existencia de componentes hijos
 });
 
 it('Compara snapshots del componente FindRooms', () => {
-  const element = renderer.create(<FindRooms onSubmit={() => null} />).toJSON();
+  const element = renderer
+    .create(<FindRooms onSubmit={() => null} listAvailableRooms={() => null} />)
+    .toJSON();
   expect(element).toMatchSnapshot();
 });

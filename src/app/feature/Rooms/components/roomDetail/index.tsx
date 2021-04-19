@@ -30,12 +30,18 @@ export const RoomDetailView: React.FC<RoomDetailViewProps> = ({
       <div data-testid="room-detail-view" className="card-rooms">
         <div className="row pt-5">
           <div className="col">
-            <CardInformation
-              key={selectedRoom}
-              data={roomSelected}
-              selectedRoom={selectedRoom}
-              saveBookingRoom={saveBookingRoom}
-            />
+            {roomSelected ? (
+              <CardInformation
+                key={selectedRoom}
+                data={roomSelected}
+                selectedRoom={selectedRoom}
+                saveBookingRoom={saveBookingRoom}
+              />
+            ) : (
+              <div className="text-center">
+                <h5>No hay datos para mostrar</h5>
+              </div>
+            )}
           </div>
         </div>
       </div>
