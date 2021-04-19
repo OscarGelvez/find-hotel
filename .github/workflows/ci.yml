@@ -30,7 +30,8 @@ jobs:
       run: npm run lint
     - name: Sonar
       uses: SonarSource/sonarcloud-github-action@master
-      env:          
+      env:        
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
     - name: Run the test  
       run: npm test    
