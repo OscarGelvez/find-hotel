@@ -7,8 +7,8 @@ import {
 } from 'app/feature/Rooms/models/Room';
 
 import {
-  IActionTypesRooms,
   BOOKING_ROOM_SAVED,
+  IActionTypesRooms,
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
 } from './ActionTypesRooms';
