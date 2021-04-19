@@ -40,12 +40,12 @@ export default function (
         selectedRoomId: roomId,
       };
     }
-    case BOOKING_ROOM_SAVED: {
-      return {
-        ...state,
-        selectedRoomId: -1,
-      };
-    }
+    // case BOOKING_ROOM_SAVED: {
+    //   return {
+    //     ...state,
+    //     selectedRoomId: -1,
+    //   };
+    // }
 
     default:
       return state;
