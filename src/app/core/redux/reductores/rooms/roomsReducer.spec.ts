@@ -3,7 +3,6 @@ import {
   bookingRoomSaved,
   listingRooms,
   loadDetailRoom,
-  roomsFiltered,
 } from '../../actions/rooms/ActionsRooms';
 import { IStateRooms } from '../../modelo/IStateRooms';
 import roomsReducers from './roomsReducers';
@@ -56,7 +55,7 @@ describe('Reductor de habitaciones', () => {
       listRooms: [newRoom],
     };
 
-    const newState = roomsReducers(initialState, roomsFiltered([newRoom]));
+    const newState = roomsReducers(initialState, listingRooms([newRoom]));
     expect(newState).toStrictEqual(expectedState);
   });
 

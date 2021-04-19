@@ -31,30 +31,20 @@ export const CustomField: React.FC<ICustomFieldProps> = ({
   value,
   valueText,
 }) => {
-  const getIcon = () => {
-    let icon;
-    if (value !== undefined && value === true) {
-      icon = (
-        <i className="fas fa-check" data-testid="custom-field-value-true"></i>
-      );
-    } else {
-      icon = (
-        <i className="fas fa-times" data-testid="custom-field-value-false"></i>
-      );
-    }
-    return icon;
-  };
+  const valueParse = value !== undefined && value === true;
   return (
     <>
       <h6 data-testid="custom-field" className="font-weight-bold">
         {label} <i className={`fas ${icon}`}></i> :{' '}
+        {valueText && valueText !== '' ? (
+          <span data-testid="custom-field-value-text">{valueText}</span>
+        ) : (
+          <i
+            className={`fas fa-${valueParse ? 'check' : 'times'}`}
+            data-testid={`custom-field-value-${valueParse ? 'true' : 'false'}`}
+          ></i>
+        )}
       </h6>
-
-      {valueText && valueText !== '' ? (
-        <span data-testid="custom-field-value-text">{valueText}</span>
-      ) : (
-        getIcon()
-      )}
     </>
   );
 };
