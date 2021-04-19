@@ -32,6 +32,30 @@ interface ICardInformationProps {
 }
 
 /**
+ * Shape Objeto habitación
+ */
+const roomShape = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  hotel: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    stars: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+  }).isRequired,
+  value: PropTypes.string.isRequired,
+  ac: PropTypes.string.isRequired,
+  parking: PropTypes.string.isRequired,
+  available_from: PropTypes.string.isRequired,
+  available_until: PropTypes.string.isRequired,
+  wifi: PropTypes.string.isRequired,
+  capacity: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+};
+/**
  * Componente encargado de renderizar Card con información de la habitación
  * @param param0
  * @returns
@@ -158,27 +182,7 @@ export const CardInformation: React.FC<ICardInformationProps> = ({
 };
 
 CardInformation.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    hotel: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      address: PropTypes.string.isRequired,
-      stars: PropTypes.number.isRequired,
-      description: PropTypes.string.isRequired,
-      score: PropTypes.number.isRequired,
-    }).isRequired,
-    value: PropTypes.string.isRequired,
-    ac: PropTypes.string.isRequired,
-    parking: PropTypes.string.isRequired,
-    available_from: PropTypes.string.isRequired,
-    available_until: PropTypes.string.isRequired,
-    wifi: PropTypes.string.isRequired,
-    capacity: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-  }).isRequired,
+  data: PropTypes.shape(roomShape).isRequired,
   selectedRoom: PropTypes.number,
   loadDetailRoom: PropTypes.func,
   saveBookingRoom: PropTypes.func,
@@ -385,27 +389,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
 };
 
 ModalFormBook.propTypes = {
-  dataRoom: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    hotel: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      address: PropTypes.string.isRequired,
-      stars: PropTypes.number.isRequired,
-      description: PropTypes.string.isRequired,
-      score: PropTypes.number.isRequired,
-    }).isRequired,
-    value: PropTypes.string.isRequired,
-    ac: PropTypes.string.isRequired,
-    parking: PropTypes.string.isRequired,
-    available_from: PropTypes.string.isRequired,
-    available_until: PropTypes.string.isRequired,
-    wifi: PropTypes.string.isRequired,
-    capacity: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-  }).isRequired,
+  dataRoom: PropTypes.shape(roomShape).isRequired,
   saveBookingRoom: PropTypes.func,
 };
 
