@@ -5,10 +5,10 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
-import { fieldsForm } from '../../models/Room';
+import { IFieldsForm } from '../../models/Room';
 
-export interface FindRoomsProps {
-  onSubmit: (payload: fieldsForm) => void;
+export interface IFindRoomsProps {
+  onSubmit: (payload: IFieldsForm) => void;
   listAvailableRooms: () => void;
 }
 
@@ -19,7 +19,7 @@ const initialValues = {
   withAir: false,
 };
 
-const validationSchema = Yup.object().shape<fieldsForm>({
+const validationSchema = Yup.object().shape<IFieldsForm>({
   fromDate: Yup.string().notRequired(),
   untilDate: Yup.string().notRequired(),
   capacity: Yup.string().notRequired(),
@@ -27,11 +27,11 @@ const validationSchema = Yup.object().shape<fieldsForm>({
   withParking: Yup.boolean().notRequired(),
 });
 
-export const FindRooms: React.FC<FindRoomsProps> = ({
+export const FindRooms: React.FC<IFindRoomsProps> = ({
   onSubmit,
   listAvailableRooms,
 }) => {
-  const handleSubmit = (values: fieldsForm) => {
+  const handleSubmit = (values: IFieldsForm) => {
     onSubmit({
       fromDate: fromDate,
       untilDate: values.untilDate,
@@ -42,8 +42,8 @@ export const FindRooms: React.FC<FindRoomsProps> = ({
   };
 
   const handleReset = (
-    values: fieldsForm,
-    { resetForm }: FormikHelpers<fieldsForm>
+    values: IFieldsForm,
+    { resetForm }: FormikHelpers<IFieldsForm>
   ) => {
     setFromDate('');
     listAvailableRooms();

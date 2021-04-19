@@ -5,14 +5,14 @@ import * as React from 'react';
 import * as Yup from 'yup';
 
 import {
-  BookingData,
-  fieldsFormBooking,
+  IBookingData,
+  IFieldsFormBooking,
   IRoom,
 } from '../../../feature/Rooms/models/Room';
 import { CustomField } from '../CustomFieldIcon';
 import { Link } from '../Link';
 
-interface CardInformationProps {
+interface ICardInformationProps {
   /**
    * Información de cada habitación
    */
@@ -28,7 +28,7 @@ interface CardInformationProps {
   /**
    * Función encargada de registrar la reservación (existe cuando se visualiza como detalle)
    */
-  saveBookingRoom?: (bookingData: BookingData) => void;
+  saveBookingRoom?: (bookingData: IBookingData) => void;
 }
 
 /**
@@ -36,7 +36,7 @@ interface CardInformationProps {
  * @param param0
  * @returns
  */
-export const CardInformation: React.FC<CardInformationProps> = ({
+export const CardInformation: React.FC<ICardInformationProps> = ({
   data,
   loadDetailRoom,
   selectedRoom,
@@ -184,11 +184,11 @@ CardInformation.propTypes = {
   saveBookingRoom: PropTypes.func,
 };
 
-interface ModalFormBookProps {
+interface IModalFormBookProps {
   /**
    * Información de la reserva a registrar
    */
-  saveBookingRoom?: (bookingData: BookingData) => void;
+  saveBookingRoom?: (bookingData: IBookingData) => void;
   /**
    * Información de la habitación
    */
@@ -202,7 +202,7 @@ const initialValues = {
   identification: '',
 };
 
-const validationSchema = Yup.object().shape<fieldsFormBooking>({
+const validationSchema = Yup.object().shape<IFieldsFormBooking>({
   name: Yup.string()
     .min(2, 'Nombre muy corto')
     .max(50, 'Nombre muy largo')
@@ -220,13 +220,13 @@ const validationSchema = Yup.object().shape<fieldsFormBooking>({
  * @param param0
  * @returns
  */
-const ModalFormBook: React.FC<ModalFormBookProps> = ({
+const ModalFormBook: React.FC<IModalFormBookProps> = ({
   saveBookingRoom,
   dataRoom,
 }) => {
   const handleSubmit = (
-    values: fieldsFormBooking,
-    { resetForm }: FormikHelpers<fieldsFormBooking>
+    values: IFieldsFormBooking,
+    { resetForm }: FormikHelpers<IFieldsFormBooking>
   ) => {
     saveBookingRoom &&
       saveBookingRoom({
@@ -409,10 +409,17 @@ ModalFormBook.propTypes = {
   saveBookingRoom: PropTypes.func,
 };
 
+interface IStarScoreProps {
+  /**
+   * Cantidad de estrellas del hotel
+   */
+  score: number;
+}
+
 /**
  * Componente encargado de renderizar estrellas según el nivel del hotel
  */
-const StarScore: React.FC<StarScoreProps> = ({ score }) => {
+const StarScore: React.FC<IStarScoreProps> = ({ score }) => {
   const arrStar = new Array(score);
   arrStar.fill('star', 0);
   return (
@@ -426,13 +433,6 @@ const StarScore: React.FC<StarScoreProps> = ({ score }) => {
     </>
   );
 };
-
-interface StarScoreProps {
-  /**
-   * Cantidad de estrellas del hotel
-   */
-  score: number;
-}
 
 StarScore.propTypes = {
   score: PropTypes.number.isRequired,

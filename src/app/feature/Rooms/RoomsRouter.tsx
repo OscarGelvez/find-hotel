@@ -2,7 +2,7 @@ import { LazyFallback } from 'app/shared/components/LazyFallback';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-const MainPage = React.lazy(() => import('./pages/Main'));
+const MainPage = React.lazy(() => import('./pages/MainPage'));
 const DetailPage = React.lazy(() => import('./pages/RoomDetail'));
 
 export const RoomsRouter = () => (

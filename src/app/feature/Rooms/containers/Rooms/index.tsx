@@ -1,16 +1,15 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { useEffect } from 'react';
 
 import { FindRooms } from '../../components/findRooms';
 import { ListRooms } from '../../components/ListRooms';
-import { fieldsForm, IRoom } from '../../models/Room';
+import { IFieldsForm, IRoom } from '../../models/Room';
 import { DivContainer } from './styles';
 
 interface RoomsProps {
   listRooms: Array<IRoom>;
   listAvailableRooms: () => void;
-  findRoomsFilter: (data: fieldsForm) => void;
+  findRoomsFilter: (data: IFieldsForm) => void;
   loadDetailRoom: (roomId: number) => void;
 }
 
@@ -20,7 +19,7 @@ export const Rooms: React.FC<RoomsProps> = ({
   findRoomsFilter,
   loadDetailRoom,
 }) => {
-  useEffect(() => {
+  React.useEffect(() => {
     if (listRooms && listRooms.length === 0) {
       listAvailableRooms();
     }

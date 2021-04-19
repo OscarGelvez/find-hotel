@@ -1,8 +1,8 @@
-import { BookingData, fieldsForm } from 'app/feature/Rooms/models/Room';
+import { IBookingData, IFieldsForm } from 'app/feature/Rooms/models/Room';
 
 import { axiosIntance } from '../config/AxiosConfig';
 
-const getDataFilter = (data: fieldsForm) => {
+const getDataFilter = (data: IFieldsForm) => {
   let filterBy = '?';
   if (data.fromDate) {
     filterBy = `${filterBy}available_from_lte=${data.fromDate}`;
@@ -35,9 +35,9 @@ const headers = {
 
 export const RoomsRepository = {
   findAllRooms: () => axiosIntance.get('/rooms'),
-  findFilterRooms: (dataFilter: fieldsForm) =>
+  findFilterRooms: (dataFilter: IFieldsForm) =>
     axiosIntance.get(`/rooms${getDataFilter(dataFilter)}`),
-  saveBookingRoom: (bookingData: BookingData) =>
+  saveBookingRoom: (bookingData: IBookingData) =>
     axiosIntance.post('/booking', bookingData, {
       headers: headers,
     }),

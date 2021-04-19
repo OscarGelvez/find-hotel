@@ -4,12 +4,12 @@ import * as React from 'react';
 
 import { BrandDiv, LogoImg, LogoSpan } from './styles';
 
-interface NavBrandProps {
+interface INavBrandProps {
   imgSrc?: string;
   text: string;
 }
 
-export const NavBrand: React.FC<NavBrandProps> = ({ imgSrc, text }) => (
+export const NavBrand: React.FC<INavBrandProps> = ({ imgSrc, text }) => (
   <BrandDiv>
     <Link to="/" replace={true}>
       {imgSrc ? (

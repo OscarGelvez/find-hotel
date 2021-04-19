@@ -4,12 +4,12 @@ import { Helmet } from 'react-helmet';
 
 import { DivContainer } from './styles';
 
-interface LayoutProps {
+interface ILayoutProps {
   title: string;
   description: string;
 }
 
-export const Layout: React.FC<LayoutProps> = ({
+export const Layout: React.FC<ILayoutProps> = ({
   children,
   title,
   description,

@@ -76,7 +76,7 @@ export interface IHotel {
   score: number;
 }
 
-export interface fieldsForm {
+export interface IFieldsForm {
   /**
    * Fecha inicio de reservación
    */
@@ -99,7 +99,7 @@ export interface fieldsForm {
   withParking?: boolean;
 }
 
-export interface fieldsFormBooking {
+export interface IFieldsFormBooking {
   /**
    * Nombre de ususario que hace la reserva
    */
@@ -118,7 +118,7 @@ export interface fieldsFormBooking {
   identification: string;
 }
 
-export interface BookingData {
+export interface IBookingData {
   /**
    * Objeto con información de la habitación seleccionada
    */
@@ -126,10 +126,10 @@ export interface BookingData {
   /**
    * Objeto con la información el usuari oque reserva
    */
-  bookData: fieldsFormBooking;
+  bookData: IFieldsFormBooking;
 }
 
-export interface fieldsFormFindBooking {
+export interface IFieldsFormFindBooking {
   /**
    * Correo electrónico de quien hacer la reserva
    */

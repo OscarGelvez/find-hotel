@@ -1,7 +1,7 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
-interface CustomFieldProps {
+interface ICustomFieldProps {
   /**
    * Título del campo
    */
@@ -25,23 +25,37 @@ interface CustomFieldProps {
  * @param param0
  * @returns Sección con item y valor de la habitación
  */
-export const CustomField: React.FC<CustomFieldProps> = ({
+export const CustomField: React.FC<ICustomFieldProps> = ({
   label,
   icon,
   value,
   valueText,
 }) => {
+  const getIcon = () => {
+    let icon;
+    if (value !== undefined && value === true) {
+      icon = (
+        <i className="fas fa-check" data-testid="custom-field-value-true"></i>
+      );
+    } else {
+      icon = (
+        <i className="fas fa-times" data-testid="custom-field-value-false"></i>
+      );
+    }
+    return icon;
+  };
   return (
-    <h6 data-testid="custom-field" className="font-weight-bold">
-      {label} <i className={`fas ${icon}`}></i> :{' '}
+    <>
+      <h6 data-testid="custom-field" className="font-weight-bold">
+        {label} <i className={`fas ${icon}`}></i> :{' '}
+      </h6>
+
       {valueText && valueText !== '' ? (
         <span data-testid="custom-field-value-text">{valueText}</span>
-      ) : value !== undefined && value === true ? (
-        <i className="fas fa-check" data-testid="custom-field-value-true"></i>
       ) : (
-        <i className="fas fa-times" data-testid="custom-field-value-false"></i>
+        getIcon()
       )}
-    </h6>
+    </>
   );
 };
 

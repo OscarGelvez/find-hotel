@@ -4,12 +4,12 @@ import * as React from 'react';
 
 import { NavItemDiv } from './styles';
 
-interface NavItemProps {
+interface INavItemProps {
   label: string;
   to: string;
 }
 
-export const NavItem: React.FC<NavItemProps> = ({ label, to }) => (
+export const NavItem: React.FC<INavItemProps> = ({ label, to }) => (
   <NavItemDiv>
     <Link to={to} replace={true}>
       {label}

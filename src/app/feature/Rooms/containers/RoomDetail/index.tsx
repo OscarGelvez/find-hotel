@@ -2,16 +2,16 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import { RoomDetailView } from '../../components/roomDetail';
-import { BookingData, IRoom } from '../../models/Room';
+import { IBookingData, IRoom } from '../../models/Room';
 import { DivContainer } from './styles';
 
-interface RoomsDetailProps {
+interface IRoomsDetailProps {
   listRooms: Array<IRoom>;
   selectedRoom: number;
-  saveBookingRoom?: (bookingData: BookingData) => void;
+  saveBookingRoom?: (bookingData: IBookingData) => void;
 }
 
-export const RoomDetail: React.FC<RoomsDetailProps> = ({
+export const RoomDetail: React.FC<IRoomsDetailProps> = ({
   listRooms,
   selectedRoom,
   saveBookingRoom,

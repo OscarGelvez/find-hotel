@@ -60,6 +60,4 @@ describe('Prueba componente de orden superior HOC con redux', () => {
   it('Compara snapshot del componente ManageRooms renderizado', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
-
-  //   it('should dispatch an action on button click', () => {});
 });

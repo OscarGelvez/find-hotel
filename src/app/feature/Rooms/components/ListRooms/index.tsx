@@ -2,10 +2,9 @@ import { CardInformation } from 'app/shared/components/CardInformation';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
-// import { FindRooms, fieldsForm } from '../findRooms';
 import { IRoom } from '../../models/Room';
 
-export interface ListRoomsProps {
+export interface IListRoomsProps {
   /**
    * Lista de habitaciones
    */
@@ -16,7 +15,7 @@ export interface ListRoomsProps {
   loadDetailRoom: (roomId: number) => void;
 }
 
-export const ListRooms: React.FC<ListRoomsProps> = ({
+export const ListRooms: React.FC<IListRoomsProps> = ({
   listRooms,
   loadDetailRoom,
 }) => {

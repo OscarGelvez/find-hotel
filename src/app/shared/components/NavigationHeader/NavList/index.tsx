@@ -4,11 +4,11 @@ import * as React from 'react';
 import { NavItem } from '../NavItem';
 import { NavListUl } from './styles';
 
-interface NavListProps {
+interface INavListProps {
   items: { label: string; url: string }[];
 }
 
-export const NavList: React.FC<NavListProps> = ({ items }) => {
+export const NavList: React.FC<INavListProps> = ({ items }) => {
   return (
     <NavListUl>
       {items.map(({ label, url }) => (

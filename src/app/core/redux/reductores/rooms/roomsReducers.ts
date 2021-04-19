@@ -1,5 +1,5 @@
 import {
-  ActionTypesRooms,
+  IActionTypesRooms,
   // BOOKING_ROOM_SAVED,
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
@@ -13,7 +13,7 @@ const initialState: IStateRooms = {
 
 export default function (
   state = initialState,
-  action: ActionTypesRooms
+  action: IActionTypesRooms
 ): IStateRooms {
   switch (action.type) {
     case LIST_ROOMS: {

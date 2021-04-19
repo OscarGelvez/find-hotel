@@ -1,12 +1,12 @@
-import { fieldsFormFindBooking } from 'app/feature/Rooms/models/Room';
+import { IFieldsFormFindBooking } from 'app/feature/Rooms/models/Room';
 import { Button } from 'app/shared/components/Button';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
-interface BookingDetail {
-  onFindBooking: (findBookingData: fieldsFormFindBooking) => void;
+interface IBookingDetail {
+  onFindBooking: (findBookingData: IFieldsFormFindBooking) => void;
 }
 
 const initialValues = {
@@ -15,7 +15,7 @@ const initialValues = {
   identification: '',
 };
 
-const validationSchema = Yup.object().shape<fieldsFormFindBooking>({
+const validationSchema = Yup.object().shape<IFieldsFormFindBooking>({
   email: Yup.string().email('Email no válido').required('Necesitamos tu email'),
   identification_type: Yup.string().required(
     'Necesitamos tu tipo de identificación'
@@ -23,10 +23,10 @@ const validationSchema = Yup.object().shape<fieldsFormFindBooking>({
   identification: Yup.string().required('Necesitamos tu identificación'),
 });
 
-export const BookingDetail: React.FC<BookingDetail> = ({ onFindBooking }) => {
+export const BookingDetail: React.FC<IBookingDetail> = ({ onFindBooking }) => {
   const handleSubmit = (
-    values: fieldsFormFindBooking,
-    { resetForm }: FormikHelpers<fieldsFormFindBooking>
+    values: IFieldsFormFindBooking,
+    { resetForm }: FormikHelpers<IFieldsFormFindBooking>
   ) => {
     onFindBooking({
       email: values.email,
