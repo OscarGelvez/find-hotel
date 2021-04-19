@@ -2,7 +2,7 @@ import { IRoom } from 'app/feature/Rooms/models/Room';
 
 import {
   ActionTypesRooms,
-  BOOKING_ROOM_SAVED,
+  // BOOKING_ROOM_SAVED,
   FINDED_ROOMS,
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
