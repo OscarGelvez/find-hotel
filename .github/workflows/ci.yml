@@ -32,6 +32,10 @@ jobs:
       run: npm run lint
     - name: Build
       run: npm run build
+    - name: Sonar
+      uses: SonarSource/sonarcloud-github-action@master
+      env:          
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: Deploy
       run: |
         git config --global user.name $user_name
@@ -43,3 +47,4 @@ jobs:
         user_email: 'oscargelvez23@gmail.com'
         github_token: ${{ secrets.ACTIONS_DEPLOY_FIND_HOTEL }}
         repository: ${{ github.repository }}  
+        
