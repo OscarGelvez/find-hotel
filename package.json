@@ -1,5 +1,6 @@
 {
   "name": "react-redux",
+  "homepage": "http://OscarGelvez.github.io/find-hotel",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
