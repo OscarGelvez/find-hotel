@@ -28,13 +28,15 @@ jobs:
       run: npm ci
     - name: Run linters  
       run: npm run lint
-    #- name: Sonar
-     # uses: SonarSource/sonarcloud-github-action@master
-      #env:        
-       #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        #  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
-    #- name: Run the test  
-     # run: npm test    
+    - name: Run the test  
+      run: npm test    
+    - name: Sonar
+      uses: SonarSource/sonarcloud-github-action@master
+      env:        
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
+    - name: Run the test  
+      run: npm test    
     - name: Build
       run: npm run build    
     - name: Deploy
