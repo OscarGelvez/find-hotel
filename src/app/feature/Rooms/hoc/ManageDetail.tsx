@@ -1,4 +1,4 @@
-import { saveBookingRoom } from 'app/core/redux/actions/rooms/ActionsRooms';
+import { saveBookingRoom } from 'app/core/redux/actions/bookings/ActionBookings';
 import { Istate } from 'app/core/redux/modelo/GeneralState';
 import { connect } from 'react-redux';
 

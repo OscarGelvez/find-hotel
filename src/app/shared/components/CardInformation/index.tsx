@@ -4,11 +4,11 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
+import { IRoom } from '../../../feature/Rooms/models/Room';
 import {
-  IBookingData,
+  IBooking,
   IFieldsFormBooking,
-  IRoom,
-} from '../../../feature/Rooms/models/Room';
+} from '../../../feature/Book/models/Booking';
 import { CustomField } from '../CustomFieldIcon';
 import { Link } from '../Link';
 
@@ -28,7 +28,7 @@ interface ICardInformationProps {
   /**
    * Función encargada de registrar la reservación (existe cuando se visualiza como detalle)
    */
-  saveBookingRoom?: (bookingData: IBookingData) => void;
+  saveBookingRoom?: (bookingData: IBooking) => void;
 }
 
 /**
@@ -192,7 +192,7 @@ interface IModalFormBookProps {
   /**
    * Información de la reserva a registrar
    */
-  saveBookingRoom?: (bookingData: IBookingData) => void;
+  saveBookingRoom?: (bookingData: IBooking) => void;
   /**
    * Información de la habitación
    */

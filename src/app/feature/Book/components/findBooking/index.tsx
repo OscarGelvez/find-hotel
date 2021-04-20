@@ -1,11 +1,11 @@
-import { IFieldsFormFindBooking } from 'app/feature/Rooms/models/Room';
+import { IFieldsFormFindBooking } from 'app/feature/Book/models/Booking';
 import { Button } from 'app/shared/components/Button';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
-interface IBookingDetail {
+interface IFindBookingForm {
   onFindBooking: (findBookingData: IFieldsFormFindBooking) => void;
 }
 
@@ -23,7 +23,9 @@ const validationSchema = Yup.object().shape<IFieldsFormFindBooking>({
   identification: Yup.string().required('Necesitamos tu identificación'),
 });
 
-export const BookingDetail: React.FC<IBookingDetail> = ({ onFindBooking }) => {
+export const FindBookingForm: React.FC<IFindBookingForm> = ({
+  onFindBooking,
+}) => {
   const handleSubmit = (
     values: IFieldsFormFindBooking,
     { resetForm }: FormikHelpers<IFieldsFormFindBooking>
@@ -128,6 +130,6 @@ export const BookingDetail: React.FC<IBookingDetail> = ({ onFindBooking }) => {
   );
 };
 
-BookingDetail.propTypes = {
+FindBookingForm.propTypes = {
   onFindBooking: PropTypes.func.isRequired,
 };

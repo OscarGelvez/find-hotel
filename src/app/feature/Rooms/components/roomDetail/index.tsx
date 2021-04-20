@@ -2,7 +2,8 @@ import { CardInformation } from 'app/shared/components/CardInformation';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
-import { IBookingData, IRoom } from '../../models/Room';
+import { IRoom } from '../../models/Room';
+import { IBooking } from '../../../Book/models/Booking';
 
 export interface IRoomDetailViewProps {
   /**
@@ -16,7 +17,7 @@ export interface IRoomDetailViewProps {
   /**
    * Función encargada de registrar la reservación
    */
-  saveBookingRoom?: (bookingData: IBookingData) => void;
+  saveBookingRoom?: (bookingData: IBooking) => void;
 }
 
 export const RoomDetailView: React.FC<IRoomDetailViewProps> = ({

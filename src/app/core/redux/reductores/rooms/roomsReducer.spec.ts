@@ -1,34 +1,11 @@
 import { IRoom } from '../../../../feature/Rooms/models/Room';
-import {
-  bookingRoomSaved,
-  listingRooms,
-  loadDetailRoom,
-} from '../../actions/rooms/ActionsRooms';
+import { listingRooms, loadDetailRoom } from '../../actions/rooms/ActionsRooms';
+import { bookingRoomSaved } from '../../actions/bookings/ActionBookings';
 import { IStateRooms } from '../../modelo/IStateRooms';
 import roomsReducers from './roomsReducers';
+import { roomInfo } from '../../../../shared/utils/data';
 
-const newRoom: IRoom = {
-  id: 50,
-  title: 'Suite full. Caroline',
-  image: 'https://static.abc.es/Media/201504/27/hotel12--644x362.jpg',
-  hotel: {
-    id: 1,
-    name: 'Gold Hotel 5',
-    address: 'Calle 54 # 56 -32 Av Libre',
-    stars: 4,
-    description:
-      'Hotel con ambiente familiar, increible opción. Muchas comodidades',
-    score: 8.7,
-  },
-  value: '154.000',
-  ac: 'Y',
-  parking: 'Y',
-  available_from: '2021-04-13',
-  available_until: '2021-04-30',
-  wifi: 'Y',
-  capacity: 1,
-  description: 'Baño privado, cama doble, con nevera, Wifi, TV.',
-};
+const newRoom: IRoom = roomInfo;
 
 describe('Reductor de habitaciones', () => {
   it('debería retornar todas las habitaciones obtenidas', () => {
