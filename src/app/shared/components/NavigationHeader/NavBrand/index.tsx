@@ -10,12 +10,12 @@ interface INavBrandProps {
 }
 
 export const NavBrand: React.FC<INavBrandProps> = ({ imgSrc, text }) => (
-  <BrandDiv>
-    <Link to="/" replace={true}>
+  <BrandDiv data-testid="div-brand">
+    <Link data-testid="link-brand" to="/" replace={true}>
       {imgSrc ? (
-        <LogoImg src={imgSrc} alt={text}></LogoImg>
+        <LogoImg data-testid="image-brand" src={imgSrc} alt={text}></LogoImg>
       ) : (
-        <LogoSpan>{text}</LogoSpan>
+        <LogoSpan data-testid="text-brand">{text}</LogoSpan>
       )}
     </Link>
   </BrandDiv>

@@ -10,8 +10,8 @@ interface INavItemProps {
 }
 
 export const NavItem: React.FC<INavItemProps> = ({ label, to }) => (
-  <NavItemDiv>
-    <Link to={to} replace={true}>
+  <NavItemDiv data-testid="nav-item">
+    <Link data-testid="link-nav-item" to={to} replace={true}>
       {label}
     </Link>
   </NavItemDiv>

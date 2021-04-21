@@ -1,6 +1,5 @@
 import {
   IActionTypesRooms,
-  // BOOKING_ROOM_SAVED,
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
 } from '../../actions/rooms/ActionTypesRooms';
@@ -30,12 +29,6 @@ export default function (
         selectedRoomId: roomId,
       };
     }
-    // case BOOKING_ROOM_SAVED: {
-    //   return {
-    //     ...state,
-    //     selectedRoomId: -1,
-    //   };
-    // }
 
     default:
       return state;

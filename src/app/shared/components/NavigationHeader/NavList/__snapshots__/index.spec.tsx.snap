@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente NavList cuando se envían items 1`] = `
+<ul
+  className="sc-AxiKw jmqPVm"
+  data-testid="nav-list"
+>
+  <li
+    data-testid="nav-item-li"
+  >
+    <div
+      className="sc-AxirZ jxvKur"
+      data-testid="nav-item"
+    >
+      <a
+        className="sc-AxjAm jqjyPd"
+        data-testid="link-nav-item"
+        href="/rooms"
+        onClick={[Function]}
+      >
+        Habitaciones
+      </a>
+    </div>
+  </li>
+  <li
+    data-testid="nav-item-li"
+  >
+    <div
+      className="sc-AxirZ jxvKur"
+      data-testid="nav-item"
+    >
+      <a
+        className="sc-AxjAm jqjyPd"
+        data-testid="link-nav-item"
+        href="/bookings"
+        onClick={[Function]}
+      >
+        Reservas
+      </a>
+    </div>
+  </li>
+</ul>
+`;

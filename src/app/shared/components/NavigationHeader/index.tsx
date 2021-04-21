@@ -11,7 +11,7 @@ export const NavigationHeader: React.FC = () => {
     { label: 'Reservas', url: '/booking' },
   ];
   return (
-    <HeaderNav>
+    <HeaderNav data-testid="div-header-nav">
       <NavBrand imgSrc={LogoCeiba} text="Find Hotel"></NavBrand>
       <NavList items={routes} />
     </HeaderNav>

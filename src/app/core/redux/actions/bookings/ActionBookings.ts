@@ -9,8 +9,16 @@ import {
   BOOKING_FINDED,
   BOOKING_ROOM_SAVED,
   BOOKING_SELECTED_DELETE,
+  DEFAULT_STATE,
   IActionTypesBookings,
 } from './ActionTypesBookings';
+
+export function defaultState(id: number): IActionTypesBookings {
+  return {
+    type: DEFAULT_STATE,
+    payload: id,
+  };
+}
 
 export function bookingRoomSaved(roomId: number): IActionTypesBookings {
   return {

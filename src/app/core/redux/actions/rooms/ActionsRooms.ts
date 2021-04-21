@@ -2,10 +2,18 @@ import { RoomsRepository } from 'app/core/api/rooms.repository';
 import { IFieldsForm, IRoom } from 'app/feature/Rooms/models/Room';
 
 import {
+  DEFAULT_STATE,
   IActionTypesRooms,
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
 } from './ActionTypesRooms';
+
+export function defaultState(id: number): IActionTypesRooms {
+  return {
+    type: DEFAULT_STATE,
+    payload: id,
+  };
+}
 
 export function listingRooms(rooms: Array<IRoom>): IActionTypesRooms {
   return {

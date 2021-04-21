@@ -1,13 +1,26 @@
 import { IRoom } from '../../../../feature/Rooms/models/Room';
 import { roomInfo } from '../../../../shared/utils/data';
-import { bookingRoomSaved } from '../../actions/bookings/ActionBookings';
-import { listingRooms, loadDetailRoom } from '../../actions/rooms/ActionsRooms';
+import {
+  defaultState,
+  listingRooms,
+  loadDetailRoom,
+} from '../../actions/rooms/ActionsRooms';
 import { IStateRooms } from '../../modelo/IStateRooms';
 import roomsReducers from './roomsReducers';
 
 const newRoom: IRoom = roomInfo;
 
 describe('Reductor de habitaciones', () => {
+  it('debería retornar el estado por defecto', () => {
+    const initialState: IStateRooms = {
+      listRooms: [],
+      selectedRoomId: -1,
+    };
+
+    const newState = roomsReducers(initialState, defaultState(0));
+    expect(newState).toStrictEqual(initialState);
+  });
+
   it('debería retornar todas las habitaciones obtenidas', () => {
     const initialState: IStateRooms = {
       listRooms: [],
@@ -37,21 +50,6 @@ describe('Reductor de habitaciones', () => {
       initialState,
       loadDetailRoom(selectedRoomId)
     );
-    expect(newState).toStrictEqual(expectedState);
-  });
-
-  it('debería setear por defecto el valor de la habitación seleccionada', () => {
-    const roomId = 5;
-    const initialState: IStateRooms = {
-      listRooms: [],
-      selectedRoomId: 56,
-    };
-    const expectedState: IStateRooms = {
-      ...initialState,
-      selectedRoomId: 56,
-    };
-
-    const newState = roomsReducers(initialState, bookingRoomSaved(roomId));
     expect(newState).toStrictEqual(expectedState);
   });
 });

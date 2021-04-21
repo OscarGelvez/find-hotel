@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente NavItem cuando se envía información 1`] = `
+<div
+  className="sc-AxirZ jxvKur"
+  data-testid="nav-item"
+>
+  <a
+    className="sc-AxjAm jqjyPd"
+    data-testid="link-nav-item"
+    href="/reservas"
+    onClick={[Function]}
+  >
+    Reservas
+  </a>
+</div>
+`;

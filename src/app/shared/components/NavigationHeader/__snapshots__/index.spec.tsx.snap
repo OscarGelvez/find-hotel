@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente NavigationHeader cuando se envían items 1`] = `
+<nav
+  className="sc-Axmtr eubyYC"
+  data-testid="div-header-nav"
+>
+  <div
+    className="sc-AxirZ imQSvU"
+    data-testid="div-brand"
+  >
+    <a
+      className="sc-AxjAm jqjyPd"
+      data-testid="link-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt="Find Hotel"
+        className="sc-AxiKw iunsIC"
+        data-testid="image-brand"
+        src="logoHotel.png"
+      />
+    </a>
+  </div>
+  <ul
+    className="sc-AxheI dkiJtT"
+    data-testid="nav-list"
+  >
+    <li
+      data-testid="nav-item-li"
+    >
+      <div
+        className="sc-AxgMl cuEAew"
+        data-testid="nav-item"
+      >
+        <a
+          className="sc-AxjAm jqjyPd"
+          data-testid="link-nav-item"
+          href="/"
+          onClick={[Function]}
+        >
+          Habitaciones
+        </a>
+      </div>
+    </li>
+    <li
+      data-testid="nav-item-li"
+    >
+      <div
+        className="sc-AxgMl cuEAew"
+        data-testid="nav-item"
+      >
+        <a
+          className="sc-AxjAm jqjyPd"
+          data-testid="link-nav-item"
+          href="/booking"
+          onClick={[Function]}
+        >
+          Reservas
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>
+`;

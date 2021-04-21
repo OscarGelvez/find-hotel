@@ -10,9 +10,9 @@ interface INavListProps {
 
 export const NavList: React.FC<INavListProps> = ({ items }) => {
   return (
-    <NavListUl>
+    <NavListUl data-testid="nav-list">
       {items.map(({ label, url }) => (
-        <li key={label}>
+        <li key={label} data-testid="nav-item-li">
           <NavItem label={label} to={url} />
         </li>
       ))}

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente NavBrand cuando se envía imagen 1`] = `
+<div
+  className="sc-AxirZ imQSvU"
+  data-testid="div-brand"
+>
+  <a
+    className="sc-AxjAm jqjyPd"
+    data-testid="link-brand"
+    href="/"
+    onClick={[Function]}
+  >
+    <img
+      alt="Text or logo header"
+      className="sc-AxiKw iunsIC"
+      data-testid="image-brand"
+      src="htpp://image.com/img.png"
+    />
+  </a>
+</div>
+`;
+
+exports[`Compara snapshot del componente NavBrand cuando se envía texto 1`] = `
+<div
+  className="sc-AxirZ imQSvU"
+  data-testid="div-brand"
+>
+  <a
+    className="sc-AxjAm jqjyPd"
+    data-testid="link-brand"
+    href="/"
+    onClick={[Function]}
+  >
+    <span
+      className="sc-AxhCb cqzvYV"
+      data-testid="text-brand"
+    >
+      Text or logo header
+    </span>
+  </a>
+</div>
+`;

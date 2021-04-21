@@ -1,10 +1,15 @@
 import { IBooking } from 'app/feature/Book/models/Booking';
 
+export const DEFAULT_STATE = 'DEFAULT_STATE';
 export const BOOKING_ROOM_SAVED = 'RESERVA_REGISTRADA';
 export const BOOKING_FINDED = 'RESERVAS_ENCONTRADAS';
-
 export const BOOKING_DELETED = 'RESERVA_ELIMINADA';
 export const BOOKING_SELECTED_DELETE = 'RESERVA_A_ELIMINAR';
+
+interface IDefaultState {
+  type: typeof DEFAULT_STATE;
+  payload: number;
+}
 
 interface IBookingRoomSaved {
   type: typeof BOOKING_ROOM_SAVED;
@@ -30,4 +35,5 @@ export type IActionTypesBookings =
   | IBookingRoomSaved
   | IBookingRoomFinded
   | IBookingDeleted
-  | ISelectDeleteId;
+  | ISelectDeleteId
+  | IDefaultState;
