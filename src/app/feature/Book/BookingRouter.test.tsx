@@ -1,8 +1,9 @@
+import { render, screen } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
 import React from 'react';
 import { Router } from 'react-router-dom';
+
 import { BookingRouter } from './BookingRouter';
-import { createMemoryHistory } from 'history';
-import { render, screen } from '@testing-library/react';
 
 test('Prueba a componente Router', () => {
   const history = createMemoryHistory();
