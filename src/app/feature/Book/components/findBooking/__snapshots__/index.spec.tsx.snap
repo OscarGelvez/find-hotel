@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshots del componente FindBookingForm 1`] = `
+<div
+  className="card-rooms"
+  data-testid="find-bookings"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="card filter-area "
+    >
+      <h4
+        className="mt-3"
+      >
+        Encuentra tu reserva
+      </h4>
+      <div
+        className="col"
+      >
+        <form
+          action="#"
+          data-testid="form-find-bookings"
+          onReset={[Function]}
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group row mb-3 mt-3"
+          >
+            <div
+              className=" col-12 col-md-4"
+            >
+              <label
+                className="col-12 col-form-label"
+                htmlFor="email"
+              >
+                Correo electrónico*
+              </label>
+              <input
+                className="form-control col-12"
+                data-testid="form-bookings-email"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="eje: joe@email.com"
+                type="email"
+                value=""
+              />
+            </div>
+            <div
+              className="col-12 col-md-4"
+            >
+              <label
+                className="col-12 col-form-label"
+                htmlFor="identification_type"
+              >
+                Tipo de identificación*
+              </label>
+              <select
+                aria-label=".form-select"
+                className=" d-block w-100"
+                data-testid="form-bookings-identification_type"
+                id="identification_type"
+                name="identification_type"
+                onBlur={[Function]}
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  value=""
+                >
+                  Seleccione
+                </option>
+                <option
+                  value="1"
+                >
+                  Cédula de ciudadanía
+                </option>
+                <option
+                  value="2"
+                >
+                  Cédula de extranjeria
+                </option>
+                <option
+                  value="3"
+                >
+                  Nit
+                </option>
+                <option
+                  value="4"
+                >
+                  Pasaporte
+                </option>
+              </select>
+            </div>
+            <div
+              className=" col-12 col-md-4"
+            >
+              <label
+                className="col-12 col-form-label"
+                htmlFor="identification"
+              >
+                Identificación*
+              </label>
+              <input
+                className="form-control"
+                data-testid="form-bookings-identification"
+                id="identification"
+                name="identification"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="eje: 60830147"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="mt-4 text-center"
+            >
+              <button
+                className="sc-AxjAm cYJbNq btn w-75"
+                data-testid="form-bookings-btn-submit"
+                type="submit"
+              >
+                Buscar
+              </button>
+            </div>
+            <div
+              className="text-center mb-2 mt-1"
+            >
+              <button
+                className="sc-AxjAm cYJbNq button-link"
+                data-testid="form-bookings-btn-reset"
+                type="reset"
+              >
+                limpiar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

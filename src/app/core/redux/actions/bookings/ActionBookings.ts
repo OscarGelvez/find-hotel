@@ -1,11 +1,14 @@
 import { BookingsRepository } from 'app/core/api/bookings.repository';
+
 import {
   IBooking,
   IFieldsFormFindBooking,
 } from '../../../../feature/Book/models/Booking';
 import {
+  BOOKING_DELETED,
   BOOKING_FINDED,
   BOOKING_ROOM_SAVED,
+  BOOKING_SELECTED_DELETE,
   IActionTypesBookings,
 } from './ActionTypesBookings';
 
@@ -22,6 +25,20 @@ export function bookingFinded(
   return {
     type: BOOKING_FINDED,
     payload: bookingsFinded,
+  };
+}
+
+export function selectedDeleteId(responseCode: number): IActionTypesBookings {
+  return {
+    type: BOOKING_SELECTED_DELETE,
+    payload: responseCode,
+  };
+}
+
+export function bookingDeleted(responseCode: number): IActionTypesBookings {
+  return {
+    type: BOOKING_DELETED,
+    payload: responseCode,
   };
 }
 
@@ -43,8 +60,13 @@ export function findBooking(findBookingData: IFieldsFormFindBooking) {
 
 export function cancelBooking(bookingId: number) {
   return function (dispacth: any) {
-    BookingsRepository.cancelBooking(bookingId).then((response: any) => {
-      return dispacth(bookingFinded(response.data));
-    });
+    dispacth(selectedDeleteId(bookingId));
+    BookingsRepository.cancelBooking(bookingId)
+      .then((response) => {
+        return dispacth(bookingDeleted(0));
+      })
+      .catch((err) => {
+        return dispacth(bookingDeleted(1));
+      });
   };
 }

@@ -21,7 +21,7 @@ export const Booking: React.FC<IBookingsProps> = ({
   cancelBooking,
 }) => {
   return (
-    <DivContainer data-testid="room">
+    <DivContainer data-testid="book">
       <FindBookingForm onFindBooking={findBooking} />
       <ListBookings
         listBookingsFinded={listBookingsFinded}

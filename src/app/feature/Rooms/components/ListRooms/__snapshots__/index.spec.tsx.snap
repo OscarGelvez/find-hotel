@@ -68,6 +68,7 @@ exports[`Compara snapshot del componente ListRooms cuando hay habitaciones 1`] =
                     <button
                       className="btn btn-primary btn-book w-100"
                       data-testid="form-button-load-detail"
+                      id="btn-select-detail"
                       onClick={[Function]}
                       type="button"
                     >

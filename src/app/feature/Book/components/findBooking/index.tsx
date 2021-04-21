@@ -35,13 +35,13 @@ export const FindBookingForm: React.FC<IFindBookingForm> = ({
       identification_type: values.identification_type,
       identification: values.identification,
     });
-    resetForm();
   };
   return (
     <>
-      <div data-testid="find-rooms" className="card-rooms">
+      <div data-testid="find-bookings" className="card-rooms">
         <div className="row">
           <div className="card filter-area ">
+            <h4 className="mt-3">Encuentra tu reserva</h4>
             <div className="col">
               <Formik
                 initialValues={initialValues}
@@ -49,7 +49,7 @@ export const FindBookingForm: React.FC<IFindBookingForm> = ({
                 onSubmit={handleSubmit}
               >
                 {({ errors, touched }) => (
-                  <Form data-testid="form-find-rooms">
+                  <Form data-testid="form-find-bookings">
                     <div className="form-group row mb-3 mt-3">
                       <div className=" col-12 col-md-4">
                         <label
@@ -60,6 +60,7 @@ export const FindBookingForm: React.FC<IFindBookingForm> = ({
                         </label>
                         <Field
                           name="email"
+                          data-testid="form-bookings-email"
                           type="email"
                           className="form-control col-12"
                           placeholder="eje: joe@email.com"
@@ -78,6 +79,7 @@ export const FindBookingForm: React.FC<IFindBookingForm> = ({
                         <Field
                           as="select"
                           className=" d-block w-100"
+                          data-testid="form-bookings-identification_type"
                           aria-label=".form-select"
                           id="identification_type"
                           name="identification_type"
@@ -104,7 +106,9 @@ export const FindBookingForm: React.FC<IFindBookingForm> = ({
                         </label>
                         <Field
                           name="identification"
+                          id="identification"
                           className="form-control"
+                          data-testid="form-bookings-identification"
                           placeholder="eje: 60830147"
                         />
                         {errors.identification && touched.identification ? (
@@ -114,10 +118,25 @@ export const FindBookingForm: React.FC<IFindBookingForm> = ({
                         ) : null}
                       </div>
                     </div>
-                    <div className="row text-center">
-                      <Button type="submit" className="btn ">
-                        Buscar
-                      </Button>
+                    <div className="row">
+                      <div className="mt-4 text-center">
+                        <Button
+                          type="submit"
+                          className="btn w-75"
+                          data-testid="form-bookings-btn-submit"
+                        >
+                          Buscar
+                        </Button>
+                      </div>
+                      <div className="text-center mb-2 mt-1">
+                        <Button
+                          className="button-link"
+                          data-testid="form-bookings-btn-reset"
+                          type="reset"
+                        >
+                          limpiar
+                        </Button>
+                      </div>
                     </div>
                   </Form>
                 )}

@@ -1,5 +1,9 @@
+import { IRoom } from 'app/feature/Rooms/models/Room';
+import { CardInformation } from 'app/shared/components/CardInformation';
+import { roomShape } from 'app/shared/components/CardInformation/model';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 import { IBooking } from '../../models/Booking';
 
 export interface IListBookingsProps {
@@ -17,19 +21,25 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
   listBookingsFinded,
   cancelBooking,
 }) => {
-  console.log(listBookingsFinded);
+  let initial: IRoom | undefined;
+  const [infoModal, setInfoModal] = React.useState(initial);
+
+  const setDataModal = (data: IRoom) => {
+    setInfoModal(data);
+  };
+
   return (
     <>
-      <div data-testid="list-rooms" className="card-rooms">
+      <div data-testid="list-bookings" className="card-rooms">
         <div className="row pt-5">
           <div className="col">
-            {listBookingsFinded &&
-              listBookingsFinded.length > 0 &&
+            {listBookingsFinded && listBookingsFinded.length > 0 ? (
               listBookingsFinded.map((data, index) => {
                 return (
                   <div
-                    data-testid="card-information"
+                    data-testid="card-information-bookigns"
                     className="card room-item"
+                    key={index}
                   >
                     <div className="card-header book-item-header ">
                       <h3>{data.roomData.hotel.name}</h3>
@@ -39,57 +49,65 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
                         <div className="col-12 col-md-6 col-lg-3">
                           <h5>A nombre de:</h5>
                           <span>{data.bookData.name}</span>
+
+                          <h5 className="mt-2">Ingreso:</h5>
+                          <span>{data.roomData.available_from}</span>
                         </div>
                         <div className="col-12 col-md-6 col-lg-3">
                           <h5>Habitación:</h5>
                           <span>{data.roomData.title}</span>
+                          <h5 className="mt-2">Salida:</h5>
+                          <span>{data.roomData.available_until}</span>
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-3">
                           <h5>Valor:</h5>
                           <span>{data.roomData.value}</span>
+                          <h5 className="mt-2">Camas:</h5>
+                          <span>{data.roomData.capacity}</span>
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-3">
+                          <ModalDetailBook detailRoom={infoModal} />
                           <button
                             type="button"
                             className="btn btn-primary btn-book w-100"
-                            data-testid="form-button-load-detail"
-                            onClick={() => null}
+                            data-testid="list-book-btn-detail"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalDetailBook"
+                            onClick={() => setDataModal(data.roomData)}
                           >
                             <i className="fas fa-check ml-3"></i>
                             {' Detalles'}
                           </button>
-                        </div>
-
-                        <div className="col-12 col-md-6 col-lg-3">
-                          <h5>Camas:</h5>
-                          <span>{data.roomData.capacity}</span>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-3">
-                          <h5>Ingreso:</h5>
-                          <span>{data.roomData.available_from}</span>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-3">
-                          <h5>Salida:</h5>
-                          <span>{data.roomData.available_until}</span>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-3">
                           <button
                             type="button"
-                            className="btn btn-danger btn-book w-100"
-                            data-testid="form-button-load-detail"
-                            onClick={() => null}
+                            className="btn btn-danger btn-book w-100 mt-3"
+                            data-testid="list-book-btn-cancel"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalDeleteBook"
+                            onClick={() => setDataModal(data.roomData)}
                           >
-                            <i className="fas fa-times-check ml-3"></i>
+                            <i className="fas fa-times ml-3"></i>
                             {' Cancelar'}
                           </button>
+                          <ModalDeleteBook
+                            detailRoom={infoModal}
+                            confirmDelete={() =>
+                              data.id && cancelBooking(data.id)
+                            }
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 );
-              })}
+              })
+            ) : (
+              <div className="text-center">
+                <h5>No hay reservas para mostrar</h5>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -100,4 +118,121 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
 ListBookings.propTypes = {
   listBookingsFinded: PropTypes.array.isRequired,
   cancelBooking: PropTypes.func.isRequired,
+};
+
+interface IDetailBookProps {
+  /**
+   * Lista de reservaciones
+   */
+  detailRoom?: IRoom;
+}
+const ModalDetailBook: React.FC<IDetailBookProps> = ({ detailRoom }) => {
+  return (
+    <>
+      <div
+        className="modal fade"
+        id="modalDetailBook"
+        data-testid="modal-detail-book"
+        aria-labelledby="modalDetailBookLabel"
+      >
+        <div className="modal-dialog modal-xl">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="modalDetailBookLabel">
+                Detalles de tu reserva
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              {detailRoom && (
+                <CardInformation
+                  data={detailRoom}
+                  selectedRoom={detailRoom.id}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+ModalDetailBook.propTypes = {
+  detailRoom: PropTypes.shape(roomShape),
+};
+
+interface IDeleteBookProps {
+  /**
+   * Lista de reservaciones
+   */
+  detailRoom?: IRoom;
+  /**
+   * Confirma eliminación de la reserva
+   */
+  confirmDelete: () => void;
+}
+const ModalDeleteBook: React.FC<IDeleteBookProps> = ({
+  detailRoom,
+  confirmDelete,
+}) => {
+  return (
+    <>
+      <div
+        className="modal fade"
+        id="modalDeleteBook"
+        data-testid="modal-book-delete"
+        aria-labelledby="modalDeleteBookLabel"
+      >
+        <div className="modal-dialog modal-xl">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="modalDeleteBookLabel">
+                Eliminar reserva
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              {detailRoom && (
+                <h5>{`¿Está seguro de eliminar la reserva de ${detailRoom.title} en ${detailRoom.hotel.name}?`}</h5>
+              )}
+            </div>
+            <div className="modal-footer">
+              <div className="d-flex justify-content-between w-100">
+                <button
+                  type="button"
+                  className="btn btn-secondary w-25"
+                  data-bs-dismiss="modal"
+                >
+                  No
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-danger w-25"
+                  onClick={confirmDelete}
+                >
+                  Sí, eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+ModalDeleteBook.propTypes = {
+  detailRoom: PropTypes.shape(roomShape),
+  confirmDelete: PropTypes.func.isRequired,
 };

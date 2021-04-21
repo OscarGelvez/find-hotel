@@ -2,8 +2,8 @@ import { CardInformation } from 'app/shared/components/CardInformation';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
-import { IRoom } from '../../models/Room';
 import { IBooking } from '../../../Book/models/Booking';
+import { IRoom } from '../../models/Room';
 
 export interface IRoomDetailViewProps {
   /**

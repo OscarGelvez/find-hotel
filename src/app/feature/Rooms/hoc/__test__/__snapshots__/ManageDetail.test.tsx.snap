@@ -79,7 +79,6 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                          Reservar
                       </button>
                       <div
-                        aria-hidden="true"
                         aria-labelledby="modalFormBookLabel"
                         className="modal fade"
                         id="modalFormBook"

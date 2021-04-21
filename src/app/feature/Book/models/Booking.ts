@@ -28,6 +28,10 @@ export interface IBooking {
    * Objeto con la información el usuari oque reserva
    */
   bookData: IFieldsFormBooking;
+  /**
+   * Identificador en base de datos
+   */
+  id?: number;
 }
 
 export interface IFieldsFormFindBooking {

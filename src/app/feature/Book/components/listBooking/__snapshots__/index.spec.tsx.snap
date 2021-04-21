@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente ListBookings cuando hay reservas 1`] = `
+<div
+  className="card-rooms"
+  data-testid="list-bookings"
+>
+  <div
+    className="row pt-5"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="card room-item"
+        data-testid="card-information-bookigns"
+      >
+        <div
+          className="card-header book-item-header "
+        >
+          <h3>
+            Cencor hotel
+          </h3>
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12 col-md-6 col-lg-3"
+            >
+              <h5>
+                A nombre de:
+              </h5>
+              <span>
+                oscar andres
+              </span>
+              <h5
+                className="mt-2"
+              >
+                Ingreso:
+              </h5>
+              <span>
+                2021-05-02
+              </span>
+            </div>
+            <div
+              className="col-12 col-md-6 col-lg-3"
+            >
+              <h5>
+                Habitación:
+              </h5>
+              <span>
+                Peace and Love
+              </span>
+              <h5
+                className="mt-2"
+              >
+                Salida:
+              </h5>
+              <span>
+                2021-05-04
+              </span>
+            </div>
+            <div
+              className="col-12 col-md-6 col-lg-3"
+            >
+              <h5>
+                Valor:
+              </h5>
+              <span>
+                56.000
+              </span>
+              <h5
+                className="mt-2"
+              >
+                Camas:
+              </h5>
+              <span>
+                1
+              </span>
+            </div>
+            <div
+              className="col-12 col-md-6 col-lg-3"
+            >
+              <div
+                aria-labelledby="modalDetailBookLabel"
+                className="modal fade"
+                data-testid="modal-detail-book"
+                id="modalDetailBook"
+              >
+                <div
+                  className="modal-dialog modal-xl"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <div
+                      className="modal-header"
+                    >
+                      <h5
+                        className="modal-title"
+                        id="modalDetailBookLabel"
+                      >
+                        Detalles de tu reserva
+                      </h5>
+                      <button
+                        aria-label="Close"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        type="button"
+                      />
+                    </div>
+                    <div
+                      className="modal-body"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                className="btn btn-primary btn-book w-100"
+                data-bs-target="#modalDetailBook"
+                data-bs-toggle="modal"
+                data-testid="list-book-btn-detail"
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="fas fa-check ml-3"
+                />
+                 Detalles
+              </button>
+              <button
+                className="btn btn-danger btn-book w-100 mt-3"
+                data-bs-target="#modalDeleteBook"
+                data-bs-toggle="modal"
+                data-testid="list-book-btn-cancel"
+                onClick={[Function]}
+                type="button"
+              >
+                <i
+                  className="fas fa-times ml-3"
+                />
+                 Cancelar
+              </button>
+              <div
+                aria-labelledby="modalDeleteBookLabel"
+                className="modal fade"
+                data-testid="modal-book-delete"
+                id="modalDeleteBook"
+              >
+                <div
+                  className="modal-dialog modal-xl"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <div
+                      className="modal-header"
+                    >
+                      <h5
+                        className="modal-title"
+                        id="modalDeleteBookLabel"
+                      >
+                        Eliminar reserva
+                      </h5>
+                      <button
+                        aria-label="Close"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        type="button"
+                      />
+                    </div>
+                    <div
+                      className="modal-body"
+                    />
+                    <div
+                      className="modal-footer"
+                    >
+                      <div
+                        className="d-flex justify-content-between w-100"
+                      >
+                        <button
+                          className="btn btn-secondary w-25"
+                          data-bs-dismiss="modal"
+                          type="button"
+                        >
+                          No
+                        </button>
+                        <button
+                          className="btn btn-danger w-25"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Sí, eliminar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Compara snapshot del componente ListBookings cuando no hay reservas 1`] = `
+<div
+  className="card-rooms"
+  data-testid="list-bookings"
+>
+  <div
+    className="row pt-5"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="text-center"
+      >
+        <h5>
+          No hay reservas para mostrar
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+`;

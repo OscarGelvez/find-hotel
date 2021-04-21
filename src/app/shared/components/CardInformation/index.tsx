@@ -4,13 +4,14 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
-import { IRoom } from '../../../feature/Rooms/models/Room';
 import {
   IBooking,
   IFieldsFormBooking,
 } from '../../../feature/Book/models/Booking';
+import { IRoom } from '../../../feature/Rooms/models/Room';
 import { CustomField } from '../CustomFieldIcon';
 import { Link } from '../Link';
+import { roomShape } from './model';
 
 interface ICardInformationProps {
   /**
@@ -31,30 +32,6 @@ interface ICardInformationProps {
   saveBookingRoom?: (bookingData: IBooking) => void;
 }
 
-/**
- * Shape Objeto habitación
- */
-const roomShape = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  hotel: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
-    stars: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-    score: PropTypes.number.isRequired,
-  }).isRequired,
-  value: PropTypes.string.isRequired,
-  ac: PropTypes.string.isRequired,
-  parking: PropTypes.string.isRequired,
-  available_from: PropTypes.string.isRequired,
-  available_until: PropTypes.string.isRequired,
-  wifi: PropTypes.string.isRequired,
-  capacity: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
-};
 /**
  * Componente encargado de renderizar Card con información de la habitación
  * @param param0
@@ -89,7 +66,7 @@ export const CardInformation: React.FC<ICardInformationProps> = ({
                 <h5 className="card-title">{data.title}</h5>
               </div>
               <div className="col-12 col-lg-4">
-                {selectedRoom && selectedRoom !== -1 ? (
+                {saveBookingRoom && selectedRoom && selectedRoom !== -1 ? (
                   <>
                     <ModalFormBook
                       saveBookingRoom={saveBookingRoom}
@@ -97,17 +74,22 @@ export const CardInformation: React.FC<ICardInformationProps> = ({
                     />
                   </>
                 ) : (
-                  <Link to={'/rooms/detail'}>
-                    <button
-                      type="button"
-                      className="btn btn-primary btn-book w-100"
-                      data-testid="form-button-load-detail"
-                      onClick={() => loadDetailRoom && loadDetailRoom(data.id)}
-                    >
-                      <i className="far fa-calendar-check ml-3"></i>
-                      {' Seleccionar'}
-                    </button>
-                  </Link>
+                  loadDetailRoom && (
+                    <Link to={'/rooms/detail'}>
+                      <button
+                        type="button"
+                        id="btn-select-detail"
+                        className="btn btn-primary btn-book w-100"
+                        data-testid="form-button-load-detail"
+                        onClick={() =>
+                          loadDetailRoom && loadDetailRoom(data.id)
+                        }
+                      >
+                        <i className="far fa-calendar-check ml-3"></i>
+                        {' Seleccionar'}
+                      </button>
+                    </Link>
+                  )
                 )}
               </div>
               <div className="col-12 col-md-12">
@@ -242,9 +224,13 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
         },
         roomData: dataRoom,
       });
+    hideModal();
     resetForm();
   };
 
+  const hideModal = () => {
+    $('#modalFormBook').modal('hide');
+  };
   return (
     <>
       <div data-testid="modal-form-book">
@@ -262,7 +248,6 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
           className="modal fade"
           id="modalFormBook"
           aria-labelledby="modalFormBookLabel"
-          aria-hidden="true"
         >
           <div className="modal-dialog">
             <div className="modal-content">

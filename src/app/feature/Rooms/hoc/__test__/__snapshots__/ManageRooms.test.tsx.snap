@@ -40,7 +40,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                   className="form-control"
                   data-testid="form-fromDate"
                   id="fromDate"
-                  min="2021-04-20"
+                  min="2021-04-21"
                   name="fromDate"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -62,7 +62,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                   className="form-control"
                   data-testid="form-untilDate"
                   id="untilDate"
-                  min="2021-04-21"
+                  min="2021-04-22"
                   name="untilDate"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -259,6 +259,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                       <button
                         className="btn btn-primary btn-book w-100"
                         data-testid="form-button-load-detail"
+                        id="btn-select-detail"
                         onClick={[Function]}
                         type="button"
                       >

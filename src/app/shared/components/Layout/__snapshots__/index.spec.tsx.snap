@@ -83,7 +83,6 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                            Reservar
                         </button>
                         <div
-                          aria-hidden="true"
                           aria-labelledby="modalFormBookLabel"
                           className="modal fade"
                           id="modalFormBook"

@@ -1,9 +1,9 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
+import { IBooking } from '../../../Book/models/Booking';
 import { RoomDetailView } from '../../components/roomDetail';
 import { IRoom } from '../../models/Room';
-import { IBooking } from '../../../Book/models/Booking';
 import { DivContainer } from './styles';
 
 interface IRoomsDetailProps {

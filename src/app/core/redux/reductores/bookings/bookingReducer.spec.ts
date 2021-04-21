@@ -1,6 +1,6 @@
 import { IRoom } from '../../../../feature/Rooms/models/Room';
-import { listingRooms, loadDetailRoom } from '../../actions/rooms/ActionsRooms';
 import { bookingRoomSaved } from '../../actions/bookings/ActionBookings';
+import { listingRooms, loadDetailRoom } from '../../actions/rooms/ActionsRooms';
 import { IStateBookings } from '../../modelo/IStateBookings';
 import bookingReducer from './bookingReducer';
 

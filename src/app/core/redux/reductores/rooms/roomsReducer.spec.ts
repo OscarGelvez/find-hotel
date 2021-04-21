@@ -1,9 +1,9 @@
 import { IRoom } from '../../../../feature/Rooms/models/Room';
-import { listingRooms, loadDetailRoom } from '../../actions/rooms/ActionsRooms';
+import { roomInfo } from '../../../../shared/utils/data';
 import { bookingRoomSaved } from '../../actions/bookings/ActionBookings';
+import { listingRooms, loadDetailRoom } from '../../actions/rooms/ActionsRooms';
 import { IStateRooms } from '../../modelo/IStateRooms';
 import roomsReducers from './roomsReducers';
-import { roomInfo } from '../../../../shared/utils/data';
 
 const newRoom: IRoom = roomInfo;
 

@@ -65,7 +65,6 @@ exports[`Compara snapshot del componente CardInformation en modo detalle 1`] = `
                  Reservar
               </button>
               <div
-                aria-hidden="true"
                 aria-labelledby="modalFormBookLabel"
                 className="modal fade"
                 id="modalFormBook"
@@ -487,6 +486,7 @@ exports[`Compara snapshot del componente CardInformation en modo lista 1`] = `
               <button
                 className="btn btn-primary btn-book w-100"
                 data-testid="form-button-load-detail"
+                id="btn-select-detail"
                 onClick={[Function]}
                 type="button"
               >
