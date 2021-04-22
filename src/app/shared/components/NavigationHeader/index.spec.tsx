@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { cleanup, getAllByTestId, render } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -9,11 +9,6 @@ import renderer from 'react-test-renderer';
 import { NavigationHeader } from './index';
 
 afterEach(cleanup);
-
-const items = [
-  { label: 'Habitaciones', url: '/rooms' },
-  { label: 'Reservas', url: '/bookings' },
-];
 
 it('rederizar el componente NavigationHeader sin errores', () => {
   const div = document.createElement('div');
