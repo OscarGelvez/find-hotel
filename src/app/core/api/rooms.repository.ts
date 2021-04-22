@@ -75,19 +75,4 @@ export const RoomsRepository = {
    */
   findFilterRooms: (dataFilter: IFieldsForm) =>
     axiosIntance.get(`/rooms${getDataFilter(dataFilter)}`),
-  /**
-   * Almacena una reservación en base de datos
-   * @param bookingData datos de la reserva
-   * @returns mensaje de éxito
-   */
-  saveBookingRoom: (bookingData: IBooking) =>
-    axiosIntance.post('/booking', bookingData, {
-      headers: headers,
-    }),
-  /**
-   * Consulta una reservación hecha
-   * @returns arreglo de reservaciones
-   */
-  findBooking: (findBookingData: IFieldsFormFindBooking) =>
-    axiosIntance.get(`/booking${getFilterBook(findBookingData)}`),
 };

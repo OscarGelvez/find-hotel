@@ -52,17 +52,25 @@ export function bookingDeleted(responseCode: number): IActionTypesBookings {
 
 export function saveBookingRoom(bookingData: IBooking) {
   return function (dispacth: any) {
-    BookingsRepository.saveBookingRoom(bookingData).then((response: any) => {
-      return dispacth(bookingRoomSaved(response.data.id));
-    });
+    BookingsRepository.saveBookingRoom(bookingData)
+      .then((response: any) => {
+        return dispacth(bookingRoomSaved(response.data.id));
+      })
+      .catch((err) => {
+        return dispacth(bookingRoomSaved(-1));
+      });
   };
 }
 
 export function findBooking(findBookingData: IFieldsFormFindBooking) {
   return function (dispacth: any) {
-    BookingsRepository.findBooking(findBookingData).then((response: any) => {
-      return dispacth(bookingFinded(response.data));
-    });
+    BookingsRepository.findBooking(findBookingData)
+      .then((response: any) => {
+        return dispacth(bookingFinded(response.data));
+      })
+      .catch((err) => {
+        return dispacth(bookingFinded([]));
+      });
   };
 }
 
