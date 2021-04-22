@@ -67,6 +67,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                       className="btn btn-primary btn-book w-100"
                       data-bs-target="#modalFormBook"
                       data-bs-toggle="modal"
+                      data-testid="form-detail-button-book"
                       type="button"
                     >
                       <i
@@ -77,6 +78,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                     <div
                       aria-labelledby="modalFormBookLabel"
                       className="modal fade"
+                      data-testid="modal-book"
                       id="modalFormBook"
                     >
                       <div
@@ -106,6 +108,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                           >
                             <form
                               action="#"
+                              data-testid="modal-book-form"
                               onReset={[Function]}
                               onSubmit={[Function]}
                             >
@@ -123,6 +126,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                                   </label>
                                   <input
                                     className="form-control col-12"
+                                    data-testid="modal-book-form-name"
                                     name="name"
                                     onBlur={[Function]}
                                     onChange={[Function]}
@@ -141,6 +145,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                                   </label>
                                   <input
                                     className="form-control col-12"
+                                    data-testid="modal-book-form-email"
                                     name="email"
                                     onBlur={[Function]}
                                     onChange={[Function]}
@@ -165,6 +170,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                                   <select
                                     aria-label=".form-select-sm example"
                                     className=" d-block w-100"
+                                    data-testid="modal-book-form-identification-type"
                                     id="identification_type"
                                     name="identification_type"
                                     onBlur={[Function]}
@@ -209,6 +215,7 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                                   </label>
                                   <input
                                     className="form-control"
+                                    data-testid="modal-book-form-identification"
                                     name="identification"
                                     onBlur={[Function]}
                                     onChange={[Function]}
@@ -223,12 +230,14 @@ exports[`Compara snapshot del componente RoomDetailView 1`] = `
                                 <button
                                   className="btn btn-secondary"
                                   data-bs-dismiss="modal"
+                                  data-testid="modal-book-form-btn-cancel"
                                   type="button"
                                 >
                                   Cancelar
                                 </button>
                                 <button
                                   className="btn btn-primary"
+                                  data-testid="modal-book-form-btn-submit"
                                   type="submit"
                                 >
                                   Finalizar

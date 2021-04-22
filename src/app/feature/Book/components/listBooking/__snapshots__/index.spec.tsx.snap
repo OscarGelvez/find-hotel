@@ -185,16 +185,18 @@ exports[`Compara snapshot del componente ListBookings cuando hay reservas 1`] = 
                         <button
                           className="btn btn-secondary w-25"
                           data-bs-dismiss="modal"
+                          data-testid="modal-book-delete-no"
                           type="button"
                         >
                           No
                         </button>
                         <button
                           className="btn btn-danger w-25"
+                          data-testid="modal-book-delete-cancel"
                           onClick={[Function]}
                           type="button"
                         >
-                          Sí, eliminar
+                          Sí, cancelar
                         </button>
                       </div>
                     </div>
