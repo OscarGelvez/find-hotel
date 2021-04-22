@@ -212,6 +212,7 @@ const ModalDeleteBook: React.FC<IDeleteBookProps> = ({
                 <button
                   type="button"
                   className="btn btn-secondary w-25"
+                  data-testid="modal-book-delete-no"
                   data-bs-dismiss="modal"
                 >
                   No
@@ -219,9 +220,10 @@ const ModalDeleteBook: React.FC<IDeleteBookProps> = ({
                 <button
                   type="button"
                   className="btn btn-danger w-25"
+                  data-testid="modal-book-delete-cancel"
                   onClick={confirmDelete}
                 >
-                  Sí, eliminar
+                  Sí, cancelar
                 </button>
               </div>
             </div>

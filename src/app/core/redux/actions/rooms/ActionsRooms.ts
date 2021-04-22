@@ -31,16 +31,24 @@ export function loadDetailRoom(roomId: number): IActionTypesRooms {
 
 export function listingRoomsAsync() {
   return function (dispacth: any) {
-    RoomsRepository.findAllRooms().then((response: any) => {
-      return dispacth(listingRooms(response.data));
-    });
+    RoomsRepository.findAllRooms()
+      .then((response: any) => {
+        return dispacth(listingRooms(response.data));
+      })
+      .catch((err) => {
+        return dispacth(listingRooms([]));
+      });
   };
 }
 
 export function findRoomsFilter(dataFilter: IFieldsForm) {
   return function (dispacth: any) {
-    RoomsRepository.findFilterRooms(dataFilter).then((response: any) => {
-      return dispacth(listingRooms(response.data));
-    });
+    RoomsRepository.findFilterRooms(dataFilter)
+      .then((response: any) => {
+        return dispacth(listingRooms(response.data));
+      })
+      .catch((err) => {
+        return dispacth(listingRooms([]));
+      });
   };
 }

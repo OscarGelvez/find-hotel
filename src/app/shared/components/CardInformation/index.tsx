@@ -237,6 +237,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
         <button
           type="button"
           className="btn btn-primary btn-book w-100"
+          data-testid="form-detail-button-book"
           data-bs-toggle="modal"
           data-bs-target="#modalFormBook"
         >
@@ -248,6 +249,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
           className="modal fade"
           id="modalFormBook"
           aria-labelledby="modalFormBookLabel"
+          data-testid="modal-book"
         >
           <div className="modal-dialog">
             <div className="modal-content">
@@ -269,7 +271,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                   onSubmit={handleSubmit}
                 >
                   {({ errors, touched }) => (
-                    <Form>
+                    <Form data-testid="modal-book-form">
                       <div className="row mb-3">
                         <div className="col-12 col-md-6 ">
                           <label
@@ -282,6 +284,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             name="name"
                             className="form-control col-12"
                             placeholder="eje: Joe Doe"
+                            data-testid="modal-book-form-name"
                           />
                           {errors.name && touched.name ? (
                             <small className="text-danger">{errors.name}</small>
@@ -298,6 +301,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             name="email"
                             type="email"
                             className="form-control col-12"
+                            data-testid="modal-book-form-email"
                             placeholder="eje: joe@email.com"
                           />
                           {errors.email && touched.email ? (
@@ -318,6 +322,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             aria-label=".form-select-sm example"
                             id="identification_type"
                             name="identification_type"
+                            data-testid="modal-book-form-identification-type"
                           >
                             <option value="">Seleccione</option>
                             <option value="1">Cédula de ciudadanía</option>
@@ -340,6 +345,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             name="identification"
                             className="form-control"
                             placeholder="eje: 60830147"
+                            data-testid="modal-book-form-identification"
                           />
                           {errors.identification && touched.identification ? (
                             <small className="text-danger">
@@ -354,10 +360,15 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                           type="button"
                           className="btn btn-secondary"
                           data-bs-dismiss="modal"
+                          data-testid="modal-book-form-btn-cancel"
                         >
                           Cancelar
                         </button>
-                        <button type="submit" className="btn btn-primary">
+                        <button
+                          type="submit"
+                          className="btn btn-primary"
+                          data-testid="modal-book-form-btn-submit"
+                        >
                           Finalizar
                         </button>
                       </div>
