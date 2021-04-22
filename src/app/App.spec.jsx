@@ -85,7 +85,7 @@ describe('Se renderiza el componente principal de la aplicación FindHotel', () 
     });
 
     cy.intercept(
-      'http://localhost:51523/booking?bookData.email=test@cypress.com&bookData.identification_type=1&bookData.identification=123456789',
+      '/booking?bookData.email=test@cypress.com&bookData.identification_type=1&bookData.identification=123456789',
       (req) => {
         req.reply([bookInfo2]);
       }

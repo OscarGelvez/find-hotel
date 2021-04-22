@@ -103,6 +103,9 @@
       "text",
       "text-summary",
       "html"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@cypress)/)"
     ]
   }
 }
