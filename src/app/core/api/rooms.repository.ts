@@ -1,7 +1,3 @@
-import {
-  IBooking,
-  IFieldsFormFindBooking,
-} from 'app/feature/Book/models/Booking';
 import { IFieldsForm } from 'app/feature/Rooms/models/Room';
 
 import { axiosIntance } from '../config/AxiosConfig';
@@ -43,24 +39,6 @@ const getDataFilter = (data: IFieldsForm) => {
  * @param filterData
  * @returns cadena filtro
  */
-const getFilterBook = (filterData: IFieldsFormFindBooking) => {
-  let filterBy = '';
-
-  if (
-    filterData &&
-    filterData.email !== '' &&
-    filterData.identification_type !== '' &&
-    filterData.identification !== ''
-  ) {
-    filterBy = `?bookData.email=${filterData.email}&bookData.identification_type=${filterData.identification_type}&bookData.identification=${filterData.identification}`;
-  }
-
-  return filterBy;
-};
-
-const headers = {
-  'Content-Type': 'application/json',
-};
 
 export const RoomsRepository = {
   /**
