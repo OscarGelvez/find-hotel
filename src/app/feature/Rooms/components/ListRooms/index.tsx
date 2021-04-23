@@ -1,4 +1,5 @@
 import { CardInformation } from 'app/shared/components/CardInformation';
+import Loading from 'app/shared/components/Loading';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
@@ -13,14 +14,20 @@ export interface IListRoomsProps {
    * Función necargada de mostrar el detalle de la habitación
    */
   loadDetailRoom: (roomId: number) => void;
+  /**
+   * Indica si se está o no cargando el recurso
+   */
+  isLoading: boolean;
 }
 
 export const ListRooms: React.FC<IListRoomsProps> = ({
   listRooms,
   loadDetailRoom,
+  isLoading,
 }) => {
   return (
     <>
+      {isLoading && <Loading />}
       <div data-testid="list-rooms" className="card-rooms">
         <div className="row pt-5">
           <div className="col">
@@ -45,4 +52,5 @@ export const ListRooms: React.FC<IListRoomsProps> = ({
 ListRooms.propTypes = {
   listRooms: PropTypes.array.isRequired,
   loadDetailRoom: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };

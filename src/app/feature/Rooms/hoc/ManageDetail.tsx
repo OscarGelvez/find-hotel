@@ -8,6 +8,7 @@ const mapStateToProps = (state: Istate) => {
   return {
     listRooms: state.rooms.listRooms,
     selectedRoom: state.rooms.selectedRoomId,
+    isLoading: state.main.isLoading,
   };
 };
 

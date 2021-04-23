@@ -10,6 +10,7 @@ import { Booking } from '../containers/Booking';
 const mapStateToProps = (state: Istate) => {
   return {
     listBookingsFinded: state.bookings.listBookings,
+    isLoading: state.main.isLoading,
   };
 };
 

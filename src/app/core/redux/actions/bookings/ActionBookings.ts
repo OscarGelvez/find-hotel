@@ -4,6 +4,7 @@ import {
   IBooking,
   IFieldsFormFindBooking,
 } from '../../../../feature/Book/models/Booking';
+import { IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
 import {
   BOOKING_DELETED,
   BOOKING_FINDED,
@@ -50,13 +51,23 @@ export function bookingDeleted(responseCode: number): IActionTypesBookings {
   };
 }
 
+export function isLoading(loading: boolean): IActionTypesMain {
+  return {
+    type: IS_LOADING,
+    payload: loading,
+  };
+}
+
 export function saveBookingRoom(bookingData: IBooking) {
   return function (dispacth: any) {
+    dispacth(isLoading(true));
     BookingsRepository.saveBookingRoom(bookingData)
       .then((response: any) => {
+        dispacth(isLoading(false));
         return dispacth(bookingRoomSaved(response.data.id));
       })
       .catch((err) => {
+        dispacth(isLoading(false));
         return dispacth(bookingRoomSaved(-1));
       });
   };
@@ -64,11 +75,14 @@ export function saveBookingRoom(bookingData: IBooking) {
 
 export function findBooking(findBookingData: IFieldsFormFindBooking) {
   return function (dispacth: any) {
+    dispacth(isLoading(true));
     BookingsRepository.findBooking(findBookingData)
       .then((response: any) => {
+        dispacth(isLoading(false));
         return dispacth(bookingFinded(response.data));
       })
       .catch((err) => {
+        dispacth(isLoading(false));
         return dispacth(bookingFinded([]));
       });
   };
@@ -76,12 +90,15 @@ export function findBooking(findBookingData: IFieldsFormFindBooking) {
 
 export function cancelBooking(bookingId: number) {
   return function (dispacth: any) {
+    dispacth(isLoading(true));
     dispacth(selectedDeleteId(bookingId));
     BookingsRepository.cancelBooking(bookingId)
       .then((response) => {
+        dispacth(isLoading(false));
         return dispacth(bookingDeleted(0));
       })
       .catch((err) => {
+        dispacth(isLoading(false));
         return dispacth(bookingDeleted(1));
       });
   };

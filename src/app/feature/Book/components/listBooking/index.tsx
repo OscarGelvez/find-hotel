@@ -1,6 +1,7 @@
 import { IRoom } from 'app/feature/Rooms/models/Room';
 import { CardInformation } from 'app/shared/components/CardInformation';
 import { roomShape } from 'app/shared/components/CardInformation/model';
+import Loading from 'app/shared/components/Loading';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
@@ -15,11 +16,16 @@ export interface IListBookingsProps {
    * Función necargada de cancelar una reservación
    */
   cancelBooking: (bookId: number) => void;
+  /**
+   * Indica si se está o no cargando el recurso
+   */
+  isLoading: boolean;
 }
 
 export const ListBookings: React.FC<IListBookingsProps> = ({
   listBookingsFinded,
   cancelBooking,
+  isLoading,
 }) => {
   let initial: IRoom | undefined;
   const [infoModal, setInfoModal] = React.useState(initial);
@@ -30,6 +36,7 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
 
   return (
     <>
+      {isLoading && <Loading />}
       <div data-testid="list-bookings" className="card-rooms">
         <div className="row pt-5">
           <div className="col">
@@ -204,7 +211,7 @@ const ModalDeleteBook: React.FC<IDeleteBookProps> = ({
             </div>
             <div className="modal-body">
               {detailRoom && (
-                <h5>{`¿Está seguro de eliminar la reserva de ${detailRoom.title} en ${detailRoom.hotel.name}?`}</h5>
+                <h5>{`¿Está seguro de cancelar la reserva de ${detailRoom.title} en ${detailRoom.hotel.name}?`}</h5>
               )}
             </div>
             <div className="modal-footer">

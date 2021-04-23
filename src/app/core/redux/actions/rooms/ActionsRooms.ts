@@ -1,5 +1,6 @@
 import { RoomsRepository } from 'app/core/api/rooms.repository';
 import { IFieldsForm, IRoom } from 'app/feature/Rooms/models/Room';
+import { IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
 
 import {
   DEFAULT_STATE,
@@ -29,13 +30,23 @@ export function loadDetailRoom(roomId: number): IActionTypesRooms {
   };
 }
 
+export function isLoading(loading: boolean): IActionTypesMain {
+  return {
+    type: IS_LOADING,
+    payload: loading,
+  };
+}
+
 export function listingRoomsAsync() {
   return function (dispacth: any) {
+    dispacth(isLoading(true));
     RoomsRepository.findAllRooms()
       .then((response: any) => {
+        dispacth(isLoading(false));
         return dispacth(listingRooms(response.data));
       })
       .catch((err) => {
+        dispacth(isLoading(false));
         return dispacth(listingRooms([]));
       });
   };
@@ -43,11 +54,14 @@ export function listingRoomsAsync() {
 
 export function findRoomsFilter(dataFilter: IFieldsForm) {
   return function (dispacth: any) {
+    dispacth(isLoading(true));
     RoomsRepository.findFilterRooms(dataFilter)
       .then((response: any) => {
+        dispacth(isLoading(false));
         return dispacth(listingRooms(response.data));
       })
       .catch((err) => {
+        dispacth(isLoading(false));
         return dispacth(listingRooms([]));
       });
   };

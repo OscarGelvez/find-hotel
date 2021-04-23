@@ -11,6 +11,7 @@ interface RoomsProps {
   listAvailableRooms: () => void;
   findRoomsFilter: (data: IFieldsForm) => void;
   loadDetailRoom: (roomId: number) => void;
+  isLoading: boolean;
 }
 
 export const Rooms: React.FC<RoomsProps> = ({
@@ -18,6 +19,7 @@ export const Rooms: React.FC<RoomsProps> = ({
   listAvailableRooms,
   findRoomsFilter,
   loadDetailRoom,
+  isLoading,
 }) => {
   React.useEffect(() => {
     if (listRooms && listRooms.length === 0) {
@@ -31,7 +33,11 @@ export const Rooms: React.FC<RoomsProps> = ({
         onSubmit={findRoomsFilter}
         listAvailableRooms={listAvailableRooms}
       />
-      <ListRooms listRooms={listRooms} loadDetailRoom={loadDetailRoom} />
+      <ListRooms
+        listRooms={listRooms}
+        loadDetailRoom={loadDetailRoom}
+        isLoading={isLoading}
+      />
     </DivContainer>
   );
 };
@@ -41,4 +47,5 @@ Rooms.propTypes = {
   listAvailableRooms: PropTypes.func.isRequired,
   findRoomsFilter: PropTypes.func.isRequired,
   loadDetailRoom: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
