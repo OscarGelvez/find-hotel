@@ -68,21 +68,22 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                     <div
                       className="col-12 col-lg-4"
                     >
+                      <button
+                        className="btn btn-primary btn-book w-100"
+                        data-bs-target="#modalFormBook"
+                        data-bs-toggle="modal"
+                        data-testid="form-detail-button-book"
+                        id="form-detail-button"
+                        type="button"
+                      >
+                        <i
+                          className="far fa-calendar-check ml-3"
+                        />
+                         Reservar
+                      </button>
                       <div
                         data-testid="modal-form-book"
                       >
-                        <button
-                          className="btn btn-primary btn-book w-100"
-                          data-bs-target="#modalFormBook"
-                          data-bs-toggle="modal"
-                          data-testid="form-detail-button-book"
-                          type="button"
-                        >
-                          <i
-                            className="far fa-calendar-check ml-3"
-                          />
-                           Reservar
-                        </button>
                         <div
                           aria-labelledby="modalFormBookLabel"
                           className="modal fade"
@@ -117,6 +118,7 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                                 <form
                                   action="#"
                                   data-testid="modal-book-form"
+                                  id="form-modal-book"
                                   onReset={[Function]}
                                   onSubmit={[Function]}
                                 >
@@ -135,6 +137,7 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                                       <input
                                         className="form-control col-12"
                                         data-testid="modal-book-form-name"
+                                        id="book-form-name"
                                         name="name"
                                         onBlur={[Function]}
                                         onChange={[Function]}
@@ -154,6 +157,7 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                                       <input
                                         className="form-control col-12"
                                         data-testid="modal-book-form-email"
+                                        id="book-form-email"
                                         name="email"
                                         onBlur={[Function]}
                                         onChange={[Function]}
@@ -179,7 +183,7 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                                         aria-label=".form-select-sm example"
                                         className=" d-block w-100"
                                         data-testid="modal-book-form-identification-type"
-                                        id="identification_type"
+                                        id="book-form-select"
                                         name="identification_type"
                                         onBlur={[Function]}
                                         onChange={[Function]}
@@ -224,6 +228,7 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                                       <input
                                         className="form-control"
                                         data-testid="modal-book-form-identification"
+                                        id="book-form-identification"
                                         name="identification"
                                         onBlur={[Function]}
                                         onChange={[Function]}
@@ -239,6 +244,7 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                                       className="btn btn-secondary"
                                       data-bs-dismiss="modal"
                                       data-testid="modal-book-form-btn-cancel"
+                                      id="modal-form-btn-cancel"
                                       type="button"
                                     >
                                       Cancelar
@@ -246,6 +252,7 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
                                     <button
                                       className="btn btn-primary"
                                       data-testid="modal-book-form-btn-submit"
+                                      id="modal-form-btn-submit"
                                       type="submit"
                                     >
                                       Finalizar

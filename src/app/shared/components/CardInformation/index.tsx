@@ -68,6 +68,17 @@ export const CardInformation: React.FC<ICardInformationProps> = ({
               <div className="col-12 col-lg-4">
                 {saveBookingRoom && selectedRoom && selectedRoom !== -1 ? (
                   <>
+                    <button
+                      type="button"
+                      className="btn btn-primary btn-book w-100"
+                      data-testid="form-detail-button-book"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalFormBook"
+                      id="form-detail-button"
+                    >
+                      <i className="far fa-calendar-check ml-3"></i>
+                      {' Reservar'}
+                    </button>
                     <ModalFormBook
                       saveBookingRoom={saveBookingRoom}
                       dataRoom={data}
@@ -206,7 +217,7 @@ const validationSchema = Yup.object().shape<IFieldsFormBooking>({
  * @param param0
  * @returns
  */
-const ModalFormBook: React.FC<IModalFormBookProps> = ({
+export const ModalFormBook: React.FC<IModalFormBookProps> = ({
   saveBookingRoom,
   dataRoom,
 }) => {
@@ -234,17 +245,6 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
   return (
     <>
       <div data-testid="modal-form-book">
-        <button
-          type="button"
-          className="btn btn-primary btn-book w-100"
-          data-testid="form-detail-button-book"
-          data-bs-toggle="modal"
-          data-bs-target="#modalFormBook"
-        >
-          <i className="far fa-calendar-check ml-3"></i>
-          {' Reservar'}
-        </button>
-
         <div
           className="modal fade"
           id="modalFormBook"
@@ -271,7 +271,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                   onSubmit={handleSubmit}
                 >
                   {({ errors, touched }) => (
-                    <Form data-testid="modal-book-form">
+                    <Form data-testid="modal-book-form" id="form-modal-book">
                       <div className="row mb-3">
                         <div className="col-12 col-md-6 ">
                           <label
@@ -285,6 +285,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             className="form-control col-12"
                             placeholder="eje: Joe Doe"
                             data-testid="modal-book-form-name"
+                            id="book-form-name"
                           />
                           {errors.name && touched.name ? (
                             <small className="text-danger">{errors.name}</small>
@@ -303,6 +304,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             className="form-control col-12"
                             data-testid="modal-book-form-email"
                             placeholder="eje: joe@email.com"
+                            id="book-form-email"
                           />
                           {errors.email && touched.email ? (
                             <small className="text-danger">
@@ -320,9 +322,9 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             as="select"
                             className=" d-block w-100"
                             aria-label=".form-select-sm example"
-                            id="identification_type"
                             name="identification_type"
                             data-testid="modal-book-form-identification-type"
+                            id="book-form-select"
                           >
                             <option value="">Seleccione</option>
                             <option value="1">Cédula de ciudadanía</option>
@@ -346,6 +348,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                             className="form-control"
                             placeholder="eje: 60830147"
                             data-testid="modal-book-form-identification"
+                            id="book-form-identification"
                           />
                           {errors.identification && touched.identification ? (
                             <small className="text-danger">
@@ -361,6 +364,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                           className="btn btn-secondary"
                           data-bs-dismiss="modal"
                           data-testid="modal-book-form-btn-cancel"
+                          id="modal-form-btn-cancel"
                         >
                           Cancelar
                         </button>
@@ -368,6 +372,7 @@ const ModalFormBook: React.FC<IModalFormBookProps> = ({
                           type="submit"
                           className="btn btn-primary"
                           data-testid="modal-book-form-btn-submit"
+                          id="modal-form-btn-submit"
                         >
                           Finalizar
                         </button>

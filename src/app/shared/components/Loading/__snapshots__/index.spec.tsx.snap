@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compara snapshot del componente Loading en modo lista 1`] = `
+<div
+  className="container-loader"
+  data-testid="view-spinner"
+>
+  <img
+    alt="loading"
+    className="img-loader"
+    data-testid="view-spinner-loader"
+    src="loading.gif"
+  />
+</div>
+`;
