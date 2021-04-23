@@ -16,7 +16,7 @@ afterEach(cleanup);
 it('rederizar el componente ListRooms sin errores', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <ListRooms listRooms={[]} loadDetailRoom={() => null} />,
+    <ListRooms listRooms={[]} loadDetailRoom={() => null} isLoading={false} />,
     div
   );
   ReactDOM.unmountComponentAtNode(div);
@@ -25,7 +25,11 @@ it('rederizar el componente ListRooms sin errores', () => {
 it('renderiza el componente ListRooms y verifica existencia de componentes hijos', () => {
   const { getByTestId } = render(
     <BrowserRouter>
-      <ListRooms listRooms={[newRoom]} loadDetailRoom={() => null} />
+      <ListRooms
+        listRooms={[newRoom]}
+        loadDetailRoom={() => null}
+        isLoading={false}
+      />
     </BrowserRouter>
   );
 
@@ -38,7 +42,11 @@ it('Compara snapshot del componente ListRooms cuando hay habitaciones', () => {
   const element = renderer
     .create(
       <BrowserRouter>
-        <ListRooms listRooms={[newRoom]} loadDetailRoom={() => null} />
+        <ListRooms
+          listRooms={[newRoom]}
+          loadDetailRoom={() => null}
+          isLoading={false}
+        />
       </BrowserRouter>
     )
     .toJSON();
@@ -47,7 +55,9 @@ it('Compara snapshot del componente ListRooms cuando hay habitaciones', () => {
 
 it('Compara snapshot del componente ListRooms cuando no hay habitaciones', () => {
   const element = renderer
-    .create(<ListRooms listRooms={[]} loadDetailRoom={() => null} />)
+    .create(
+      <ListRooms listRooms={[]} loadDetailRoom={() => null} isLoading={false} />
+    )
     .toJSON();
   expect(element).toMatchSnapshot();
 });

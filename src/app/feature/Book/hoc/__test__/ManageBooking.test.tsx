@@ -1,3 +1,4 @@
+import { IStateMain } from 'app/core/redux/modelo/IStateMain';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -19,6 +20,10 @@ const bookings: IStateBookings = {
   deleteBookingId: -1,
 };
 
+const main: IStateMain = {
+  isLoading: false,
+};
+
 describe('Prueba componente de orden superior HOC con redux', () => {
   let store;
   let component;
@@ -26,6 +31,7 @@ describe('Prueba componente de orden superior HOC con redux', () => {
   beforeEach(() => {
     store = mockStore({
       bookings: bookings,
+      main,
     });
 
     component = renderer.create(

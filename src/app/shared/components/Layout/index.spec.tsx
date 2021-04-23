@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import { cleanup, render } from '@testing-library/react';
+import { IStateMain } from 'app/core/redux/modelo/IStateMain';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -25,10 +26,15 @@ const rooms: IStateRooms = {
   selectedRoomId: 50,
 };
 
+const main: IStateMain = {
+  isLoading: false,
+};
+
 let store;
 beforeEach(() => {
   store = mockStore({
     rooms: rooms,
+    main,
   });
 });
 it('rederizar el componente Layout sin errores', () => {

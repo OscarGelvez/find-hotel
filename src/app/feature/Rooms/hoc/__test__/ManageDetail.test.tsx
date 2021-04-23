@@ -18,6 +18,10 @@ const rooms: IStateRooms = {
   selectedRoomId: 50,
 };
 
+const main: IStateMain = {
+  isLoading: false,
+};
+
 describe('Prueba componente de orden superior HOC con redux', () => {
   let store;
   let component;
@@ -25,6 +29,7 @@ describe('Prueba componente de orden superior HOC con redux', () => {
   beforeEach(() => {
     store = mockStore({
       rooms: rooms,
+      main,
     });
 
     component = renderer.create(

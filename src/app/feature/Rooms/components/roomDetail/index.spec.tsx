@@ -21,6 +21,7 @@ it('rederizar el componente RoomDetailView sin errores', () => {
       listRooms={[newRoom]}
       selectedRoom={roomId}
       saveBookingRoom={() => null}
+      isLoading={false}
     />,
     div
   );
@@ -33,6 +34,7 @@ it('renderiza el componente RoomDetailView y verifica existencia de componentes 
       listRooms={[newRoom]}
       selectedRoom={roomId}
       saveBookingRoom={() => null}
+      isLoading={false}
     />
   );
   expect(getByTestId('room-detail-view')).toContainElement(
@@ -47,6 +49,7 @@ it('Compara snapshot del componente RoomDetailView', () => {
         listRooms={[newRoom]}
         selectedRoom={roomId}
         saveBookingRoom={() => null}
+        isLoading={false}
       />
     )
     .toJSON();

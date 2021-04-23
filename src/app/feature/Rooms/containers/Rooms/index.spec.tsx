@@ -23,6 +23,7 @@ it('rederizar el componente Rooms sin errores', () => {
         listAvailableRooms={() => null}
         findRoomsFilter={() => null}
         loadDetailRoom={() => null}
+        isLoading={false}
       />
     </BrowserRouter>,
     div
@@ -38,6 +39,7 @@ it('renderiza el componente Rooms y verifica existencia de componentes hijos', (
         listAvailableRooms={() => null}
         findRoomsFilter={() => null}
         loadDetailRoom={() => null}
+        isLoading={false}
       />
     </BrowserRouter>
   );
@@ -54,6 +56,7 @@ it('Compara snapshot del componente Rooms', () => {
           listAvailableRooms={() => null}
           findRoomsFilter={() => null}
           loadDetailRoom={() => null}
+          isLoading={false}
         />
       </BrowserRouter>
     )

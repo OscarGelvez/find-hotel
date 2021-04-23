@@ -20,6 +20,7 @@ it('rederizar el componente Booking sin errores', () => {
       listBookingsFinded={[newBook]}
       findBooking={() => null}
       cancelBooking={() => null}
+      isLoading={false}
     />,
     div
   );
@@ -32,6 +33,7 @@ it('renderiza el componente Booking y verifica existencia de componentes hijos',
       listBookingsFinded={[newBook]}
       findBooking={() => null}
       cancelBooking={() => null}
+      isLoading={false}
     />
   );
   expect(getByTestId('book')).toContainElement(getByTestId('find-bookings'));
@@ -45,6 +47,7 @@ it('Compara snapshot del componente Booking', () => {
         listBookingsFinded={[newBook]}
         findBooking={() => null}
         cancelBooking={() => null}
+        isLoading={false}
       />
     )
     .toJSON();
