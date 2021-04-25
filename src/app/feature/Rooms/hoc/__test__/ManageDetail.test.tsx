@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 
@@ -34,7 +35,9 @@ describe('Prueba componente de orden superior HOC con redux', () => {
 
     component = renderer.create(
       <Provider store={store}>
-        <ManageDetail />
+        <BrowserRouter>
+          <ManageDetail />
+        </BrowserRouter>
       </Provider>
     );
   });

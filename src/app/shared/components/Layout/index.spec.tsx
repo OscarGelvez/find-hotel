@@ -5,6 +5,7 @@ import { IStateMain } from 'app/core/redux/modelo/IStateMain';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 
@@ -41,12 +42,14 @@ it('rederizar el componente Layout sin errores', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <Provider store={store}>
-      <Layout
-        title={'Detalle de habitación'}
-        description={'Detalles de tu habitación'}
-      >
-        {<ManageDetail></ManageDetail>}
-      </Layout>
+      <BrowserRouter>
+        <Layout
+          title={'Detalle de habitación'}
+          description={'Detalles de tu habitación'}
+        >
+          {<ManageDetail></ManageDetail>}
+        </Layout>
+      </BrowserRouter>
     </Provider>,
     div
   );
@@ -56,12 +59,14 @@ it('rederizar el componente Layout sin errores', () => {
 it('renderiza el componente Layout y verifica existencia de componentes hijos', () => {
   const { getByTestId } = render(
     <Provider store={store}>
-      <Layout
-        title={'Detalle de habitación'}
-        description={'Detalles de tu habitación'}
-      >
-        {<ManageDetail></ManageDetail>}
-      </Layout>
+      <BrowserRouter>
+        <Layout
+          title={'Detalle de habitación'}
+          description={'Detalles de tu habitación'}
+        >
+          {<ManageDetail></ManageDetail>}
+        </Layout>
+      </BrowserRouter>
     </Provider>
   );
 
@@ -72,12 +77,14 @@ it('Compara snapshot del componente Layout renderizado', () => {
   const element = renderer
     .create(
       <Provider store={store}>
-        <Layout
-          title={'Detalle de habitación'}
-          description={'Detalles de tu habitación'}
-        >
-          {<ManageDetail></ManageDetail>}
-        </Layout>
+        <BrowserRouter>
+          <Layout
+            title={'Detalle de habitación'}
+            description={'Detalles de tu habitación'}
+          >
+            {<ManageDetail></ManageDetail>}
+          </Layout>
+        </BrowserRouter>
       </Provider>
     )
     .toJSON();
