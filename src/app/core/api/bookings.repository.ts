@@ -43,8 +43,9 @@ export const BookingsRepository = {
    * Consulta una reservación hecha
    * @returns arreglo de reservaciones
    */
-  findBooking: (findBookingData: IFieldsFormFindBooking) =>
-    axiosIntance.get(`/booking${getFilterBook(findBookingData)}`),
+  findBooking: (findBookingData: IFieldsFormFindBooking) => {
+    return axiosIntance.get(`/booking${getFilterBook(findBookingData)}`);
+  },
   /**
    * Elimina una reservación
    * @param bookingId Identificador de la reserva

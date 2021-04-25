@@ -59,9 +59,9 @@ export function isLoading(loading: boolean): IActionTypesMain {
 }
 
 export function saveBookingRoom(bookingData: IBooking) {
-  return function (dispacth: any) {
+  return async function (dispacth: any) {
     dispacth(isLoading(true));
-    BookingsRepository.saveBookingRoom(bookingData)
+    await BookingsRepository.saveBookingRoom(bookingData)
       .then((response: any) => {
         dispacth(isLoading(false));
         return dispacth(bookingRoomSaved(response.data.id));
@@ -74,9 +74,9 @@ export function saveBookingRoom(bookingData: IBooking) {
 }
 
 export function findBooking(findBookingData: IFieldsFormFindBooking) {
-  return function (dispacth: any) {
+  return async function (dispacth: any) {
     dispacth(isLoading(true));
-    BookingsRepository.findBooking(findBookingData)
+    await BookingsRepository.findBooking(findBookingData)
       .then((response: any) => {
         dispacth(isLoading(false));
         return dispacth(bookingFinded(response.data));
@@ -89,10 +89,10 @@ export function findBooking(findBookingData: IFieldsFormFindBooking) {
 }
 
 export function cancelBooking(bookingId: number) {
-  return function (dispacth: any) {
+  return async function (dispacth: any) {
     dispacth(isLoading(true));
     dispacth(selectedDeleteId(bookingId));
-    BookingsRepository.cancelBooking(bookingId)
+    await BookingsRepository.cancelBooking(bookingId)
       .then((response) => {
         dispacth(isLoading(false));
         return dispacth(bookingDeleted(0));

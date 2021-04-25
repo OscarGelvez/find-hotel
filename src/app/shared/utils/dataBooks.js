@@ -1,9 +1,9 @@
 export const bookInfo = {
   bookData: {
-    name: 'oscar andres',
-    email: 'oscargelvez23@gmail.com',
+    name: 'test',
+    email: 'test@test.com',
     identification_type: '1',
-    identification: '1323131232',
+    identification: '123456789',
   },
   roomData: {
     id: 54,
