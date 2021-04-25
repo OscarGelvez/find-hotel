@@ -189,6 +189,15 @@ const ModalDeleteBook: React.FC<IDeleteBookProps> = ({
   detailRoom,
   confirmDelete,
 }) => {
+  const deleteBook = () => {
+    confirmDelete();
+    hideModal();
+  };
+
+  const hideModal = () => {
+    $('#modalDeleteBook').modal('hide');
+  };
+
   return (
     <>
       <div
@@ -229,7 +238,7 @@ const ModalDeleteBook: React.FC<IDeleteBookProps> = ({
                   type="button"
                   className="btn btn-danger w-25"
                   data-testid="modal-book-delete-cancel"
-                  onClick={confirmDelete}
+                  onClick={deleteBook}
                 >
                   Sí, cancelar
                 </button>
