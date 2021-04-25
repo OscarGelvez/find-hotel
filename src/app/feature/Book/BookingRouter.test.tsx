@@ -9,6 +9,8 @@ import configureStore from 'redux-mock-store';
 import { BookingRouter } from './BookingRouter';
 import { IBooking } from './models/Booking';
 const mockStore = configureStore([]);
+import { IStateMain } from 'app/core/redux/modelo/IStateMain';
+
 import { bookInfo } from '../../shared/utils/dataBooks';
 
 const newBook: IBooking = bookInfo;
@@ -18,12 +20,17 @@ const bookings: IStateBookings = {
   listBookings: listBooks,
   deleteBookingId: -1,
 };
+
+const main: IStateMain = {
+  isLoading: false,
+};
 let store;
 const history = createMemoryHistory();
 
 test('Prueba a componente Router', () => {
   store = mockStore({
     bookings: bookings,
+    main,
   });
   render(
     <Provider store={store}>
