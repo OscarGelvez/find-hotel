@@ -15,7 +15,11 @@ afterEach(cleanup);
 it('rederizar el componente ListBookings sin errores', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <ListBookings listBookingsFinded={[]} cancelBooking={() => null} />,
+    <ListBookings
+      listBookingsFinded={[]}
+      cancelBooking={() => null}
+      isLoading={false}
+    />,
     div
   );
   ReactDOM.unmountComponentAtNode(div);
@@ -23,7 +27,11 @@ it('rederizar el componente ListBookings sin errores', () => {
 
 it('renderiza el componente ListBookings y verifica existencia de componentes hijos', () => {
   const { getByTestId } = render(
-    <ListBookings listBookingsFinded={[newBook]} cancelBooking={() => null} />
+    <ListBookings
+      listBookingsFinded={[newBook]}
+      cancelBooking={() => null}
+      isLoading={false}
+    />
   );
 
   expect(getByTestId('list-bookings')).toContainElement(
@@ -43,7 +51,11 @@ it('renderiza el componente ListBookings y verifica existencia de componentes hi
 it('Compara snapshot del componente ListBookings cuando hay reservas', () => {
   const element = renderer
     .create(
-      <ListBookings listBookingsFinded={[newBook]} cancelBooking={() => null} />
+      <ListBookings
+        listBookingsFinded={[newBook]}
+        cancelBooking={() => null}
+        isLoading={false}
+      />
     )
     .toJSON();
   expect(element).toMatchSnapshot();
@@ -51,7 +63,13 @@ it('Compara snapshot del componente ListBookings cuando hay reservas', () => {
 
 it('Compara snapshot del componente ListBookings cuando no hay reservas', () => {
   const element = renderer
-    .create(<ListBookings listBookingsFinded={[]} cancelBooking={() => null} />)
+    .create(
+      <ListBookings
+        listBookingsFinded={[]}
+        cancelBooking={() => null}
+        isLoading={false}
+      />
+    )
     .toJSON();
   expect(element).toMatchSnapshot();
 });
