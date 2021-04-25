@@ -38,9 +38,9 @@ export function isLoading(loading: boolean): IActionTypesMain {
 }
 
 export function listingRoomsAsync() {
-  return function (dispacth: any) {
+  return async function (dispacth: any) {
     dispacth(isLoading(true));
-    RoomsRepository.findAllRooms()
+    await RoomsRepository.findAllRooms()
       .then((response: any) => {
         dispacth(isLoading(false));
         return dispacth(listingRooms(response.data));
@@ -53,9 +53,9 @@ export function listingRoomsAsync() {
 }
 
 export function findRoomsFilter(dataFilter: IFieldsForm) {
-  return function (dispacth: any) {
+  return async function (dispacth: any) {
     dispacth(isLoading(true));
-    RoomsRepository.findFilterRooms(dataFilter)
+    await RoomsRepository.findFilterRooms(dataFilter)
       .then((response: any) => {
         dispacth(isLoading(false));
         return dispacth(listingRooms(response.data));

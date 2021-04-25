@@ -1,6 +1,7 @@
 import { IFieldsForm } from 'app/feature/Rooms/models/Room';
+import axios from 'axios';
 
-import { axiosIntance } from '../config/AxiosConfig';
+import { baseUrl } from '../config/AxiosConfig';
 
 /**
  * Función encargad de armar los filtros para la obtención de hoteles/habitaciones
@@ -45,12 +46,12 @@ export const RoomsRepository = {
    * Obtiene todas los hoteles/habitaciones disponibles
    * @returns arreglo de habitaciones
    */
-  findAllRooms: () => axiosIntance.get('/rooms'),
+  findAllRooms: () => axios.get(`${baseUrl}/rooms`),
   /**
    * Obtiene todas los hoteles/habitaciones disponibles según los filtros
    * @param dataFilter filtros a aplicar
    * @returns arreglo de habitaciones
    */
   findFilterRooms: (dataFilter: IFieldsForm) =>
-    axiosIntance.get(`/rooms${getDataFilter(dataFilter)}`),
+    axios.get(`${baseUrl}/rooms${getDataFilter(dataFilter)}`),
 };
