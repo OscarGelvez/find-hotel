@@ -184,7 +184,7 @@ exports[`Compara snapshot del componente Booking 1`] = `
                   A nombre de:
                 </h5>
                 <span>
-                  oscar andres
+                  test
                 </span>
                 <h5
                   className="mt-2"

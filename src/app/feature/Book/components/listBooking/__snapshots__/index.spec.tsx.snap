@@ -35,7 +35,7 @@ exports[`Compara snapshot del componente ListBookings cuando hay reservas 1`] = 
                 A nombre de:
               </h5>
               <span>
-                oscar andres
+                test
               </span>
               <h5
                 className="mt-2"

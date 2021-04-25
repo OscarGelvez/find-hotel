@@ -184,7 +184,7 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                   A nombre de:
                 </h5>
                 <span>
-                  oscar andres
+                  test
                 </span>
                 <h5
                   className="mt-2"
