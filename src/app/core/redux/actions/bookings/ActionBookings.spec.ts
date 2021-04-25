@@ -1,6 +1,14 @@
+import { baseUrl } from 'app/core/config/AxiosConfig';
+import expect from 'expect';
+import moxios from 'moxios';
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+
+import { IBooking } from '../../../../feature/Book/models/Booking';
+import { bookInfo } from '../../../../shared/utils/dataBooks';
 import {
   bookingDeleted,
+  bookingFinded,
   bookingRoomSaved,
   cancelBooking,
   findBooking,
@@ -8,13 +16,6 @@ import {
   saveBookingRoom,
   selectedDeleteId,
 } from './ActionBookings';
-import expect from 'expect';
-import moxios from 'moxios';
-import configureMockStore from 'redux-mock-store';
-
-import { bookInfo } from '../../../../shared/utils/dataBooks';
-import { bookingFinded } from './ActionBookings';
-import { IBooking } from '../../../../feature/Book/models/Booking';
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
@@ -33,7 +34,7 @@ const initialState = {
   deleteBookingId: -1,
 };
 
-describe('Test servicio de guardar reservaciones correctamente', () => {
+describe('Test servicio de guardar reservaciones', () => {
   let store;
 
   beforeEach(() => {
@@ -44,22 +45,23 @@ describe('Test servicio de guardar reservaciones correctamente', () => {
     moxios.uninstall();
   });
 
-  it('Debería almacenar la resevación', (done) => {
+  it('Debería almacenar la resevación correctamente', async (done) => {
     const expectedActions = [
       isLoading(true),
       isLoading(false),
-      bookingRoomSaved(100),
+      bookingRoomSaved(5),
     ];
-    bookInfo.bookData = findBookingData;
-    bookInfo.id = 100;
 
-    return store.dispatch(saveBookingRoom(bookInfo)).then((res) => {
-      console.log(res);
-      const actualAction = store.getActions();
-      console.log(actualAction);
-      expect(actualAction).toEqual(expectedActions);
-      done();
+    moxios.stubRequest(baseUrl + '/booking', {
+      status: 201,
+      responseText: bookInfo,
     });
+
+    await store.dispatch(saveBookingRoom(bookInfo)).then((res) => {
+      const actualAction = store.getActions();
+      expect(actualAction).toEqual(expectedActions);
+    });
+    done();
   });
 
   it('Debería fallar al guardar la reservación', async (done) => {
@@ -68,14 +70,17 @@ describe('Test servicio de guardar reservaciones correctamente', () => {
       isLoading(false),
       bookingRoomSaved(-1),
     ];
-    bookInfo.id = 100;
-    return store.dispatch(saveBookingRoom(bookInfo)).then((res) => {
-      console.log(res);
-      const actualAction = store.getActions();
-      console.log(actualAction);
-      expect(actualAction).toEqual(expectedActions);
-      done();
+
+    moxios.stubRequest(baseUrl + '/booking', {
+      status: 404,
+      responseText: -1,
     });
+
+    await store.dispatch(saveBookingRoom(bookInfo)).then((res) => {
+      const actualAction = store.getActions();
+      expect(actualAction).toEqual(expectedActions);
+    });
+    done();
   });
 });
 
@@ -90,26 +95,33 @@ describe('Test servicio de búsqueda de reservaciones', () => {
     moxios.uninstall();
   });
 
-  it('Deberia buscar una reservación correctamente', (done) => {
+  it('Deberia buscar una reservación correctamente', async (done) => {
     const expectedActions = [
       isLoading(true),
       isLoading(false),
       bookingFinded(arrBooking),
     ];
 
-    return store.dispatch(findBooking(findBookingData)).then((res) => {
-      console.log(res);
+    moxios.stubRequest(
+      baseUrl +
+        '/booking?bookData.email=test@test.com&bookData.identification_type=1&bookData.identification=123456789',
+      {
+        status: 200,
+        responseText: arrBooking,
+      }
+    );
+
+    await store.dispatch(findBooking(findBookingData)).then((res) => {
       const actualAction = store.getActions();
-      console.log(actualAction);
       expect(actualAction).toEqual(expectedActions);
-      done();
     });
+    done();
   });
 
-  xit('Debería fallar en la carga de las reservaciones', async (done) => {
+  it('Debería fallar al buscar una reservación', async (done) => {
     const findBookingData = {
       email: 'test@test.com',
-      identification_type: '2',
+      identification_type: '1',
       identification: '123456789',
     };
 
@@ -119,13 +131,20 @@ describe('Test servicio de búsqueda de reservaciones', () => {
       bookingFinded([]),
     ];
 
-    return store.dispatch(findBooking(findBookingData)).then((res) => {
-      console.log(res);
+    moxios.stubRequest(
+      baseUrl +
+        '/booking?bookData.email=test@test.com&bookData.identification_type=1&bookData.identification=123456789',
+      {
+        status: 404,
+        responseText: [],
+      }
+    );
+
+    await store.dispatch(findBooking(findBookingData)).then((res) => {
       const actualAction = store.getActions();
-      console.log(actualAction);
       expect(actualAction).toEqual(expectedActions);
-      done();
     });
+    done();
   });
 });
 
@@ -140,38 +159,43 @@ describe('Test servicio de eliminar reservaciones', () => {
     moxios.uninstall();
   });
 
-  it('Debería eliminar la resevación correctamente', (done) => {
+  it('Debería eliminar la resevación correctamente', async (done) => {
     const expectedActions = [
       isLoading(true),
-      selectedDeleteId(100),
+      selectedDeleteId(179),
       isLoading(false),
-
       bookingDeleted(0),
     ];
 
-    return store.dispatch(cancelBooking(100)).then((res) => {
-      console.log(res);
-      const actualAction = store.getActions();
-      console.log(actualAction);
-      expect(actualAction).toEqual(expectedActions);
-      done();
+    moxios.stubRequest(baseUrl + '/booking/179', {
+      status: 200,
+      responseText: 0,
     });
+
+    await store.dispatch(cancelBooking(179)).then((res) => {
+      const actualAction = store.getActions();
+      expect(actualAction).toEqual(expectedActions);
+    });
+    done();
   });
 
   it('Debería fallar al guardar la reservación', async (done) => {
     const expectedActions = [
       isLoading(true),
-      selectedDeleteId(100),
+      selectedDeleteId(305),
       isLoading(false),
       bookingDeleted(1),
     ];
 
-    return store.dispatch(cancelBooking(100)).then((res) => {
-      console.log(res);
-      const actualAction = store.getActions();
-      console.log(actualAction);
-      expect(actualAction).toEqual(expectedActions);
-      done();
+    moxios.stubRequest(baseUrl + '/booking/305', {
+      status: 404,
+      responseText: 0,
     });
+
+    await store.dispatch(cancelBooking(305)).then((res) => {
+      const actualAction = store.getActions();
+      expect(actualAction).toEqual(expectedActions);
+    });
+    done();
   });
 });

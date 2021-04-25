@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 import { act, cleanup, fireEvent, render, wait } from '@testing-library/react';
+import { mount, shallow } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -9,8 +10,6 @@ import renderer from 'react-test-renderer';
 import { IRoom } from '../../../feature/Rooms/models/Room';
 import { roomInfo } from '../../utils/data';
 import { CardInformation, ModalFormBook } from './index';
-
-import { mount, shallow } from 'enzyme';
 
 const newRoom: IRoom = roomInfo;
 const roomId = 50;

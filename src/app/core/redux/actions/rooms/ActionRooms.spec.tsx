@@ -1,16 +1,16 @@
+import expect from 'expect';
+import moxios from 'moxios';
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+
+import { IRoom } from '../../../../feature/Rooms/models/Room';
+import { roomInfo } from '../../../../shared/utils/data';
 import {
   findRoomsFilter,
   isLoading,
   listingRooms,
   listingRoomsAsync,
 } from './ActionsRooms';
-import expect from 'expect';
-import moxios from 'moxios';
-import configureMockStore from 'redux-mock-store';
-
-import { roomInfo } from '../../../../shared/utils/data';
-import { IRoom } from '../../../../feature/Rooms/models/Room';
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
@@ -49,7 +49,6 @@ describe('Test servicio de buscar habitaciones', () => {
 
     await store.dispatch(listingRoomsAsync()).then((res) => {
       const actualAction = store.getActions();
-      console.log(actualAction);
       expect(actualAction).toEqual(expectedActions);
     });
     done();
@@ -69,7 +68,6 @@ describe('Test servicio de buscar habitaciones', () => {
 
     await store.dispatch(listingRoomsAsync()).then((res) => {
       const actualAction = store.getActions();
-      console.log(actualAction);
       expect(actualAction).toEqual(expectedActions);
     });
     done();
@@ -112,7 +110,6 @@ describe('Test servicio de filtrar en búsqueda de habitaciones', () => {
 
     await store.dispatch(findRoomsFilter(filterObj)).then((res) => {
       const actualAction = store.getActions();
-      console.log(actualAction);
       expect(actualAction).toEqual(expectedActions);
     });
     done();
@@ -136,7 +133,6 @@ describe('Test servicio de filtrar en búsqueda de habitaciones', () => {
 
     await store.dispatch(findRoomsFilter(filterObj)).then((res) => {
       const actualAction = store.getActions();
-      console.log(actualAction);
       expect(actualAction).toEqual(expectedActions);
     });
     done();

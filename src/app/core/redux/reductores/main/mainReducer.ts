@@ -1,6 +1,6 @@
 import {
-  IS_LOADING,
   IActionTypesMain,
+  IS_LOADING,
 } from '../../actions/main/ActionTypesMain';
 import { IStateMain } from '../../modelo/IStateMain';
 

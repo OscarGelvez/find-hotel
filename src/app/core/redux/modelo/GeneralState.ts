@@ -1,6 +1,6 @@
 import { IStateBookings } from './IStateBookings';
-import { IStateRooms } from './IStateRooms';
 import { IStateMain } from './IStateMain';
+import { IStateRooms } from './IStateRooms';
 
 export interface Istate {
   rooms: IStateRooms;

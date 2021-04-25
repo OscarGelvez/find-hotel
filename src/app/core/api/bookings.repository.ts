@@ -2,8 +2,9 @@ import {
   IBooking,
   IFieldsFormFindBooking,
 } from 'app/feature/Book/models/Booking';
+import axios from 'axios';
 
-import { axiosIntance } from '../config/AxiosConfig';
+import { baseUrl } from '../config/AxiosConfig';
 
 /**
  * Función encargada de armar los filtros en la búsqueda de la reserva
@@ -36,21 +37,20 @@ export const BookingsRepository = {
    * @returns mensaje de éxito
    */
   saveBookingRoom: (bookingData: IBooking) =>
-    axiosIntance.post('/booking', bookingData, {
+    axios.post(`${baseUrl}/booking`, bookingData, {
       headers: headers,
     }),
   /**
    * Consulta una reservación hecha
    * @returns arreglo de reservaciones
    */
-  findBooking: (findBookingData: IFieldsFormFindBooking) => {
-    return axiosIntance.get(`/booking${getFilterBook(findBookingData)}`);
-  },
+  findBooking: (findBookingData: IFieldsFormFindBooking) =>
+    axios.get(`${baseUrl}/booking${getFilterBook(findBookingData)}`),
   /**
    * Elimina una reservación
    * @param bookingId Identificador de la reserva
    * @returns reserva eliminada
    */
   cancelBooking: (bookingId: number) =>
-    axiosIntance.delete(`/booking/${bookingId}`),
+    axios.delete(`${baseUrl}/booking/${bookingId}`),
 };

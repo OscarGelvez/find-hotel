@@ -125,6 +125,7 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
 ListBookings.propTypes = {
   listBookingsFinded: PropTypes.array.isRequired,
   cancelBooking: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
 interface IDetailBookProps {

@@ -1,7 +1,7 @@
 import { RoomsRepository } from 'app/core/api/rooms.repository';
 import { IFieldsForm, IRoom } from 'app/feature/Rooms/models/Room';
-import { IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
 
+import { IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
 import {
   DEFAULT_STATE,
   IActionTypesRooms,
