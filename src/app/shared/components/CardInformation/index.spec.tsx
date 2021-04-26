@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 
-import { act, cleanup, fireEvent, render, wait } from '@testing-library/react';
+import { cleanup, render, wait } from '@testing-library/react';
 import { mount, shallow } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';

@@ -1,6 +1,9 @@
+import { IErrorToast } from 'app/core/redux/modelo/IStateMain';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import { toast } from 'react-toastify';
 
+import ToastError from '../../../../shared/components/ToastError';
 import { FindRooms } from '../../components/findRooms';
 import { ListRooms } from '../../components/ListRooms';
 import { IFieldsForm, IRoom } from '../../models/Room';
@@ -12,6 +15,7 @@ interface RoomsProps {
   findRoomsFilter: (data: IFieldsForm) => void;
   loadDetailRoom: (roomId: number) => void;
   isLoading: boolean;
+  errorMessage: IErrorToast;
 }
 
 export const Rooms: React.FC<RoomsProps> = ({
@@ -20,15 +24,26 @@ export const Rooms: React.FC<RoomsProps> = ({
   findRoomsFilter,
   loadDetailRoom,
   isLoading,
+  errorMessage,
 }) => {
   React.useEffect(() => {
-    if (listRooms && listRooms.length === 0) {
+    if (listRooms && listRooms.length === 0 && errorMessage.message === '') {
       listAvailableRooms();
     }
-  }, [listRooms, listAvailableRooms]);
+  }, [listRooms, listAvailableRooms, errorMessage]);
+
+  React.useEffect(() => {
+    if (errorMessage.message !== '') {
+      errorMessage.type === 'rooms'
+        ? toast.error(errorMessage.message)
+        : errorMessage.type === 'rooms-filter' &&
+          toast.info(errorMessage.message);
+    }
+  }, [errorMessage]);
 
   return (
     <DivContainer data-testid="room">
+      <ToastError />
       <FindRooms
         onSubmit={findRoomsFilter}
         listAvailableRooms={listAvailableRooms}
@@ -48,4 +63,8 @@ Rooms.propTypes = {
   findRoomsFilter: PropTypes.func.isRequired,
   loadDetailRoom: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  errorMessage: PropTypes.shape({
+    message: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  }).isRequired,
 };

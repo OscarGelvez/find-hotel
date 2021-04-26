@@ -9,7 +9,11 @@ import { connect } from 'react-redux';
 import { Rooms } from '../containers/Rooms';
 
 const mapStateToProps = (state: Istate) => {
-  return { listRooms: state.rooms.listRooms, isLoading: state.main.isLoading };
+  return {
+    listRooms: state.rooms.listRooms,
+    isLoading: state.main.isLoading,
+    errorMessage: state.main.errorMessage,
+  };
 };
 
 export const ManageRooms = connect(mapStateToProps, {

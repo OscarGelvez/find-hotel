@@ -1,3 +1,4 @@
+import { IStateMain } from 'app/core/redux/modelo/IStateMain';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -21,6 +22,7 @@ const rooms: IStateRooms = {
 
 const main: IStateMain = {
   isLoading: false,
+  errorMessage: { message: '', type: '' },
 };
 
 describe('Prueba componente de orden superior HOC con redux', () => {

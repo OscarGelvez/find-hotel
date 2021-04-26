@@ -6,6 +6,13 @@ exports[`Compara snapshot del componente Rooms 1`] = `
   data-testid="room"
 >
   <div
+    data-testid="toast-error"
+  >
+    <div
+      className="Toastify"
+    />
+  </div>
+  <div
     className="card-rooms"
     data-testid="find-rooms"
   >
@@ -40,7 +47,7 @@ exports[`Compara snapshot del componente Rooms 1`] = `
                   className="form-control"
                   data-testid="form-fromDate"
                   id="fromDate"
-                  min="2021-04-25"
+                  min="2021-04-26"
                   name="fromDate"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -62,7 +69,7 @@ exports[`Compara snapshot del componente Rooms 1`] = `
                   className="form-control"
                   data-testid="form-untilDate"
                   id="untilDate"
-                  min="2021-04-26"
+                  min="2021-04-27"
                   name="untilDate"
                   onBlur={[Function]}
                   onChange={[Function]}

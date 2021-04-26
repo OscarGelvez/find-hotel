@@ -1,5 +1,8 @@
+import { IErrorToast } from '../../modelo/IStateMain';
+
 export const DEFAULT_STATE = 'DEFAULT_STATE';
 export const IS_LOADING = 'CARGANDO_RECURSO';
+export const ERROR = 'OBTENIENDO_ERROR';
 
 interface IDefaultState {
   type: typeof DEFAULT_STATE;
@@ -11,4 +14,9 @@ interface IIsLoadingAction {
   payload: boolean;
 }
 
-export type IActionTypesMain = IDefaultState | IIsLoadingAction;
+interface IErrorAction {
+  type: typeof ERROR;
+  payload: IErrorToast;
+}
+
+export type IActionTypesMain = IDefaultState | IIsLoadingAction | IErrorAction;

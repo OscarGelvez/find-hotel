@@ -1,7 +1,8 @@
 import { RoomsRepository } from 'app/core/api/rooms.repository';
 import { IFieldsForm, IRoom } from 'app/feature/Rooms/models/Room';
 
-import { IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
+import { IErrorToast } from '../../modelo/IStateMain';
+import { ERROR, IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
 import {
   DEFAULT_STATE,
   IActionTypesRooms,
@@ -37,6 +38,13 @@ export function isLoading(loading: boolean): IActionTypesMain {
   };
 }
 
+export function setError(error: IErrorToast): IActionTypesMain {
+  return {
+    type: ERROR,
+    payload: error,
+  };
+}
+
 export function listingRoomsAsync() {
   return async function (dispacth: any) {
     dispacth(isLoading(true));
@@ -47,6 +55,13 @@ export function listingRoomsAsync() {
       })
       .catch((err) => {
         dispacth(isLoading(false));
+        dispacth(
+          setError({
+            type: 'rooms',
+            message:
+              'Error al cargar los hoteles. Por favor, intente nuevamente',
+          })
+        );
         return dispacth(listingRooms([]));
       });
   };
@@ -62,6 +77,13 @@ export function findRoomsFilter(dataFilter: IFieldsForm) {
       })
       .catch((err) => {
         dispacth(isLoading(false));
+        dispacth(
+          setError({
+            type: 'rooms-filter',
+            message:
+              'No se encotraron resultados. Por favor, intente nuevamente',
+          })
+        );
         return dispacth(listingRooms([]));
       });
   };

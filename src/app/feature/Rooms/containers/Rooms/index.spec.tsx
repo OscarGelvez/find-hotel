@@ -24,6 +24,7 @@ it('rederizar el componente Rooms sin errores', () => {
         findRoomsFilter={() => null}
         loadDetailRoom={() => null}
         isLoading={false}
+        errorMessage={{ message: '', type: '' }}
       />
     </BrowserRouter>,
     div
@@ -40,6 +41,7 @@ it('renderiza el componente Rooms y verifica existencia de componentes hijos', (
         findRoomsFilter={() => null}
         loadDetailRoom={() => null}
         isLoading={false}
+        errorMessage={{ message: '', type: '' }}
       />
     </BrowserRouter>
   );
@@ -57,6 +59,7 @@ it('Compara snapshot del componente Rooms', () => {
           findRoomsFilter={() => null}
           loadDetailRoom={() => null}
           isLoading={false}
+          errorMessage={{ message: '', type: '' }}
         />
       </BrowserRouter>
     )

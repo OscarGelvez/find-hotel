@@ -10,6 +10,7 @@ import {
   isLoading,
   listingRooms,
   listingRoomsAsync,
+  setError,
 } from './ActionsRooms';
 
 const middleware = [thunk];
@@ -55,9 +56,14 @@ describe('Test servicio de buscar habitaciones', () => {
   });
 
   it('Debería fallar al buscar habitaciones', async (done) => {
+    const error = {
+      message: 'Error al cargar los hoteles. Por favor, intente nuevamente',
+      type: 'rooms',
+    };
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(error),
       listingRooms([]),
     ];
 
@@ -116,9 +122,14 @@ describe('Test servicio de filtrar en búsqueda de habitaciones', () => {
   });
 
   it('Debería fallar al filtrar una habitación', async (done) => {
+    const error = {
+      message: 'No se encotraron resultados. Por favor, intente nuevamente',
+      type: 'rooms-filter',
+    };
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(error),
       listingRooms([]),
     ];
 
