@@ -81,6 +81,7 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
                             className="btn btn-primary btn-book w-100 mt-2"
                             data-testid="list-book-btn-detail"
                             data-bs-toggle="modal"
+                            id="list-book-btn-detail"
                             data-bs-target="#modalDetailBook"
                             onClick={() => setDataModal(data.roomData)}
                           >
@@ -91,6 +92,7 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
                             type="button"
                             className="btn btn-danger btn-book w-100 mt-3"
                             data-testid="list-book-btn-cancel"
+                            id="list-book-btn-cancel"
                             data-bs-toggle="modal"
                             data-bs-target="#modalDeleteBook"
                             onClick={() => setDataModal(data.roomData)}

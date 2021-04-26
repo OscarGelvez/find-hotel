@@ -4,6 +4,8 @@ export const bookInfo = {
     email: 'test@test.com',
     identification_type: '1',
     identification: '123456789',
+    fromDateBook: '2021-05-02',
+    untilDateBook: '2021-02-03',
   },
   roomData: {
     id: 54,
@@ -36,6 +38,8 @@ export const bookInfo2 = {
     email: 'test@cypress.com',
     identification_type: '1',
     identification: '123456789',
+    fromDateBook: '2021-04-15',
+    untilDateBook: '2021-04-20',
   },
   roomData: {
     id: 50,
