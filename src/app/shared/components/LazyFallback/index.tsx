@@ -4,6 +4,6 @@ import { Div, SpanFallback } from './styles';
 
 export const LazyFallback = () => (
   <Div>
-    <SpanFallback>Cargando página...</SpanFallback>
+    <SpanFallback>Cargando página, espere porfavor...</SpanFallback>
   </Div>
 );
