@@ -24,6 +24,7 @@ it('rederizar el componente RoomDetail sin errores', () => {
         selectedRoom={roomId}
         saveBookingRoom={() => null}
         isLoading={false}
+        errorMessage={{ message: '', type: '' }}
       />
     </BrowserRouter>,
     div
@@ -39,6 +40,7 @@ it('renderiza el componente RoomDetail y verifica existencia de componentes hijo
         selectedRoom={roomId}
         saveBookingRoom={() => null}
         isLoading={false}
+        errorMessage={{ message: '', type: '' }}
       />
     </BrowserRouter>
   );
@@ -56,6 +58,7 @@ it('Compara snapshot del componente RoomDetail', () => {
           selectedRoom={roomId}
           saveBookingRoom={() => null}
           isLoading={false}
+          errorMessage={{ message: '', type: '' }}
         />
       </BrowserRouter>
     )

@@ -29,6 +29,7 @@ const rooms: IStateRooms = {
 
 const main: IStateMain = {
   isLoading: false,
+  errorMessage: { message: '', type: '' },
 };
 
 let store;

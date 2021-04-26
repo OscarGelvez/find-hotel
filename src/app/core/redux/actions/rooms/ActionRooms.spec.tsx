@@ -25,6 +25,8 @@ const initialState = {
   selectedRoomId: -1,
 };
 
+const errorDefault = { message: '', type: '' };
+
 describe('Test servicio de buscar habitaciones', () => {
   let store;
 
@@ -40,6 +42,7 @@ describe('Test servicio de buscar habitaciones', () => {
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(errorDefault),
       listingRooms(arrRooms),
     ];
 
@@ -102,6 +105,7 @@ describe('Test servicio de filtrar en búsqueda de habitaciones', () => {
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(errorDefault),
       listingRooms(arrRooms),
     ];
 

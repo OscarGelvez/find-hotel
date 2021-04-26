@@ -10,6 +10,13 @@ exports[`Compara snapshot del componente Layout renderizado 1`] = `
     data-testid="room-detail"
   >
     <div
+      data-testid="toast-error"
+    >
+      <div
+        className="Toastify"
+      />
+    </div>
+    <div
       className="card card-detail-screen"
     >
       <div

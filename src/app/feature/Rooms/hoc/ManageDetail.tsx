@@ -9,6 +9,7 @@ const mapStateToProps = (state: Istate) => {
     listRooms: state.rooms.listRooms,
     selectedRoom: state.rooms.selectedRoomId,
     isLoading: state.main.isLoading,
+    errorMessage: state.main.errorMessage,
   };
 };
 

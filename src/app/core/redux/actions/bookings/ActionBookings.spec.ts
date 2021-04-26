@@ -34,6 +34,7 @@ const initialState = {
   listBookings: [],
   deleteBookingId: -1,
 };
+const errorDefault = { message: '', type: '' };
 
 describe('Test servicio de guardar reservaciones', () => {
   let store;
@@ -50,6 +51,7 @@ describe('Test servicio de guardar reservaciones', () => {
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(errorDefault),
       bookingRoomSaved(5),
     ];
 
@@ -66,9 +68,16 @@ describe('Test servicio de guardar reservaciones', () => {
   });
 
   it('Debería fallar al guardar la reservación', async (done) => {
+    const error = {
+      message:
+        'Se ha presentado un error al guardar tu reserva. Por favor, intente nuevamente',
+      type: 'rooms-save-book',
+    };
+
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(error),
       bookingRoomSaved(-1),
     ];
 
@@ -100,6 +109,7 @@ describe('Test servicio de búsqueda de reservaciones', () => {
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(errorDefault),
       bookingFinded(arrBooking),
     ];
 
@@ -172,6 +182,7 @@ describe('Test servicio de eliminar reservaciones', () => {
       isLoading(true),
       selectedDeleteId(179),
       isLoading(false),
+      setError(errorDefault),
       bookingDeleted(0),
     ];
 

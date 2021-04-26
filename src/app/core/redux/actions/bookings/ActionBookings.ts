@@ -15,6 +15,8 @@ import {
   IActionTypesBookings,
 } from './ActionTypesBookings';
 
+const errorDefault = { message: '', type: '' };
+
 export function defaultState(id: number): IActionTypesBookings {
   return {
     type: DEFAULT_STATE,
@@ -72,10 +74,18 @@ export function saveBookingRoom(bookingData: IBooking) {
     await BookingsRepository.saveBookingRoom(bookingData)
       .then((response: any) => {
         dispacth(isLoading(false));
+        dispacth(setError(errorDefault));
         return dispacth(bookingRoomSaved(response.data.id));
       })
       .catch((err) => {
         dispacth(isLoading(false));
+        dispacth(
+          setError({
+            type: 'rooms-save-book',
+            message:
+              'Se ha presentado un error al guardar tu reserva. Por favor, intente nuevamente',
+          })
+        );
         return dispacth(bookingRoomSaved(-1));
       });
   };
@@ -87,6 +97,7 @@ export function findBooking(findBookingData: IFieldsFormFindBooking) {
     await BookingsRepository.findBooking(findBookingData)
       .then((response: any) => {
         dispacth(isLoading(false));
+        dispacth(setError(errorDefault));
         return dispacth(bookingFinded(response.data));
       })
       .catch((err) => {
@@ -110,6 +121,7 @@ export function cancelBooking(bookingId: number) {
     await BookingsRepository.cancelBooking(bookingId)
       .then((response) => {
         dispacth(isLoading(false));
+        dispacth(setError(errorDefault));
         return dispacth(bookingDeleted(0));
       })
       .catch((err) => {

@@ -9,6 +9,7 @@ import {
   LIST_ROOMS,
   LOAD_ROOM_DETAIL,
 } from './ActionTypesRooms';
+const errorDefault = { message: '', type: '' };
 
 export function defaultState(id: number): IActionTypesRooms {
   return {
@@ -51,6 +52,7 @@ export function listingRoomsAsync() {
     await RoomsRepository.findAllRooms()
       .then((response: any) => {
         dispacth(isLoading(false));
+        dispacth(setError(errorDefault));
         return dispacth(listingRooms(response.data));
       })
       .catch((err) => {
@@ -73,6 +75,7 @@ export function findRoomsFilter(dataFilter: IFieldsForm) {
     await RoomsRepository.findFilterRooms(dataFilter)
       .then((response: any) => {
         dispacth(isLoading(false));
+        dispacth(setError(errorDefault));
         return dispacth(listingRooms(response.data));
       })
       .catch((err) => {
