@@ -183,6 +183,7 @@ describe('Test servicio de eliminar reservaciones', () => {
       selectedDeleteId(179),
       isLoading(false),
       setError(errorDefault),
+      selectedDeleteId(-1),
       bookingDeleted(0),
     ];
 
@@ -210,6 +211,7 @@ describe('Test servicio de eliminar reservaciones', () => {
       selectedDeleteId(305),
       isLoading(false),
       setError(error),
+      selectedDeleteId(-1),
       bookingDeleted(1),
     ];
 

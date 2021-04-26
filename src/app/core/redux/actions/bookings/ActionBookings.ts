@@ -122,6 +122,7 @@ export function cancelBooking(bookingId: number) {
       .then((response) => {
         dispacth(isLoading(false));
         dispacth(setError(errorDefault));
+        dispacth(selectedDeleteId(-1));
         return dispacth(bookingDeleted(0));
       })
       .catch((err) => {
@@ -133,6 +134,7 @@ export function cancelBooking(bookingId: number) {
               'Se ha presentado un error al cancelar la reserva. Por favor, intente nuevamente',
           })
         );
+        dispacth(selectedDeleteId(-1));
         return dispacth(bookingDeleted(1));
       });
   };
