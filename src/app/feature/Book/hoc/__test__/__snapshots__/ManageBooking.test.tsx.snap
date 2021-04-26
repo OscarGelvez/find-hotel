@@ -6,6 +6,13 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
   data-testid="book"
 >
   <div
+    data-testid="toast-error"
+  >
+    <div
+      className="Toastify"
+    />
+  </div>
+  <div
     className="card-rooms"
     data-testid="find-bookings"
   >

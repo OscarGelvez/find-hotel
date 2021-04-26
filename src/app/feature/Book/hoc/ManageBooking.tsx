@@ -11,6 +11,7 @@ const mapStateToProps = (state: Istate) => {
   return {
     listBookingsFinded: state.bookings.listBookings,
     isLoading: state.main.isLoading,
+    errorMessage: state.main.errorMessage,
   };
 };
 

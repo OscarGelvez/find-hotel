@@ -22,6 +22,7 @@ const bookings: IStateBookings = {
 
 const main: IStateMain = {
   isLoading: false,
+  errorMessage: { message: '', type: '' },
 };
 
 describe('Prueba componente de orden superior HOC con redux', () => {

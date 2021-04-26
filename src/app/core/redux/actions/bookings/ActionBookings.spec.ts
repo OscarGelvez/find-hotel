@@ -15,6 +15,7 @@ import {
   isLoading,
   saveBookingRoom,
   selectedDeleteId,
+  setError,
 } from './ActionBookings';
 
 const middleware = [thunk];
@@ -125,9 +126,16 @@ describe('Test servicio de búsqueda de reservaciones', () => {
       identification: '123456789',
     };
 
+    const error = {
+      message:
+        'Se ha presentado un error al cargar las reservas. Por favor, intente nuevamente',
+      type: 'books',
+    };
+
     const expectedActions = [
       isLoading(true),
       isLoading(false),
+      setError(error),
       bookingFinded([]),
     ];
 
@@ -179,11 +187,18 @@ describe('Test servicio de eliminar reservaciones', () => {
     done();
   });
 
-  it('Debería fallar al guardar la reservación', async (done) => {
+  it('Debería fallar al eliminar la reservación', async (done) => {
+    const error = {
+      message:
+        'Se ha presentado un error al cancelar la reserva. Por favor, intente nuevamente',
+      type: 'books',
+    };
+
     const expectedActions = [
       isLoading(true),
       selectedDeleteId(305),
       isLoading(false),
+      setError(error),
       bookingDeleted(1),
     ];
 

@@ -4,7 +4,8 @@ import {
   IBooking,
   IFieldsFormFindBooking,
 } from '../../../../feature/Book/models/Booking';
-import { IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
+import { IErrorToast } from '../../modelo/IStateMain';
+import { ERROR, IActionTypesMain, IS_LOADING } from '../main/ActionTypesMain';
 import {
   BOOKING_DELETED,
   BOOKING_FINDED,
@@ -58,6 +59,13 @@ export function isLoading(loading: boolean): IActionTypesMain {
   };
 }
 
+export function setError(error: IErrorToast): IActionTypesMain {
+  return {
+    type: ERROR,
+    payload: error,
+  };
+}
+
 export function saveBookingRoom(bookingData: IBooking) {
   return async function (dispacth: any) {
     dispacth(isLoading(true));
@@ -83,6 +91,13 @@ export function findBooking(findBookingData: IFieldsFormFindBooking) {
       })
       .catch((err) => {
         dispacth(isLoading(false));
+        dispacth(
+          setError({
+            type: 'books',
+            message:
+              'Se ha presentado un error al cargar las reservas. Por favor, intente nuevamente',
+          })
+        );
         return dispacth(bookingFinded([]));
       });
   };
@@ -99,6 +114,13 @@ export function cancelBooking(bookingId: number) {
       })
       .catch((err) => {
         dispacth(isLoading(false));
+        dispacth(
+          setError({
+            type: 'books',
+            message:
+              'Se ha presentado un error al cancelar la reserva. Por favor, intente nuevamente',
+          })
+        );
         return dispacth(bookingDeleted(1));
       });
   };
