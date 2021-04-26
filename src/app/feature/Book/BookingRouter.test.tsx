@@ -23,6 +23,7 @@ const bookings: IStateBookings = {
 
 const main: IStateMain = {
   isLoading: false,
+  errorMessage: { message: '', type: '' },
 };
 let store;
 const history = createMemoryHistory();
