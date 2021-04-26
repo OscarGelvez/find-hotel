@@ -58,13 +58,13 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
                           <span>{data.bookData.name}</span>
 
                           <h5 className="mt-2">Ingreso:</h5>
-                          <span>{data.roomData.available_from}</span>
+                          <span>{data.bookData.fromDateBook}</span>
                         </div>
                         <div className="col-12 col-md-6 col-lg-3">
                           <h5>Habitación:</h5>
                           <span>{data.roomData.title}</span>
                           <h5 className="mt-2">Salida:</h5>
-                          <span>{data.roomData.available_until}</span>
+                          <span>{data.bookData.untilDateBook}</span>
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-3">
@@ -78,7 +78,7 @@ export const ListBookings: React.FC<IListBookingsProps> = ({
                           <ModalDetailBook detailRoom={infoModal} />
                           <button
                             type="button"
-                            className="btn btn-primary btn-book w-100"
+                            className="btn btn-primary btn-book w-100 mt-2"
                             data-testid="list-book-btn-detail"
                             data-bs-toggle="modal"
                             data-bs-target="#modalDetailBook"

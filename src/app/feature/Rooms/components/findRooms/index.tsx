@@ -6,6 +6,7 @@ import * as React from 'react';
 import * as Yup from 'yup';
 
 import { IFieldsForm } from '../../models/Room';
+import { getNextDate } from '../../../../shared/utils/GetNextDateValid';
 
 export interface IFindRoomsProps {
   onSubmit: (payload: IFieldsForm) => void;
@@ -52,23 +53,7 @@ export const FindRooms: React.FC<IFindRoomsProps> = ({
   const minDate = currentDate.toISOString().split('T')[0];
   const [fromDate, setFromDate] = React.useState('');
 
-  /**
-   * Valida la siguiente fecha valida del campo Fecha de salida
-   * según la fecha seleccionada en el campo Fecha ingreso
-   * @returns fecha mínima del campo Fecha de salida
-   */
-  const getNextDate = () => {
-    if (fromDate === minDate) {
-      currentDate.setDate(currentDate.getDate() + 1);
-      return currentDate.toISOString().split('T')[0];
-    } else {
-      const auxDate = fromDate !== '' ? new Date(fromDate) : currentDate;
-      auxDate.setDate(auxDate.getDate() + 1);
-      return auxDate.toISOString().split('T')[0];
-    }
-  };
-
-  const nextDate = getNextDate();
+  const nextDate = getNextDate(currentDate, fromDate, minDate);
   return (
     <>
       <div data-testid="find-rooms" className="card-rooms">

@@ -181,6 +181,53 @@ exports[`Prueba componente de orden superior HOC con redux Compara snapshot del 
                                     </div>
                                   </div>
                                   <div
+                                    className="row mb-3"
+                                  >
+                                    <div
+                                      className="col-12 col-md-6 "
+                                    >
+                                      <label
+                                        className="col-12 col-form-label"
+                                        htmlFor="name"
+                                      >
+                                        Fecha de ingreso
+                                      </label>
+                                      <input
+                                        className="form-control"
+                                        data-testid="form-book-fromDate"
+                                        id="fromDateBook"
+                                        min="2021-04-26"
+                                        name="fromDateBook"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        type="date"
+                                        value=""
+                                      />
+                                    </div>
+                                    <div
+                                      className=" col-12 col-md-6"
+                                    >
+                                      <label
+                                        className="col-12 col-form-label"
+                                        htmlFor="email"
+                                      >
+                                        Fecha de salida
+                                      </label>
+                                      <input
+                                        className="form-control"
+                                        data-testid="form-book-untilDate"
+                                        id="untilDateBook"
+                                        max="2021-04-30"
+                                        min="2021-04-27"
+                                        name="untilDateBook"
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        type="date"
+                                        value=""
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
                                     className="row mb-2"
                                   >
                                     <div

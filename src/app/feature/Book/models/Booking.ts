@@ -17,6 +17,14 @@ export interface IFieldsFormBooking {
    * Número de identificación
    */
   identification: string;
+  /**
+   * Fecha de ingreso al hotel
+   */
+  fromDateBook: string;
+  /**
+   * Fecha de salida del hotel
+   */
+  untilDateBook: string;
 }
 
 export interface IBooking {

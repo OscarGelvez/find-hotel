@@ -169,6 +169,27 @@ describe('Pruebas de componente ModalFormBook ', () => {
     const ident_type = wrapper.find('#book-form-select').first();
     const identy = wrapper.find('#book-form-identification').first();
 
+    const fromDateBook = wrapper.find('#fromDateBook').first();
+    const untilDateBook = wrapper.find('#untilDateBook').first();
+
+    await wait(() => {
+      fromDateBook.simulate('change', {
+        target: {
+          name: 'fromDateBook',
+          value: '2021-04-26',
+        },
+      });
+    });
+
+    await wait(() => {
+      untilDateBook.simulate('change', {
+        target: {
+          name: 'untilDateBook',
+          value: '2021-04-30',
+        },
+      });
+    });
+
     await wait(() => {
       name.simulate('change', {
         target: {

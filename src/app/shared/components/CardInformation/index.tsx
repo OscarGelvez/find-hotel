@@ -1,3 +1,4 @@
+import { getNextDate } from 'app/shared/utils/GetNextDateValid';
 import { Field, Form, Formik } from 'formik';
 import { FormikHelpers } from 'formik/dist/types';
 import * as PropTypes from 'prop-types';
@@ -197,6 +198,8 @@ const initialValues = {
   email: '',
   identification_type: '',
   identification: '',
+  fromDateBook: '',
+  untilDateBook: '',
 };
 
 const validationSchema = Yup.object().shape<IFieldsFormBooking>({
@@ -209,6 +212,8 @@ const validationSchema = Yup.object().shape<IFieldsFormBooking>({
     'Necesitamos tu tipo de identificación'
   ),
   identification: Yup.string().required('Necesitamos tu identificación'),
+  fromDateBook: Yup.string().required('Necesitamos tu fecha de ingreso'),
+  untilDateBook: Yup.string().required('Necesitamos tu fecha de salida'),
 });
 
 /**
@@ -232,16 +237,25 @@ export const ModalFormBook: React.FC<IModalFormBookProps> = ({
           email: values.email,
           identification_type: values.identification_type,
           identification: values.identification,
+          fromDateBook: fromDate,
+          untilDateBook: values.untilDateBook,
         },
         roomData: dataRoom,
       });
     hideModal();
+    setFromDate('');
     resetForm();
   };
 
   const hideModal = () => {
     $('#modalFormBook').modal('hide');
   };
+
+  const currentDate = new Date();
+  const minDate = currentDate.toISOString().split('T')[0];
+  const [fromDate, setFromDate] = React.useState('');
+
+  const nextDate = getNextDate(currentDate, fromDate, minDate);
   return (
     <>
       <div data-testid="modal-form-book">
@@ -270,7 +284,7 @@ export const ModalFormBook: React.FC<IModalFormBookProps> = ({
                   validationSchema={validationSchema}
                   onSubmit={handleSubmit}
                 >
-                  {({ errors, touched }) => (
+                  {({ errors, touched, setFieldValue }) => (
                     <Form data-testid="modal-book-form" id="form-modal-book">
                       <div className="row mb-3">
                         <div className="col-12 col-md-6 ">
@@ -309,6 +323,58 @@ export const ModalFormBook: React.FC<IModalFormBookProps> = ({
                           {errors.email && touched.email ? (
                             <small className="text-danger">
                               {errors.email}
+                            </small>
+                          ) : null}
+                        </div>
+                      </div>
+                      <div className="row mb-3">
+                        <div className="col-12 col-md-6 ">
+                          <label
+                            htmlFor="name"
+                            className="col-12 col-form-label"
+                          >
+                            Fecha de ingreso
+                          </label>
+                          <Field
+                            className="form-control"
+                            data-testid="form-book-fromDate"
+                            type="date"
+                            name="fromDateBook"
+                            id="fromDateBook"
+                            min={minDate}
+                            value={fromDate}
+                            onChange={(
+                              e: React.ChangeEvent<HTMLInputElement>
+                            ) => {
+                              setFieldValue('fromDateBook', e.target.value);
+                              setFromDate(e.target.value);
+                            }}
+                          />
+                          {errors.fromDateBook && touched.fromDateBook ? (
+                            <small className="text-danger">
+                              {errors.fromDateBook}
+                            </small>
+                          ) : null}
+                        </div>
+                        <div className=" col-12 col-md-6">
+                          <label
+                            htmlFor="email"
+                            className="col-12 col-form-label"
+                          >
+                            Fecha de salida
+                          </label>
+                          <Field
+                            className="form-control"
+                            data-testid="form-book-untilDate"
+                            type="date"
+                            name="untilDateBook"
+                            id="untilDateBook"
+                            min={nextDate}
+                            max={dataRoom.available_until}
+                          />
+                          {errors.untilDateBook && touched.untilDateBook ? (
+                            <small className="text-danger">
+                              {errors.untilDateBook}
                             </small>
                           ) : null}
                         </div>
