@@ -183,8 +183,8 @@ describe('Test servicio de eliminar reservaciones', () => {
       selectedDeleteId(179),
       isLoading(false),
       setError(errorDefault),
-      selectedDeleteId(-1),
       bookingDeleted(0),
+      selectedDeleteId(-1),
     ];
 
     moxios.stubRequest(baseUrl + '/booking/179', {
@@ -211,8 +211,8 @@ describe('Test servicio de eliminar reservaciones', () => {
       selectedDeleteId(305),
       isLoading(false),
       setError(error),
-      selectedDeleteId(-1),
       bookingDeleted(1),
+      selectedDeleteId(-1),
     ];
 
     moxios.stubRequest(baseUrl + '/booking/305', {
