@@ -6,7 +6,6 @@ import {
   defaultState,
   selectedDeleteId,
 } from '../../actions/bookings/ActionBookings';
-// import { bookingRoomSaved } from '../../actions/bookings/ActionBookings';
 import { IStateBookings } from '../../modelo/IStateBookings';
 import bookingReducer from './bookingReducer';
 
@@ -86,20 +85,4 @@ describe('Reductor de resevarciones', () => {
     const newState = bookingReducer(initialState, bookingDeleted(codeResponse));
     expect(newState).toStrictEqual(expectedState);
   });
-  // Cuando se tenga spin de carga esta cosa se puede probar
-  //
-  // it('debería setear por defecto el valor de la habitación seleccionada', () => {
-  //   const roomId = 5;
-  //   const initialState: IStateRooms = {
-  //     listRooms: [],
-  //     selectedRoomId: 56,
-  //   };
-  //   const expectedState: IStateRooms = {
-  //     ...initialState,
-  //     selectedRoomId: 56,
-  //   };
-
-  //   const newState = roomsReducers(initialState, bookingRoomSaved(roomId));
-  //   expect(newState).toStrictEqual(expectedState);
-  // });
 });

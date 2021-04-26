@@ -130,7 +130,7 @@ describe('Test servicio de búsqueda de reservaciones', () => {
   });
 
   it('Debería fallar al buscar una reservación', async (done) => {
-    const findBookingData = {
+    const findBookingData2 = {
       email: 'test@test.com',
       identification_type: '1',
       identification: '123456789',
@@ -158,7 +158,7 @@ describe('Test servicio de búsqueda de reservaciones', () => {
       }
     );
 
-    await store.dispatch(findBooking(findBookingData)).then((res) => {
+    await store.dispatch(findBooking(findBookingData2)).then((res) => {
       const actualAction = store.getActions();
       expect(actualAction).toEqual(expectedActions);
     });

@@ -5,8 +5,8 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import * as Yup from 'yup';
 
-import { IFieldsForm } from '../../models/Room';
 import { getNextDate } from '../../../../shared/utils/GetNextDateValid';
+import { IFieldsForm } from '../../models/Room';
 
 export interface IFindRoomsProps {
   onSubmit: (payload: IFieldsForm) => void;

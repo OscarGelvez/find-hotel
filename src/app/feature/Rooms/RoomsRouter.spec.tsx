@@ -1,20 +1,17 @@
-import { IStateRooms } from '../../core/redux/modelo/IStateRooms';
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom';
+import { MemoryRouter, Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 
-import { RoomsRouter } from './RoomsRouter';
+import { IStateRooms } from '../../core/redux/modelo/IStateRooms';
 import { IRoom } from './models/Room';
+import { RoomsRouter } from './RoomsRouter';
 const mockStore = configureStore([]);
+
 import { IStateMain } from '../../core/redux/modelo/IStateMain';
-
 import { roomInfo } from '../../shared/utils/data';
-import renderer from 'react-test-renderer';
-
-import { MemoryRouter } from 'react-router-dom';
 
 const newRoom: IRoom = roomInfo;
 const listRooms: IRoom[] = [newRoom];
